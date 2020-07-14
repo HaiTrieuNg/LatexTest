@@ -12,8 +12,8 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
 
+sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 
@@ -24,21 +24,20 @@ author = 'Trieu Nguyen'
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.autodoc',
-'sphinx.ext.doctest',
-'sphinx.ext.intersphinx',
-'sphinx.ext.todo',
-'sphinx.ext.coverage',
-'sphinx.ext.mathjax',
-'sphinx.ext.ifconfig',
-'sphinx.ext.viewcode',
-'sphinx.ext.githubpages']
+              'sphinx.ext.doctest',
+              'sphinx.ext.intersphinx',
+              'sphinx.ext.todo',
+              'sphinx.ext.coverage',
+              'sphinx.ext.mathjax',
+              'sphinx.ext.ifconfig',
+              'sphinx.ext.viewcode',
+              'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -47,7 +46,6 @@ master_doc = 'index'
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -64,40 +62,38 @@ html_static_path = ['_static']
 latex_engine = 'pdflatex'
 
 latex_elements = {
-     
-     #Logo on cover
-     'maketitle': r'''
+
+    # Logo on cover
+    'maketitle': r'''
      \small BeeFi Technology
-       
+
      \vspace{0mm}
      \begin{figure}[!h]
      \centering
      \includegraphics[scale=1.0]{BeeFi_Logo.png}
      \end{figure}
-     
-     ''',    
-    
-     #background image
-     #footer logo and header logo, haven't been able to take them out of the cover page
+
+     ''',
+
+    # background image
+    # footer logo and header logo, haven't been able to take them out of the cover page
     'preamble': r'''
     \usepackage{eso-pic}
     \AddToShipoutPictureBG{%
     \AtPageLowerLeft{\includegraphics[scale=0.7]{BeeFi_Logo.png}}}
-    
+
     \usepackage{eso-pic,graphicx,transparent}
     \AddToShipoutPictureBG*{%
     \AtPageLowerLeft{%
-    \transparent{0.4}\includegraphics[width=\paperwidth,height=\paperheight]{bg.png}%
+    \transparent{0.4}\includegraphics[width=\paperwidth,height=\paperheight]{bg.jpg}%
     }%
     }
-    
+
    \usepackage{eso-pic}
    \usepackage{graphicx}
-
    \AddToShipoutPictureBG{%
    \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[scale=0.7]{BeeFi_Logo.png}}}%
 }
-
     ''',
 }
 
@@ -105,6 +101,5 @@ latex_logo = 'BeeFi_Logo.png'
 
 latex_documents = [
     (master_doc, 'test.tex', 'LatexTest',
-     'Trieu Nguyen', 'manual' )
+     'Trieu Nguyen', 'manual')
 ]
-
