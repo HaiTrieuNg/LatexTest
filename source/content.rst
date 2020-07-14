@@ -29,13 +29,6 @@ Date       Version Description
 
 2.2.3 AT+GMR – Check version information 3
 
-2.2.4 AT+RESTORE \- Restore factory default setting 3
-
-2.2.5 AT+UART_CUR \- Current UART configuration, not save in Flash 3
-
-2.2.6 AT+UART_DEF \- Default UART configuration, save in Flash 4
-
-2.2.7 AT+SYSRAM \- Check the available RAM size 5
 
 
 1 Command Description
