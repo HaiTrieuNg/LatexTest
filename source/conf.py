@@ -64,10 +64,11 @@ html_static_path = ['_static']
 latex_engine = 'pdflatex'
 
 latex_elements = {
-     'maketitle': r'''
-     \small BeeFi Technology
      
      #Logo on cover
+     'maketitle': r'''
+     \small BeeFi Technology
+       
      \vspace{0mm}
      \begin{figure}[!h]
      \centering
@@ -76,13 +77,13 @@ latex_elements = {
      
      ''',    
     
+     #background image
+     #footer logo and header logo, haven't been able to take them out of the cover page
     'preamble': r'''
-    #footer logo, haven't been able to take it out from cover
     \usepackage{eso-pic}
     \AddToShipoutPictureBG{%
     \AtPageLowerLeft{\includegraphics[scale=0.7]{BeeFi_Logo.png}}}
     
-    #background
     \usepackage{eso-pic,graphicx,transparent}
     \AddToShipoutPictureBG*{%
     \AtPageLowerLeft{%
@@ -90,12 +91,11 @@ latex_elements = {
     }%
     }
     
-    #header logo, haven't been able to take it out from cover
    \usepackage{eso-pic}
    \usepackage{graphicx}
 
    \AddToShipoutPictureBG{%
-  \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[scale=0.7]{BeeFi_Logo.png}}}%
+   \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[scale=0.7]{BeeFi_Logo.png}}}%
 }
 
     ''',
