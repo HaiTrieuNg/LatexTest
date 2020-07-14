@@ -65,8 +65,9 @@ latex_engine = 'pdflatex'
 
 latex_elements = {
      'maketitle': r'''
-     \small Created on : May, 2020
+     \small BeeFi Technology
      
+     #Logo on cover
      \vspace{0mm}
      \begin{figure}[!h]
      \centering
@@ -76,10 +77,12 @@ latex_elements = {
      ''',    
     
     'preamble': r'''
+    #footer logo, haven't been able to take it out from cover
     \usepackage{eso-pic}
     \AddToShipoutPictureBG{%
     \AtPageLowerLeft{\includegraphics[scale=0.7]{BeeFi_Logo.png}}}
     
+    #background
     \usepackage{eso-pic,graphicx,transparent}
     \AddToShipoutPictureBG*{%
     \AtPageLowerLeft{%
@@ -87,6 +90,7 @@ latex_elements = {
     }%
     }
     
+    #header logo, haven't been able to take it out from cover
    \usepackage{eso-pic}
    \usepackage{graphicx}
 
