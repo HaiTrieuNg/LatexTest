@@ -30,8 +30,15 @@ release = '0.0.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-]
+extensions = ['sphinx.ext.autodoc',
+'sphinx.ext.doctest',
+'sphinx.ext.intersphinx',
+'sphinx.ext.todo',
+'sphinx.ext.coverage',
+'sphinx.ext.mathjax',
+'sphinx.ext.ifconfig',
+'sphinx.ext.viewcode',
+'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -53,3 +60,48 @@ html_logo = 'BeeFi_Logo.png'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+latex_engine = 'pdflatex'
+
+latex_elements = {
+     'maketitle': r'''
+     \small Created on : May, 2020
+     
+     \vspace{0mm}
+     \begin{figure}[!h]
+     \centering
+     \includegraphics[scale=1.0]{BeeFi_Logo.png}
+     \end{figure}
+     
+     ''',    
+    
+    'preamble': r'''
+    \usepackage{eso-pic}
+    \AddToShipoutPictureBG{%
+    \AtPageLowerLeft{\includegraphics[scale=0.7]{BeeFi_Logo.png}}}
+    
+    \usepackage{eso-pic,graphicx,transparent}
+    \AddToShipoutPictureBG*{%
+    \AtPageLowerLeft{%
+    \transparent{0.4}\includegraphics[width=\paperwidth,height=\paperheight]{bg.jpg}%
+    }%
+    }
+    
+   \usepackage{showframe}
+   \usepackage{eso-pic}
+   \usepackage{graphicx}
+
+   \AddToShipoutPictureBG{%
+  \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[width=1.5in]{BeeFi_Logo.png}}}%
+}
+
+    ''',
+}
+
+latex_logo = 'BeeFi_Logo.png'
+
+latex_documents = [
+    (master_doc, 'test.tex', 'LatexTest',
+     'Trieu Nguyen', 'manual' )
+]
+
