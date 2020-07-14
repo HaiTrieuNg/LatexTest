@@ -73,7 +73,13 @@ latex_elements = {
      \includegraphics[scale=1.0]{images/BeeFi_Logo.png}
      \end{figure}
      ''',
-
+     
+     'preamble': r'''
+     \usepackage{fancyhdr}
+     \pagestyle{fancy}
+     \fancyhf{}
+     \fancyhead[R]{\thepage}
+    ''',
 }
 
 latex_logo = 'images/BeeFi_Logo.png'
