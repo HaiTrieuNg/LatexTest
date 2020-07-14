@@ -74,13 +74,16 @@ latex_elements = {
      \end{figure}
 
      ''',
-
+  
+    #footer
+    #\usepackage{eso-pic}
+    #\AddToShipoutPictureBG{%
+    #\AtPageLowerLeft{\hspace{1cm}\includegraphics[scale=0.7]{BeeFi_Logo.png}}}
+    
     # background image
     # footer logo and header logo, haven't been able to take them out of the cover page
+  
     'preamble': r'''
-    \usepackage{eso-pic}
-    \AddToShipoutPictureBG{%
-    \AtPageLowerLeft{\hspace{1cm}\includegraphics[scale=0.7]{BeeFi_Logo.png}}}
 
     \usepackage{eso-pic,graphicx,transparent}
     \AddToShipoutPictureBG*{%
