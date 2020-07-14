@@ -87,12 +87,11 @@ latex_elements = {
     }%
     }
     
-   \usepackage{showframe}
    \usepackage{eso-pic}
    \usepackage{graphicx}
 
    \AddToShipoutPictureBG{%
-  \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[width=1.5in]{BeeFi_Logo.png}}}%
+  \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[scale=0.7]{BeeFi_Logo.png}}}%
 }
 
     ''',
