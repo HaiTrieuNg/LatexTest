@@ -70,13 +70,13 @@ latex_elements = {
      \vspace{0mm}
      \begin{figure}[!h]
      \centering
-     \includegraphics[scale=1.0]{images/BeeFi_Logo.png}
+     \includegraphics[scale=1.0]{images\BeeFi_Logo.png}
      \end{figure}
      ''',
 
 }
 
-latex_logo = 'images/BeeFi_Logo.png'
+latex_logo = 'images\BeeFi_Logo.png'
 
 latex_documents = [
     (master_doc, 'test.tex', 'LatexTest',
