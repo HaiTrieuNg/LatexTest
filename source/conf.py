@@ -80,19 +80,19 @@ latex_elements = {
     'preamble': r'''
     \usepackage{eso-pic}
     \AddToShipoutPictureBG{%
-    \AtPageLowerLeft{\includegraphics[scale=0.7]{BeeFi_Logo.png}}}
+    \AtPageLowerLeft{\hspace{1cm}\includegraphics[scale=0.7]{BeeFi_Logo.png}}}
 
     \usepackage{eso-pic,graphicx,transparent}
     \AddToShipoutPictureBG*{%
     \AtPageLowerLeft{%
-    \transparent{0.4}\includegraphics[width=\paperwidth,height=\paperheight]{bg.jpg}%
+    \transparent{0.4}\includegraphics[width=\paperwidth,height=\paperheight]{BeeFi_Logo.png}%
     }%
     }
 
    \usepackage{eso-pic}
    \usepackage{graphicx}
    \AddToShipoutPictureBG{%
-   \AtPageUpperLeft{\raisebox{-\height}{\includegraphics[scale=0.7]{BeeFi_Logo.png}}}%
+   \AtPageUpperLeft{\hspace{1cm}\raisebox{-\height}{\includegraphics[scale=0.7]{BeeFi_Logo.png}}}%
 }
     ''',
 }
