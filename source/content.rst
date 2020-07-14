@@ -27,7 +27,6 @@ Date       Version Description
 
 2.2.2 AT+RST \- Restart module 2
 
-2.2.3 AT+GMR – Check version information 3
 
 
 
@@ -138,19 +137,3 @@ Response        OK
 Parameters      \-
 =============== ======
 
-2.2.3 AT+GMR – Check version information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-=============== ==================
-Execute Command AT+GMR
-=============== ==================
-Response        <AT version info >
-                
-                <SDK version info>
-                
-                <compile time>
-                
-                OK
-Parameters      \-
-example         AT+GMR
-=============== ==================
