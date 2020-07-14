@@ -87,7 +87,7 @@ latex_elements = {
     \usepackage{eso-pic,graphicx,transparent}
     \AddToShipoutPictureBG*{%
     \AtPageLowerLeft{%
-    \transparent{0.4}\includegraphics[width=\paperwidth,height=\paperheight]{bg.jpg}%
+    \transparent{0.4}\includegraphics[width=\paperwidth,height=\paperheight]{bg.png}%
     }%
     }
     
