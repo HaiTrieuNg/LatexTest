@@ -27,32 +27,12 @@ Date       Version Description
 
 2.2.2 AT+RST \- Restart module 2
 
-2.2.3 AT+GMR – Check version information 3
 
-2.2.4 AT+RESTORE \- Restore factory default setting 3
-
-2.2.5 AT+UART_CUR \- Current UART configuration, not save in Flash 3
-
-2.2.6 AT+UART_DEF \- Default UART configuration, save in Flash 4
-
-2.2.7 AT+SYSRAM \- Check the available RAM size 5
 
 
 1 Command Description
 ======================
 
-.. raw:: html
-
-    <font color="blue">Blue word,</font>
-
-
-
-
-Some :red:`red colored text`.
-
-Some :blue:`blue colored text`. Not blue anymore.
-
-Some :big:`big text`.
 
 Each command set contains four types of AT commands：
 
@@ -76,13 +56,6 @@ Each command set contains four types of AT commands：
 +-----------------+--------------+-----------------------------------+
 
 
-Some :red:`red colored text` again!
-
-Notes：
-
-.. raw:: html
-
-<font color="blue">1. Not all AT commands support all four variations mentioned above.<br>2. Square brackets [ ] designate the default value; it is either not required or may not appear.</font>
 
 3. String values need to be included in double quotation marks, for
    example: AT+CWSAP="BFQ756290","21030826", 1,4
@@ -145,19 +118,3 @@ Response        OK
 Parameters      \-
 =============== ======
 
-2.2.3 AT+GMR – Check version information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-=============== ==================
-Execute Command AT+GMR
-=============== ==================
-Response        <AT version info >
-                
-                <SDK version info>
-                
-                <compile time>
-                
-                OK
-Parameters      \-
-example         AT+GMR
-=============== ==================

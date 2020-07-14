@@ -91,7 +91,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#at-test-at">2.2.1 AT - Test AT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ate-configure-echo-of-at-commands">2.2.2 ATE - Configure echo of AT commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#at-rst-restart-module">2.2.2 AT+RST - Restart module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#at-gmr-check-version-information">2.2.3 AT+GMR – Check version information</a></li>
 </ul>
 </li>
 </ul>
@@ -194,16 +193,8 @@
 <p>2.2.1 AT - Test AT 2</p>
 <p>2.2.2 ATE - Configure echo of AT commands 2</p>
 <p>2.2.2 AT+RST - Restart module 2</p>
-<p>2.2.3 AT+GMR – Check version information 3</p>
-<p>2.2.4 AT+RESTORE - Restore factory default setting 3</p>
-<p>2.2.5 AT+UART_CUR - Current UART configuration, not save in Flash 3</p>
-<p>2.2.6 AT+UART_DEF - Default UART configuration, save in Flash 4</p>
-<p>2.2.7 AT+SYSRAM - Check the available RAM size 5</p>
 <div class="section" id="command-description">
 <h1>1 Command Description<a class="headerlink" href="#command-description" title="Permalink to this headline">¶</a></h1>
-<font color="blue">Blue word,</font><p>Some <a href="#id1"><span class="problematic" id="id2">:red:`red colored text`</span></a>.</p>
-<p>Some <a href="#id3"><span class="problematic" id="id4">:blue:`blue colored text`</span></a>. Not blue anymore.</p>
-<p>Some <a href="#id5"><span class="problematic" id="id6">:big:`big text`</span></a>.</p>
 <p>Each command set contains four types of AT commands：</p>
 <table class="docutils align-default">
 <colgroup>
@@ -243,9 +234,6 @@ user-defined parameters.</p></td>
 </tr>
 </tbody>
 </table>
-<p>Some <a href="#id7"><span class="problematic" id="id8">:red:`red colored text`</span></a> again!</p>
-<p>Notes：</p>
-<p>&lt;font color=”blue”&gt;1. Not all AT commands support all four variations mentioned above.&lt;br&gt;2. Square brackets [ ] designate the default value; it is either not required or may not appear.&lt;/font&gt;</p>
 <ol class="arabic simple" start="3">
 <li><p>String values need to be included in double quotation marks, for
 example: AT+CWSAP=”BFQ756290”,”21030826”, 1,4</p></li>
@@ -360,35 +348,6 @@ LF)</p></li>
 </tr>
 <tr class="row-odd"><td><p>Parameters</p></td>
 <td><p>-</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="at-gmr-check-version-information">
-<h3>2.2.3 AT+GMR – Check version information<a class="headerlink" href="#at-gmr-check-version-information" title="Permalink to this headline">¶</a></h3>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 45%" />
-<col style="width: 55%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Execute Command</p></th>
-<th class="head"><p>AT+GMR</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Response</p></td>
-<td><p>&lt;AT version info &gt;</p>
-<p>&lt;SDK version info&gt;</p>
-<p>&lt;compile time&gt;</p>
-<p>OK</p>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Parameters</p></td>
-<td><p>-</p></td>
-</tr>
-<tr class="row-even"><td><p>example</p></td>
-<td><p>AT+GMR</p></td>
 </tr>
 </tbody>
 </table>

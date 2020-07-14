@@ -33,18 +33,6 @@ Date       Version Description
 1 Command Description
 ======================
 
-.. raw:: html
-
-    <font color="blue">Blue word,</font>
-
-
-
-
-Some :red:`red colored text`.
-
-Some :blue:`blue colored text`. Not blue anymore.
-
-Some :big:`big text`.
 
 Each command set contains four types of AT commands：
 
@@ -68,13 +56,6 @@ Each command set contains four types of AT commands：
 +-----------------+--------------+-----------------------------------+
 
 
-Some :red:`red colored text` again!
-
-Notes：
-
-.. raw:: html
-
-<font color="blue">1. Not all AT commands support all four variations mentioned above.<br>2. Square brackets [ ] designate the default value; it is either not required or may not appear.</font>
 
 3. String values need to be included in double quotation marks, for
    example: AT+CWSAP="BFQ756290","21030826", 1,4
