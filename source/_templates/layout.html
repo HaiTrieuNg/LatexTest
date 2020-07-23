@@ -6,10 +6,7 @@
     color: #000000;
 }
     
-    .fa-book::after, .icon-book::after {
-    content: "Switch Version";
-    }
-     
+
     span.fa.fa-book {
 	visibility: hidden;
 	position: relative;
@@ -19,11 +16,10 @@
   span.fa.fa-book:after {
 	visibility: visible;
 	position: absolute;
-	content: "This text replaces the original.";
+	content: "Switch Version";
 }
     
-    
-    /* Sidebar */
+   /* Sidebar */
     .wy-nav-side {
       background: #333333;
     }
@@ -37,8 +33,16 @@
     .wy-side-nav-search input[type=text] {
     border-radius: 0px;
     }
-    
-   
+
+    span.caption-text{
+    display: none;
+}
+  .wy-menu-vertical header, .wy-menu-vertical p.caption {
+    height: 0px;
+    width: 0px;
+    display: none;
+
+  }
     
     /* Content area */
     .wy-nav-content {
