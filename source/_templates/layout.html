@@ -19,7 +19,22 @@
 	left: 0;
 	content: "Switch Version";
 }
-    
+ 
+	  
+ .wy-breadcrumbs li:first-child a:first-child {
+  visibility: hidden;
+  position: relative;
+}
+
+  .wy-breadcrumbs li:first-child a:first-child:after {
+    visibility: visible;
+    position: absolute;
+    top: 1;
+    left: 0;
+    content: "Home";
+}
+
+
    /* Sidebar */
     .wy-nav-side {
       background: #333333;
