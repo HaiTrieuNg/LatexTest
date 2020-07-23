@@ -38,25 +38,6 @@ Date       Version Description
    pay particular attention to.
 
 .. important:: Some important content
-
-
-.. example-code::
-
-  .. code-block:: JSON
-
-    {
-      "key": "value"
-    }
-
-  .. code-block:: python
-
-    pygments_style = 'sphinx'
-
-
-  .. code-block:: ruby
-
-    print "Hello, World!\n"
-    
     
 Each command set contains four types of AT commands：
 
