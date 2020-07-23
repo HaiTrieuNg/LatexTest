@@ -2,6 +2,27 @@
   {% block footer %} {{ super() }}
 
   <style>
+     .wy-side-nav-search>div.version {
+    color: #000000;
+}
+    
+    .fa-book::after, .icon-book::after {
+    content: "Switch Version";
+    }
+     
+    span.fa.fa-book {
+	visibility: hidden;
+	position: relative;
+}
+
+
+  span.fa.fa-book:after {
+	visibility: visible;
+	position: absolute;
+	content: "This text replaces the original.";
+}
+    
+    
     /* Sidebar */
     .wy-nav-side {
       background: #333333;
@@ -17,17 +38,7 @@
     border-radius: 0px;
     }
     
-    .version{
-      color: #000000;
-    }
-    
-    .fa-book::before, .icon-book::before {
-    content: "Switch Version";
-    }
-    
-    span.fa.fa-book {
-    content: "Switch Version";
-    }
+   
     
     /* Content area */
     .wy-nav-content {
