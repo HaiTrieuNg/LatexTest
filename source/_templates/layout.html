@@ -2,6 +2,7 @@
   {% block footer %} {{ super() }}
 
   <style>
+	  
      .wy-side-nav-search>div.version {
     color: #000000;
 }
@@ -42,12 +43,14 @@
 
     /* Upper Sidebar */
     .wy-side-nav-search{
-      background: lightgray;
+      background: #e3e3e3;
       color: #000000;
     }
 
     .wy-side-nav-search input[type=text] {
-    border-radius: 0px;
+     	border-radius: 0px;
+	border-color: #333333
+	   
     }
 
     span.caption-text{
@@ -71,12 +74,52 @@
 
    /*tables*/
   .wy-table-responsive table td, .wy-table-responsive table th {
-    white-space: normal;
+    white-space: normal  !important;
     }
 
   .wy-table-responsive {
     overflow: visible !important;
   }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  .icon-home {
+  color: #333333 !important;
+}
+
+.icon-home:hover {
+  background-color: #d6d6d6 !important;
+}
+
+.version {
+  color: #000000 !important;
+}
+
+a:hover {
+  color: #bd2c2a !important;
+}
+
+.logo {
+  width: 240px !important;
+}
+
+/* For space between the return type and function name */
+a.internal + code.descname::before {
+  content: ' ';
+}
+
+/* For space between the arguments of the function */
+a.internal + em::before {
+  content: ' ';
+}
+
+.tool-sha256 {
+  word-break: break-all;
+}
 
    </style>
 {% endblock %}
