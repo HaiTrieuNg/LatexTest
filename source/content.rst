@@ -33,6 +33,11 @@ Date       Version Description
 1 Command Description
 ======================
 
+.. note::
+   This is note text. Use a note for information you want the user to
+   pay particular attention to.
+
+.. important:: Some important content
 
 Each command set contains four types of AT commands：
 
