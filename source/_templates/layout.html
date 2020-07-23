@@ -2,11 +2,15 @@
   {% block footer %} {{ super() }}
 
   <style>
-	  
+.logo {
+  width: 240px;
+}	  
      .wy-side-nav-search>div.version {
     color: #000000;
 }
-    
+    .version {
+  color: #000000;
+}
 
   span.fa.fa-book{
 	visibility: hidden;
@@ -72,6 +76,7 @@
     color: #000000;
    }
 
+
    /*tables*/
   .wy-table-responsive table td, .wy-table-responsive table th {
     white-space: normal  !important;
@@ -81,32 +86,21 @@
     overflow: visible !important;
   }
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  .icon-home {
-  color: #333333 !important;
+	  		  
+.icon-home {
+  color: #333333 ;
 }
 
 .icon-home:hover {
-  background-color: #d6d6d6 !important;
-}
-
-.version {
-  color: #000000 !important;
+  background-color: #d6d6d6;
 }
 
 a:hover {
-  color: #bd2c2a !important;
+  color: #bd2c2a ;
 }
 
-.logo {
-  width: 240px !important;
-}
-
+/*From Espressif css*/
+	  
 /* For space between the return type and function name */
 a.internal + code.descname::before {
   content: ' ';
