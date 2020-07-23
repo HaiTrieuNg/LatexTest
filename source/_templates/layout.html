@@ -1,0 +1,42 @@
+{% extends "!layout.html" %}
+  {% block footer %} {{ super() }}
+
+  <style>
+    /* Sidebar */
+    .wy-nav-side {
+      background: #333333;
+    }
+
+    /* Upper Sidebar */
+    .wy-side-nav-search{
+      background: lightgray;
+      color: #000000;
+    }
+
+    .wy-side-nav-search input[type=text] {
+    border-radius: 0px;
+    }
+    
+    .fa-book::before, .icon-book::before {
+    content: "Switch Version";
+    }
+    /* Content area */
+    .wy-nav-content {
+    max-width: 90%;
+   }
+   
+   a.icon.icon-home{
+    color: #000000;
+   }
+
+   /*tables*/
+  .wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal;
+    }
+
+  .wy-table-responsive {
+    overflow: visible !important;
+  }
+
+   </style>
+{% endblock %}
