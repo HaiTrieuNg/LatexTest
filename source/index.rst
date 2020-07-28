@@ -6,13 +6,7 @@
 Welcome to LatexTest  documentation!
 =====================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
-   content
-   
-   
 ==================  ==================  ==================
 |Get Started|_      |API Reference|_    |H/W Reference|_
 ------------------  ------------------  ------------------
@@ -23,27 +17,33 @@ Welcome to LatexTest  documentation!
 `API Guides`_       `Contribute`_       `Resources`_
 ==================  ==================  ==================
 
-.. |Get Started| image:: _images/1.png
+.. |Get Started| image:: Beefi_Logo.png
 .. _Get Started: content.html
 
-.. |API Reference| image:: _images/2.png
+.. |API Reference| image:: Beefi_Logo.png
 .. _API Reference: content.html
 
-.. |H/W Reference| image:: _images/3.png
-.. _H/W Reference: content.html
+.. |H/W Reference| image:: Beefi_Logo.png
+.. _H/W Reference: hw-reference/index.html
 
-.. |API Guides| image:: _images/4.png
+.. |API Guides| image:: Beefi_Logo.png
 .. _API Guides: content.html
 
-.. _Libraries and Frameworks: libraries-and-frameworks/index.html
+.. _Libraries and Frameworks: content.html
 
-.. |Contribute| image:: _images/5.png
+.. |Contribute| image:: Beefi_Logo.png
 .. _Contribute: content.html
 
-.. |Resources| image:: _images/6.png
+.. |Resources| image:: Beefi_Logo.png
 .. _Resources: content.html
 
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   content
+   Test
 
 Indices and tables
 ==================

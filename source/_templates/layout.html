@@ -2,7 +2,7 @@
   {% block footer %} {{ super() }}
 
  <style>
-	 .wy-alert.wy-alert-warning .wy-alert-title, .rst-content .wy-alert-warning.note .wy-alert-title, .rst-content .attention .wy-alert-title, .rst-content .caution .wy-alert-title, .rst-content .wy-alert-warning.danger .wy-alert-title, .rst-content .wy-alert-warning.error .wy-alert-title, .rst-content .wy-alert-warning.hint .wy-alert-title, .rst-content .wy-alert-warning.important .wy-alert-title, .rst-content .wy-alert-warning.tip .wy-alert-title, .rst-content .warning .wy-alert-title, .rst-content .wy-alert-warning.seealso .wy-alert-title, .rst-content .admonition-todo .wy-alert-title, .rst-content .wy-alert-warning.admonition .wy-alert-title, .wy-alert.wy-alert-warning .rst-content .admonition-title, .rst-content .wy-alert.wy-alert-warning .admonition-title, .rst-content .wy-alert-warning.note .admonition-title, .rst-content .attention .admonition-title, .rst-content .caution .admonition-title, .rst-content .wy-alert-warning.danger .admonition-title, .rst-content .wy-alert-warning.error .admonition-title, .rst-content .wy-alert-warning.hint .admonition-title, .rst-content .wy-alert-warning.important .admonition-title, .rst-content .wy-alert-warning.tip .admonition-title, .rst-content .warning .admonition-title, .rst-content .wy-alert-warning.seealso .admonition-title, .rst-content .admonition-todo .admonition-title, .rst-content .wy-alert-warning.admonition .admonition-title{
+.wy-alert.wy-alert-warning .wy-alert-title, .rst-content .wy-alert-warning.note .wy-alert-title, .rst-content .attention .wy-alert-title, .rst-content .caution .wy-alert-title, .rst-content .wy-alert-warning.danger .wy-alert-title, .rst-content .wy-alert-warning.error .wy-alert-title, .rst-content .wy-alert-warning.hint .wy-alert-title, .rst-content .wy-alert-warning.important .wy-alert-title, .rst-content .wy-alert-warning.tip .wy-alert-title, .rst-content .warning .wy-alert-title, .rst-content .wy-alert-warning.seealso .wy-alert-title, .rst-content .admonition-todo .wy-alert-title, .rst-content .wy-alert-warning.admonition .wy-alert-title, .wy-alert.wy-alert-warning .rst-content .admonition-title, .rst-content .wy-alert.wy-alert-warning .admonition-title, .rst-content .wy-alert-warning.note .admonition-title, .rst-content .attention .admonition-title, .rst-content .caution .admonition-title, .rst-content .wy-alert-warning.danger .admonition-title, .rst-content .wy-alert-warning.error .admonition-title, .rst-content .wy-alert-warning.hint .admonition-title, .rst-content .wy-alert-warning.important .admonition-title, .rst-content .wy-alert-warning.tip .admonition-title, .rst-content .warning .admonition-title, .rst-content .wy-alert-warning.seealso .admonition-title, .rst-content .admonition-todo .admonition-title, .rst-content .wy-alert-warning.admonition .admonition-title{
     background: #cd5c5c;
 
  }
@@ -11,131 +11,122 @@
     background: #FA8072;
  }
 
-	 /*Code block highlight color change*/
-	 div.highlight{
-		background : #eeffcc;
-	 }
-	 
-	 .highlight .hll {
-    		background-color: #FFFF66;
-	}
+  /*Logo, have to define in conf.py*/
+  .wy-side-nav-search>a.icon img.logo {
+    content: url("https://www.beefi.io/images/logo.png")
+  }
 
-	/*Logo, have to define in conf.py*/
-	.wy-side-nav-search>a.icon img.logo {
-		content: url("https://www.beefi.io/images/logo.png")
-	}
+  .logo {
+     width: 240px !important;
+  } 
 
-	.logo {
-		 width: 240px !important;
-	}	
+  /*Change version Menu text from "Read the Docs" to "Switch Version"*/
+  span.fa.fa-book{
+    visibility: hidden;
+    position: relative;
+  }
 
-	/*Change version Menu text from "Read the Docs" to "Switch Version"*/
-	span.fa.fa-book{
-		visibility: hidden;
-		position: relative;
-	}
+  span.fa.fa-book:after {
+    visibility: visible;
+    position: absolute;
+    top: 1;
+    left: 0;
+    content: "Switch Version";
+  }
 
-	span.fa.fa-book:after {
-		visibility: visible;
-		position: absolute;
-		top: 1;
-		left: 0;
-		content: "Switch Version";
-	}
+  /*Change Top link in content area from "Docs" to "Home"*/   
+  .wy-breadcrumbs li:first-child a:first-child {
+     visibility: hidden;
+    position: relative;
+  }
 
-	/*Change Top link in content area from "Docs" to "Home"*/	  
-	.wy-breadcrumbs li:first-child a:first-child {
-		 visibility: hidden;
-		position: relative;
-	}
-
-	.wy-breadcrumbs li:first-child a:first-child:after {
-		visibility: visible;
-		position: absolute;
-		top: 1;
-		left: 0;
-		content: "Home";
-	}
+  .wy-breadcrumbs li:first-child a:first-child:after {
+    visibility: visible;
+    position: absolute;
+    top: 1;
+    left: 0;
+    content: "Home";
+  }
 
 
-	/* Under Sidebar */
-	.wy-nav-side {
-		background: #333333;
-	}
+  /* Under Sidebar */
+  .wy-nav-side {
+    background: #333333;
+  }
 
-	 /* Upper Sidebar color and text */
-	.wy-side-nav-search{
-		background: #e3e3e3 !important;
-		color: #000000 !important;
-	}
+   /* Upper Sidebar color and text */
+  .wy-side-nav-search{
+    background: #e3e3e3;
+    color: #000000;
+  }
 
-	.wy-side-nav-search input[type=text] {
-		border-radius: 0px;
-		border-color: #333333
+  .wy-side-nav-search input[type=text] {
+    border-radius: 0px;
+    border-color: #333333
 
-	}
+  }
 
-	/*Upper side bar version text*/
-	.wy-side-nav-search>div.version {
-		color: #000000 !important;
-	}
-	.version {
-		color: #000000 !important;
-	}
+  /*Upper side bar version text*/
+  .wy-side-nav-search>div.version {
+    color: #000000 !important;
+  }
+  .version {
+    color: #000000 !important;
+  }
 
-	/* remove under side bar blue caption "CONTENT:" */	  
-	span.caption-text{
-		display: none;
-	}
-	.wy-menu-vertical header, .wy-menu-vertical p.caption {
-		height: 0px;
-		width: 0px;
-		display: none;
-	}
+  /* remove under side bar blue caption "CONTENT:" */   
+  span.caption-text{
+    display: none;
+  }
+  .wy-menu-vertical header, .wy-menu-vertical p.caption {
+    height: 0px;
+    width: 0px;
+    display: none;
+  }
 
-	/* Expand content area */
-	.wy-nav-content {
-		max-width: 90%;
-	}
+  /* Expand content area */
+  .wy-nav-content {
+    max-width: 90%;
+  }
 
-	/*tables*/
-	.wy-table-responsive table td, .wy-table-responsive table th {
-		white-space: normal  !important;
-	}
+  /*tables*/
+  .wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal  !important;
+  }
 
-	.wy-table-responsive {
-		overflow: visible !important;
-	}
+  .wy-table-responsive {
+    overflow: visible !important;
+  }
 
-	/* Hovered background and text color change */	  		  
-	.icon-home {
-	  color: #333333 !important;
-	}
+  /* Hovered background and text color change */          
+  .icon-home {
+    color: #333333 !important;
+  }
 
-	.icon-home:hover {
-	  background-color: #d6d6d6 !important;
-	}
+  .icon-home:hover {
+    background-color: #d6d6d6 !important;
+  }
 
-	a:hover {
-	  color: #bd2c2a !important;
-	}
+  a:hover {
+    color: #bd2c2a !important;
+  }
 
 
-	/*From Espressif css*/
+  /*From Espressif css*/
 
-	/* For space between the return type and function name */
-	a.internal + code.descname::before {
-	  content: ' ';
-	}
+  /* For space between the return type and function name */
+  a.internal + code.descname::before {
+    content: ' ';
+  }
 
-	/* For space between the arguments of the function */
-	a.internal + em::before {
-	  content: ' ';
-	}
+  /* For space between the arguments of the function */
+  a.internal + em::before {
+    content: ' ';
+  }
 
-	.tool-sha256 {
-	  word-break: break-all;
-	}
+  .tool-sha256 {
+    word-break: break-all;
+  }
 
      </style>
 {% endblock %}
