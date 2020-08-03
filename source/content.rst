@@ -1,3 +1,7 @@
+.. |br| raw:: html
+
+     <br/>
+
 BFQ4004
 
 Dual-band Wi-Fi Module
@@ -5,241 +9,6 @@ Dual-band Wi-Fi Module
 AT Command Reference
 
 July 2020
-
-Table of Contents
-=================
-
-**1** **Overview** 5
-
-`2 Command Types and Formats 5 <\l>`__
-
-`3 Basic AT Commands 6 <\l>`__
-
-`3.1 Overview 6 <\l>`__
-
-`3.2 Command Descriptions 6 <\l>`__
-
-`3.2.1 AT – Tests AT Startup 6 <\l>`__
-
-`3.2.2 AT+ATE – Configures Echoing of AT Commands 6 <\l>`__
-
-`3.2.3 AT+RST – Restarts the Module 7 <\l>`__
-
-`3.2.4 AT+GMR – Checks AT Commands Version Information 7 <\l>`__
-
-`3.2.5 AT+RESTORE – Restores Factory Settings 7 <\l>`__
-
-`3.2.6 AT+UART_CUR – Current UART Configuration in RAM 7 <\l>`__
-
-`3.2.7 AT+UART_DEF – Default UART Configuration from Flash 8 <\l>`__
-
-`3.2.8 AT+SYSRAM – Checks the Remaining Space on RAM 9 <\l>`__
-
-`3.2.9 AT+SLEEP – Configures the Operating Modes for Power Optimization
-10 <\l>`__
-
-`3.2.10 AT+GSLP – Enters Suspend (Deep-sleep) Mode 10 <\l>`__
-
-`3.2.11 AT+RFPOWER – Sets Maximum of RF TX Power 11 <\l>`__
-
-`4 Hardware-Related AT Commands 11 <\l>`__
-
-`4.1 Overview 11 <\l>`__
-
-`4.2 Command Descriptions 11 <\l>`__
-
-`4.2.1 AT+SYSIOSETCFG – Configures IO Working Mode 11 <\l>`__
-
-`4.2.2 AT+SYSIOGETCFG – Get IO Working Mode 12 <\l>`__
-
-`4.2.3 AT+SYSGPIODIR – Configures the Direction of GPIO 12 <\l>`__
-
-`4.2.4 AT+SYSGPIOWRITE – Configures the Output Level of a GPIO
-13 <\l>`__
-
-`4.2.5 AT+SYSGPIOREAD – Reads the GPIO Level 13 <\l>`__
-
-`4.2.6 AT+WAKEUPGPIO – Configures a GPIO to Wake BFQ4004 up from Sleep
-Mode 14 <\l>`__
-
-`5 Wi-Fi-Related AT Commands 15 <\l>`__
-
-`5.1 Overview 15 <\l>`__
-
-`5.2 Command Descriptions 16 <\l>`__
-
-`5.2.1 AT+CWMODE_CUR – Sets Current WiFi Mode Configuration, Not Saved
-in Flash 16 <\l>`__
-
-`5.2.2 AT+CWMODE_DEF- Sets Default WiFi Mode Configuration, Saved in
-Flash 17 <\l>`__
-
-`5.2.3 AT+CWJAP_CUR – Connects to AP, Configuration Not Saved in Flash
-17 <\l>`__
-
-`5.2.4 AT+CWJAP_DEF – Connects to AP, Configuration Saved in Flash
-18 <\l>`__
-
-`5.2.5 AT+CWLAPOPT – Sets the Configuration for the Command AT+CWLAP
-19 <\l>`__
-
-`5.2.6 AT+CWLAP – Lists Available APs 21 <\l>`__
-
-`5.2.7 AT+CWQAP – Disconnects from the AP 22 <\l>`__
-
-`5.2.8 AT+CWSAP_CUR – Configures the BFQ4004 SoftAP, Configuration Not
-Saved to Flash 22 <\l>`__
-
-`5.2.9 AT+CWSAP_DEF - Configures the BFQ4004 SoftAP, Configuration Saved
-to Flash 23 <\l>`__
-
-`5.2.10 AT+CWLIF – Gets the IP Addresses of the Stations the BFQ4004
-SoftAP Is Connected With 24 <\l>`__
-
-`5.2.11 AT+CWDHCP_CUR - Enables/Disables DHCP, Configuration Not Saved
-to Flash 25 <\l>`__
-
-`5.2.12 AT+CWDHCP_DEF - Enables/Disables DHCP, Configuration Saved to
-Flash 25 <\l>`__
-
-`5.2.13 AT+CWDHCPS_CUR - Sets the IP address Range the SoftAP DHCP
-Server Can Allocate, Configuration Not Saved to Flash 26 <\l>`__
-
-`5.2.14 AT+CWDHCPS_DEF - Sets the IP address Range the SoftAP DHCP
-Server Can Allocate, Configuration Saved to Flash 27 <\l>`__
-
-`5.2.15 AT+CWAUTOCONN – Automatically Connects to the AP on Power-up or
-Not 28 <\l>`__
-
-`5.2.16 AT+CIPSTA_CUR – Sets the Current IP Address of the BFQ4004
-Station, Configuration Not Saved in Flash 28 <\l>`__
-
-`5.2.17 AT+CIPSTA_DEF - Sets the Default IP Address of the BFQ4004
-Station, Configuration Saved in Flash 29 <\l>`__
-
-`5.2.18 AT+CIPAP_CUR – Sets the Current IP Address of the BFQ4004
-SoftAP, Configuration Not Saved in Flash 30 <\l>`__
-
-`5.2.19 AT+CIPAP_DEF - Sets the Default IP Address of the BFQ4004
-SoftAP, Configuration Saved in Flash 30 <\l>`__
-
-`5.2.20 AT+WPS – Enables the WPS Function 31 <\l>`__
-
-`5.2.21 AT+CWHOSTNAME – Configures the Name of BFQ4004 Station
-31 <\l>`__
-
-`5.2.22 AT+CWCOUNTRY_CUR – Sets the Current Wi-Fi Country Code,
-Configuration Not Saved in Flash 32 <\l>`__
-
-`5.2.23 AT+CWCOUNTRY_DEF – Sets the Default Wi-Fi Country Code,
-Configuration Save in Flash 33 <\l>`__
-
-`6 TCP/IP-Related AT Commands 34 <\l>`__
-
-`6.1 Overview 34 <\l>`__
-
-`6.2 Command Descriptions 35 <\l>`__
-
-`6.2.1 AT+CIPSTATUS – Gets the Connection Status 35 <\l>`__
-
-`6.2.2 AT+CIPDOMAIN – DNS Function 36 <\l>`__
-
-`6.2.3 AT+CIPSTART – Establishes TCP Connection, UDP Transmission or SSL
-Connection 36 <\l>`__
-
-`6.2.4 AT+CIPSSLSIZE – Sets the Size of the SSL Buffer 39 <\l>`__
-
-`6.2.5 AT+CIPSSLCCONF – Configures the SSL Client 39 <\l>`__
-
-`6.2.6 AT+CIPSEND – Sends Data 40 <\l>`__
-
-`6.2.7 AT+CIPSENDEX – Sends Data 42 <\l>`__
-
-`6.2.8 AT+CIPSENDBUF – Writes Data Into the TCP-Send-Buffer 43 <\l>`__
-
-`6.2.9 AT+BUFRESET – Resets the Segment ID Count 44 <\l>`__
-
-`6.2.10 AT+CIPBUFSTATUS – Checks the Status of the TCP-Send-Buffer
-44 <\l>`__
-
-`6.2.11 AT+CIPCHECKSEQ – Checks If a Specific Segment Was Successfully
-Sent 46 <\l>`__
-
-`6.2.12 AT+CIPCLOSE – Closes the TCP/UDP/SSL Connection 46 <\l>`__
-
-`6.2.13 AT+CIFSR – Gets the Local IP Address 46 <\l>`__
-
-`6.2.14 AT+CIPMUX – Enables or Disables Multiple Connections 47 <\l>`__
-
-`6.2.15 AT+CIPSERVER – Creates or Deletes TCP Server 48 <\l>`__
-
-`6.2.16 AT+CIPSERVERMAXCONN – Sets the Maximum Connections Allowed by
-Server 48 <\l>`__
-
-`6.2.17 AT+CIPMODE – Sets Transmission Mode 49 <\l>`__
-
-`6.2.18 AT+CIPSTO – Sets the TCP Server Timeout 49 <\l>`__
-
-`6.2.19 AT+PING – Pings Packets 50 <\l>`__
-
-`6.2.20 AT+CIUPDATE – Updates the Software Through Wi-Fi 50 <\l>`__
-
-`6.2.21 AT+CIPDINFO – Shows the Remote IP and Port with +IPD 51 <\l>`__
-
-`6.2.22 +IPD – Receives Network Data 51 <\l>`__
-
-`6.2.23 AT+CIPRECVMODE – Sets TCP Receive Mode 52 <\l>`__
-
-`6.2.24 AT+CIPRECVDATA – Gets TCP Data In Passive Receive Mode
-52 <\l>`__
-
-`6.2.25 AT+CIPREVLEN – Gets TCP Data Length in Passive Received Mode
-53 <\l>`__
-
-`6.2.26 AT+CIPSNTPCFG – Sets the Configuration of SNTP 53 <\l>`__
-
-`6.2.27 AT+CIPSNTPTIME – Checks the SNTP Time 54 <\l>`__
-
-`6.2.28 AT+CIPDNS_CUR – Sets User-defined DNS Servers, Configuration Not
-Saved to Flash 55 <\l>`__
-
-`6.2.29 AT+CIPDNS_DEF – Sets User-defined DNS Servers, Configuration
-Saved to Flash 56 <\l>`__
-
-`7 HTTP-Related AT Commands 56 <\l>`__
-
-`7.1 Overview 56 <\l>`__
-
-`7.2 Command Descriptions 57 <\l>`__
-
-`7.2.1 AT+CHTTPURL – Sets HTTP Server Port and Address 57 <\l>`__
-
-`7.2.2 AT+CHTTPPH – Sets Path of POST/GET 57 <\l>`__
-
-`7.2.3 AT+CHTTPCTP – Sets Command Type of HTTP (GET or POST) 58 <\l>`__
-
-`7.2.4 AT+CHTTPCDT – Sets Name and Value Pair of Data in HTTP 58 <\l>`__
-
-`7.2.5 AT+CHTTPTR – Sends HTTP Package and Return Received Data
-58 <\l>`__
-
-`8 Internet-of-Things (IoT)-Related AT Commands 60 <\l>`__
-
-`8.1 MQTT Commands Overview 60 <\l>`__
-
-`8.2 CoAP Commands Overview 60 <\l>`__
-
-`8.3 TLS Commands Overview 60 <\l>`__
-
-`9 AWS IoT Core AT Commands 61 <\l>`__
-
-`10 Customizing AT Firmware 61 <\l>`__
-
-`10.1 Compiling AT project 61 <\l>`__
-
-`10.2 Customize AT Functions 61 <\l>`__
-
-`10.3 Add User-defined AT Commands 61 <\l>`__
 
 Overview
 ========
@@ -253,15 +22,12 @@ This document provides detailed information about the BF4004Q WiFi
 module AT commands. It also introduces how to download firmware images
 onto the flash on the module as well as some customization examples.
 
-**︎ Note**
+.. note::
+     -  *Please make sure that correct binary file (.bin) has been installed |br|
+     in BFQ4004 module before using the AT commands in this document.* |br|
+     -  *AT firmware uses priority levels* *and 1 of system_os_task, so only |br|
+     one task of priority 2 is allowed to be set up by user application.* |br|
 
--  *Please make sure that correct binary file (.bin) has been installed
-   in BFQ4004 module before using the AT commands in this document.*
-
--  *AT firmware uses priority levels* *and 1 of system_os_task, so only
-   one task of priority 2 is allowed to be set up by user application.*
-
-**#**
 =====
 
 Command Types and Formats
@@ -288,23 +54,17 @@ Each command set contains four types of AT commands.
 |                 |                    | user-defined parameter.     |
 +-----------------+--------------------+-----------------------------+
 
-**︎ Note**
+.. note::
+     -  *Not all AT commands support all four varioations mentioned above.* |br|
+     -  *Square brackets “[]” designate the default value. It is not always |br|
+     required or may not appear.* |br|
+     -  *String values need to be included in double quotation markets, for |br|
+     example: |br|
+     AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4* |br|
+     -  *The default baud rate is 1152.* |br|
+     -  *AT commands have to be capitalized and must end with a new line (CR |br|
+     LF).* |br|
 
--  *Not all AT commands support all four varioations mentioned above.*
-
--  *Square brackets “[]” designate the default value. It is not always
-   required or may not appear.*
-
--  *String values need to be included in double quotation markets, for
-   example:
-   AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4*
-
--  *The default baud rate is 1152.*
-
--  *AT commands have to be capitalized and must end with a new line (CR
-   LF).*
-
-#
 
 Basic AT Commands
 =================
@@ -376,11 +136,11 @@ AT+GMR – Checks AT Commands Version Information
 =================== ==================
 **Execute Command** AT+GMR
 **Response**        <AT version info>
-                    
+
                     <SDK version info>
-                    
+
                     <compile time>
-                    
+
                     OK
 **Parameters**      -
 =================== ==================
@@ -988,7 +748,7 @@ Overview
 
 +------------------+--------------------------------------------------+
 | **Commands**     | **Description**                                  |
-+------------------+--------------------------------------------------+
++==================+==================================================+
 | AT+CWMODE_CUR    | Sets the Wi-Fi mode                              |
 |                  | (Station/SoftAP/Station+SoftAP); configuration   |
 |                  | not saved in flash.                              |
@@ -1155,7 +915,7 @@ AT+CWJAP_CUR – Connects to AP, Configuration Not Saved in Flash
 +----------------+-------------------------+-------------------------+
 | **Command**    | | Query:                | | Set:                  |
 |                | | AT+CWJAP_CUR?         | | AT+                   |
-|                |                         | CWJAP_CUR=<ssid>,<pwd>, |
+|                |                         | CWJAP_CUR-<ssid>,<pwd>, |
 |                | Function: check         |                         |
 |                | parameters of the AP    | [<bssid>,<pci_en>]      |
 |                | BFQ4004 Station is      |                         |
@@ -1250,7 +1010,7 @@ AT+CWJAP_DEF – Connects to AP, Configuration Saved in Flash
 +----------------+-------------------------+-------------------------+
 | **Command**    | | Query:                | | Set:                  |
 |                | | AT+CWJAP_DEF?         | | AT+                   |
-|                |                         | CWJAP_DEF=<ssid>,<pwd>, |
+|                |                         | CWJAP_DEF-<ssid>,<pwd>, |
 |                | Function: check         |                         |
 |                | parameters of the AP    | [<bssid>,<pci_en>]      |
 |                | BFQ4004 Station is      |                         |
@@ -1419,7 +1179,7 @@ AT+CWLAP – Lists Available APs
 +----------------+-------------------------+-------------------------+
 | **Command**    | Set:                    | Execute:                |
 |                |                         |                         |
-|                | AT+CWLAP[=<ssid>,<mac>, | AT+CWLAP                |
+|                | AT+CWLAP[-<ssid>,<mac>, | AT+CWLAP                |
 |                |                         |                         |
 |                | <channel>,<scan_type>,  | Function: to list all   |
 |                |                         | available APs.          |
@@ -2480,7 +2240,7 @@ AT+CWCOUNTRY_CUR – Sets the Current Wi-Fi Country Code, Configuration Not Save
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query:                  | Set:                    |
 |                |                         |                         |
-|                | AT+CWCOUNTRY_CUR?       | AT+ CWCPUNTRY_CUR=      |
+|                | AT+CWCOUNTRY_CUR?       | AT+ CWCPUNTRY_CUR-      |
 |                |                         |                         |
 |                | Function: to check the  | <country_               |
 |                | current WiFi country    | policy>,<country_code>, |
@@ -2558,7 +2318,7 @@ AT+CWCOUNTRY_DEF – Sets the Default Wi-Fi Country Code, Configuration Save in 
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query:                  | Set:                    |
 |                |                         |                         |
-|                | AT+CWCOUNTRY_DEF?       | AT+ CWCPUNTRY_DEF=      |
+|                | AT+CWCOUNTRY_DEF?       | AT+ CWCPUNTRY_DEF-      |
 |                |                         | <country_               |
 |                | Function: to check the  | policy>,<country_code>, |
 |                | default WiFi country    |                         |
@@ -2639,7 +2399,7 @@ Overview
 
 +---------------------+-----------------------------------------------+
 | **Commands**        | **Description**                               |
-+---------------------+-----------------------------------------------+
++=====================+===============================================+
 | AT+CIPSTATUS        | Gets the connection status                    |
 +---------------------+-----------------------------------------------+
 | AT+CIPDOMAIN        | DNS function                                  |
@@ -3055,7 +2815,7 @@ AT+CIPSSLCCONF – Configures the SSL Client
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query:                  | Set:                    |
 |                |                         |                         |
-|                | AT+CIPSSLCCONF?         | AT+CIPSSLCCONF=<SSL     |
+|                | AT+CIPSSLCCONF?         | AT+CIPSSLCCONF-<SSL     |
 |                |                         | mode>                   |
 |                | Function: gets the      |                         |
 |                | configuration of the    | Function: sets the      |
@@ -3261,7 +3021,7 @@ AT+CIPSENDEX – Sends Data
 +-----------------+---------------------------------------------------+
 | **Set Command** | 1. Single connection: (+CIPMUX=)                  |
 |                 |                                                   |
-|                 | AT+CIPSENDEX=<length>                             |
+|                 | AT+CIPSENDEX-<length>                             |
 |                 |                                                   |
 |                 | 2. Multiple connections: (+CIPMUX=1)              |
 |                 |                                                   |
@@ -3608,7 +3368,7 @@ AT+CIPMUX – Enables or Disables Multiple Connections
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query Command:          | Set Command:            |
 |                |                         |                         |
-|                | AT+CIPMUX?              | AT+CIPMUX=< mode>       |
+|                | AT+CIPMUX?              | AT+CIPMUX-< mode>       |
 |                |                         |                         |
 |                | Function: checks the    | Function: sets the      |
 |                | connection mode.        | connection mode.        |
@@ -3687,7 +3447,7 @@ AT+CIPSERVERMAXCONN – Sets the Maximum Connections Allowed by Server
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query Command:          | Set Command:            |
 |                |                         |                         |
-|                | AT+CIPSERVERMAXCONN?    | AT+CIPSERVERMAXCONN=<   |
+|                | AT+CIPSERVERMAXCONN?    | AT+CIPSERVERMAXCONN-<   |
 |                |                         | num>                    |
 |                | Function: obtains the   |                         |
 |                | maximum number of       | Function: sets the      |
@@ -3727,7 +3487,7 @@ AT+CIPMODE – Sets Transmission Mode
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query Command:          | Set Command:            |
 |                |                         |                         |
-|                | AT+CIPMODE?             | AT+CIPMODE=< mode>      |
+|                | AT+CIPMODE?             | AT+CIPMODE-< mode>      |
 |                |                         |                         |
 |                | Function: checks the    | Function: sets the      |
 |                | transmission mode.      | transmission mode.      |
@@ -3784,7 +3544,7 @@ AT+CIPSTO – Sets the TCP Server Timeout
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query Command:          | Set Command:            |
 |                |                         |                         |
-|                | AT+CIPSTO?              | AT+CIPSTO=< time>       |
+|                | AT+CIPSTO?              | AT+CIPSTO-< time>       |
 |                |                         |                         |
 |                | Function: checks the    | Function: sets the TCP  |
 |                | TCP server timeout      | server timeout.         |
@@ -3920,7 +3680,7 @@ AT+CIPDINFO – Shows the Remote IP and Port with +IPD
 +----------------+-------------------------+-------------------------+
 | **Command**    | Single connection:      | Multiple connection:    |
 |                |                         |                         |
-|                | (+CIPMUX=)+IPD,<len>    | (+CIPMU                 |
+|                | (+CIPMUX-)+IPD,<len>    | (+CIPMU                 |
 |                |                         | X=)+IPD,<link_ID>,<len> |
 |                | [,<rem                  |                         |
 |                | ote_IP>,<remote_port>]: | [,<rem                  |
@@ -3963,7 +3723,7 @@ AT+CIPRECVMODE – Sets TCP Receive Mode
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query Command:          | Set Command:            |
 |                |                         |                         |
-|                | AT+CIPRECVMODE?         | AT+CIPRECVMODE=<mode>   |
+|                | AT+CIPRECVMODE?         | AT+CIPRECVMODE-<mode>   |
 |                |                         |                         |
 |                | Function: checks the    | Function: sets the      |
 |                | receive mode of TCP     | receive mode of TCP     |
@@ -4037,7 +3797,7 @@ AT+CIPRECVDATA – Gets TCP Data In Passive Receive Mode
 +-----------------+------------------------+------------------------+
 | **Set Command** | Single connection mode | Multiple connections   |
 |                 |                        | mode                   |
-|                 | (AT+CIPMUX=):          |                        |
+|                 | (AT+CIPMUX-):          |                        |
 |                 |                        | (AT+CIPMUX=1):         |
 |                 | AT+CIPRECVDATA=<len>   |                        |
 |                 |                        | AT+CIPRE               |
@@ -4127,7 +3887,7 @@ AT+CIPSNTPCFG – Sets the Configuration of SNTP
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query Command:          | Set Command:            |
 |                |                         |                         |
-|                | AT+CIPSNTPCFG?          | AT+CIPSNTPCFG=<enable>  |
+|                | AT+CIPSNTPCFG?          | AT+CIPSNTPCFG-<enable>  |
 |                |                         |                         |
 |                | Function: checks the    | [,<tim                  |
 |                | SNTP configuration.     | ezone>][,<SNTP_server>, |
@@ -4230,7 +3990,7 @@ AT+CIPDNS_CUR – Sets User-defined DNS Servers, Configuration Not Saved to Flas
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query Command:          | Set Command:            |
 |                |                         |                         |
-|                | AT+CIPDNS_CUR?          | AT+CIPDNS_CUR=<enable>  |
+|                | AT+CIPDNS_CUR?          | AT+CIPDNS_CUR-<enable>  |
 |                |                         |                         |
 |                | Function: gets the      | [,<DNS_server>,         |
 |                | current DNS server.     |                         |
@@ -4311,7 +4071,7 @@ AT+CIPDNS_DEF – Sets User-defined DNS Servers, Configuration Saved to Flash
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query Command:          | Set Command:            |
 |                |                         |                         |
-|                | AT+CIPDNS_DEF?          | AT+CIPDNS_DEF=<enable>  |
+|                | AT+CIPDNS_DEF?          | AT+CIPDNS_DEF-<enable>  |
 |                |                         |                         |
 |                | Function: gets the      | [,<DNS_server>,         |
 |                | current DNS server.     |                         |
@@ -4416,7 +4176,7 @@ AT+CHTTPURL – Sets HTTP Server Port and Address
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query Command:          | Set Command:            |
 |                |                         |                         |
-|                | AT+CHTTPURL?            | AT+CHTTPURL=<port>,     |
+|                | AT+CHTTPURL?            | AT+CHTTPURL-<port>,     |
 |                |                         |                         |
 |                | Function: gets the      | <IP_address>            |
 |                | current port and IP     |                         |
@@ -4475,7 +4235,7 @@ AT+CHTTPPH – Sets Path of POST/GET
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query Command:          | Set Command:            |
 |                |                         |                         |
-|                | AT+CHTTPPH?             | AT+CHTTPPH=<path>       |
+|                | AT+CHTTPPH?             | AT+CHTTPPH-<path>       |
 |                |                         |                         |
 |                | Function: gets paths of | Function: sets path of  |
 |                | POST/GET.               | POST/GET.               |
@@ -4496,13 +4256,13 @@ AT+CHTTPCTP – Sets Command Type of HTTP (GET or POST)
 
 =============== ==================================================
 **Set Command** AT+CHTTPCTP=<type>
-                
+
                 Function: sets command type of either POST or GET.
 **Response**    OK
 **Parameters**  <type>: a number representing GET or POST command.
-                
+
                 -  : GET (default);
-                
+
                 -  1: POST.
 **Examples**    AT+CHTTPCTP=1
 =============== ==================================================
@@ -4525,6 +4285,198 @@ AT+CHTTPCDT – Sets Name and Value Pair of Data in HTTP
 |                 | corresponding to the name.                        |
 +-----------------+---------------------------------------------------+
 | **Examples**    | AT+CHTTPCTP=”username”,”admin”                    |
++-----------------+---------------------------------------------------+
+
+AT+CHTTPTR – Sends HTTP Package and Return Received Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------+-----------------------------------------------+
+| **Execute Command** | AT+CHTTPTR                                    |
+|                     |                                               |
+|                     | Function: sends HTTP package and return       |
+|                     | received data.                                |
++---------------------+-----------------------------------------------+
+| **Response**        | <reply_data>                                  |
+|                     |                                               |
+|                     | OK                                            |
+|                     |                                               |
+|                     | or                                            |
+|                     |                                               |
+|                     | <error_code>                                  |
++---------------------+-----------------------------------------------+
+| **Parameters**      | <reply_data>: data received from HTTP server. |
+|                     |                                               |
+|                     | <error_code>: a hex number in the form of     |
+|                     | “x7+Standard HTTP error code”.                |
++---------------------+-----------------------------------------------+
+| **Notes**           | If resource is not found, standard HTTP error |
+|                     | code = 404, the set command would return the  |
+|                     | following error code:                         |
+|                     |                                               |
+|                     | x7194                                         |
+|                     |                                               |
+|                     | Because hex(x7+44)=0x7194                     |
+|                     |                                               |
+|                     | For a complete list of standard HTTP/1.1      |
+|                     | error codes please refer to: RFC 2616:        |
+|                     | https://tools.ietf.org/html/rfc2616           |
++---------------------+-----------------------------------------------+
+| **Examples**        | AT+CHTTPTR                                    |
++---------------------+-----------------------------------------------+
+
+Example operation: (is this correct?)
+
+GET:
+
+| AT+CHTTPURL=8,"192.168..18"
+| AT+CHTTPPH=”/usr/local/http"
+| AT+CHTTPTP=0
+| AT+CHTTPTR
+| <reply_data> // GET data
+
+POST:
+
+| AT+CHTTPURL=8,"192.168..18"
+| AT+CHTTPPH=”/usr/local/http"
+| AT+CHTTPTP=1
+| AT+CHTTPCDT=”field1”,”value1” // only 1 name-value pair at a time
+| AT+CHTTPTR
+| AT+CHTTPCDT=”field2”,”value2”
+| AT+CHTTPTR
+| …
+
+Espressif’s HTTP commands:
+
+AT+HTTPCLIENT=<opt>,<content-type>,[<url>],[<host>],[<path>],<transport_type>,[<data>][,"http_req_header"][,"http_req_header"][...]
+
+AT+HTTPGETSIZE
+
+AT+HTTPGETSIZE=<url>
+
+Should we follow their commands?
+
+Internet-of-Things (IoT)-Related AT Commands
+============================================
+
+MQTT Commands Overview
+----------------------
+
+=============== ===============
+**Commands**    **Description**
+AT+CMQNEW       
+AT+CMQCON       
+AT+CMQDISCON    
+AT+CMQSUB       
+AT+CMQUNSUB     
+AT+CMQPUB       
+AT+CMQTTSNEW    
+AT+CMQTTSNEWEXT 
+=============== ===============
+
+CoAP Commands Overview
+----------------------
+
+============= ===============
+**Commands**  **Description**
+AT+CCOAPNEW   
+AT+CCOAPSEND  
+AT+CCOAPCSEND 
+AT+CCOAPDEL   
+============= ===============
+
+TLS Commands Overview
+---------------------
+
+============ ===============
+**Commands** **Description**
+AT+CTLSCFG   
+AT+CTLSCONN  
+AT+CTLSCLOSE 
+AT+CTLSSEND  
+AT+CTLSRECV  
+AT+CSETCA    
+============ ===============
+
+AWS IoT Core AT Commands
+========================
+
+Customizing AT Firmware
+=======================
+
+Compiling AT project
+--------------------
+
+If users want to customize AT source code, or add customized AT
+commands, please copy the folder “at” in the examples to the root
+directory of the corresponding BFQ4004 SDK , and then enter
+BFQ4004_SDK/at folder to develop and compile the custom AT project. For
+details, please refer to BFQ4004 Getting Started Guide.
+
+Customize AT Functions
+----------------------
+
+-  OTA：
+
+The official AT firmware launched by BeeFi supports the command
+AT+CIUPDATE by default, which helps update AT firmware to the latest
+version from BeeFi Cloud.
+
+For the customized AT firmware, users have to implement this function by
+themselves to update the firmware from their own cloud. Please refer to
+the OTA example detailed in\ *at_upgrade.c*.
+
+-  [STRIKEOUT:SmartConfig：]
+
+[STRIKEOUT:The official AT firmware launched by Espressif supports the
+commands AT+CWSTARTSMART and AT+CWSTOPSMART.]
+
+[STRIKEOUT:If users don’t need SmartConfig, you can compile AT Project
+and disable CONFIG_AT_SMARTCONFIG_COMMAND_ENABLE in user_config.h for
+smaller bin size and more memory.]
+
+Add User-defined AT Commands
+----------------------------
+
+TBD
+
+**Revision History**
+
+======== =============================== ==========
+Revision Description                     Date
+V0.1.0   Initial internal review version 2020-07-26
+======== =============================== ==========
+
+|image1|
+
+Disclaimer and Copyright Notice
+
+Information in this document, including URL references, is subject to
+change without notice. Please visit http://www.beefi.io/ for the latest
+information.
+
+THIS CODUMENT IS PROVIDED AS IS WITH NO WARRANTIES WHATSOEVER, INCLUDING
+ANY WARRANTY OF MERCHANTABILITY, NON-INFRINGEMENT, FITNESS FOR ANY
+PARTICULAR PURPOSE, OR ANY WARRANTY OTHERWISE ARISING OUT OF ANY
+PROPOSAL, SPECIFICATION OR SAMPLE.
+
+All liability, including liability for infringement of any proprietary
+rights, relating to the use of information in this document, is
+disclaimed. No licenses express or implied, by estoppel or otherwise, to
+any intellectual property rights are granted herein.
+
+The Wi-Fi Alliance Member logo is a trademark of the Wi-Fi Alliance. The
+Bluetooth logo is a registered trademark of Bluetooth SIG.
+
+All trade names, trademarks and registered trademarks mentioned in this
+document are property of their respective owners and are hereby
+acknowledged.
+
+Copyright©2020 BeeFi Technologies Inc. All rights reserved.
+
+.. |image1| image:: media/image3.png
+   :width: 1.75208in
+   :height: 0.60764in
+     |
 +-----------------+---------------------------------------------------+
 
 AT+CHTTPTR – Sends HTTP Package and Return Received Data
