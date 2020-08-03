@@ -271,7 +271,7 @@ Each command set contains four types of AT commands.
 
 +-----------------+--------------------+-----------------------------+
 | **Type**        | **Command Format** | **Description**             |
-+-----------------+--------------------+-----------------------------+
++=================+====================+=============================+
 | Test Command    | AT+<X>=?           | Queries the Set Commands’   |
 |                 |                    | internal parameters and     |
 |                 |                    | their range of values.      |
