@@ -2776,7 +2776,7 @@ Establish SSL Connection
 |                 |                                                   |
 |                 | ..                                                |
 |                 |                                                   |
-|                 |    ️ **Warning:**                                 |
+|                 |    ️  **Warning:**                                 |
 |                 |                                                   |
 |                 |    SSL connection needs a large amount of memory. |
 |                 |    Please use the command AT+CIPSSLSIZE=<size> as |
