@@ -4564,7 +4564,7 @@ CoAP Commands Overview
 
 ============= ===============
 **Commands**  **Description**
------------------------------
+============= ===============
 AT+CCOAPNEW   
 AT+CCOAPSEND  
 AT+CCOAPCSEND 
