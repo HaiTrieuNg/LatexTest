@@ -23,8 +23,10 @@ module AT commands. It also introduces how to download firmware images
 onto the flash on the module as well as some customization examples.
 
 .. note::
-     .. note::
-     -  *Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document.* |br|     -  *AT firmware uses priority levels* *and 1 of system_os_task, so only     one task of priority 2 is allowed to be set up by user application.* |br|
+     -  *Please make sure that correct binary file (.bin) has been installed
+     in BFQ4004 module before using the AT commands in this document.* |br|
+     -  *AT firmware uses priority levels* *and 1 of system_os_task, so only
+     one task of priority 2 is allowed to be set up by user application.* |br|
 
 =====
 
@@ -54,13 +56,13 @@ Each command set contains four types of AT commands.
 
 .. note::
      -  *Not all AT commands support all four varioations mentioned above.* |br|
-     -  *Square brackets “[]” designate the default value. It is not always |br|
+     -  *Square brackets “[]” designate the default value. It is not always
      required or may not appear.* |br|
-     -  *String values need to be included in double quotation markets, for |br|
-     example: |br|
+     -  *String values need to be included in double quotation markets, for
+        example:
      AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4* |br|
      -  *The default baud rate is 1152.* |br|
-     -  *AT commands have to be capitalized and must end with a new line (CR |br|
+     -  *AT commands have to be capitalized and must end with a new line (CR
      LF).* |br|
 
 
@@ -4474,7 +4476,7 @@ Copyright©2020 BeeFi Technologies Inc. All rights reserved.
 .. |image1| image:: media/image3.png
    :width: 1.75208in
    :height: 0.60764in
-     |
+,”admin”                    |
 +-----------------+---------------------------------------------------+
 
 AT+CHTTPTR – Sends HTTP Package and Return Received Data
