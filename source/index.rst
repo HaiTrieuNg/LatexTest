@@ -39,9 +39,8 @@ Welcome to LatexTest  documentation!
 
 
 .. toctree::
-   :maxdepth: 2
-   :caption:
-
+   :hidden: 
+   
    content
    Test
 
