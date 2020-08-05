@@ -26,7 +26,6 @@ onto the flash on the module as well as some customization examples.
      -  *Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document.* |br|
      -  *AT firmware uses priority levels* *and 1 of system_os_task, so only     one task of priority 2 is allowed to be set up by user application.* |br|
 
-=====
 
 Command Types and Formats
 =========================
@@ -70,6 +69,7 @@ Overview
 
 ============ =====================================================
 **Commands** **Description**
+============ =====================================================
 AT           Tests AT startup.
 ATE          Configures echoing of AT commands.
 AT+RST       Restarts the module.
@@ -483,6 +483,7 @@ Overview
 
 =============== =====================================================
 **Commands**    **Description**
+=============== =====================================================
 AT+SYSIOSETCFG  Configures IO working mode.
 AT+SYSIOGETCFG  Checks the working mode of IO pin.
 AT+SYSGPIODIR   Configures the direction of GPIO.
@@ -2776,7 +2777,7 @@ Establish SSL Connection
 |                 |                                                   |
 |                 | ..                                                |
 |                 |                                                   |
-|                 |    ️  **Warning:**                                 |
+|                 |    ️ **Warning**                                  |
 |                 |                                                   |
 |                 |    SSL connection needs a large amount of memory. |
 |                 |    Please use the command AT+CIPSSLSIZE=<size> as |
@@ -4152,6 +4153,7 @@ Overview
 
 ============ ===========================================
 **Commands** **Description**
+============ ===========================================
 AT+CHTTPURL  Set HTTP server port and address.
 AT+CHTTPPH   Set path of POST/GET.
 AT+CHTTPTP   Set command type of HTTP (GET or POST).
@@ -4357,206 +4359,15 @@ MQTT Commands Overview
 
 =============== ===============
 **Commands**    **Description**
-AT+CMQNEW       
-AT+CMQCON       
-AT+CMQDISCON    
-AT+CMQSUB       
-AT+CMQUNSUB     
-AT+CMQPUB       
-AT+CMQTTSNEW    
-AT+CMQTTSNEWEXT 
 =============== ===============
-
-CoAP Commands Overview
-----------------------
-
-============= ===============
-**Commands**  **Description**
-AT+CCOAPNEW   
-AT+CCOAPSEND  
-AT+CCOAPCSEND 
-AT+CCOAPDEL   
-============= ===============
-
-TLS Commands Overview
----------------------
-
-============ ===============
-**Commands** **Description**
-AT+CTLSCFG   
-AT+CTLSCONN  
-AT+CTLSCLOSE 
-AT+CTLSSEND  
-AT+CTLSRECV  
-AT+CSETCA    
-============ ===============
-
-AWS IoT Core AT Commands
-========================
-
-Customizing AT Firmware
-=======================
-
-Compiling AT project
---------------------
-
-If users want to customize AT source code, or add customized AT
-commands, please copy the folder “at” in the examples to the root
-directory of the corresponding BFQ4004 SDK , and then enter
-BFQ4004_SDK/at folder to develop and compile the custom AT project. For
-details, please refer to BFQ4004 Getting Started Guide.
-
-Customize AT Functions
-----------------------
-
--  OTA：
-
-The official AT firmware launched by BeeFi supports the command
-AT+CIUPDATE by default, which helps update AT firmware to the latest
-version from BeeFi Cloud.
-
-For the customized AT firmware, users have to implement this function by
-themselves to update the firmware from their own cloud. Please refer to
-the OTA example detailed in\ *at_upgrade.c*.
-
--  [STRIKEOUT:SmartConfig：]
-
-[STRIKEOUT:The official AT firmware launched by Espressif supports the
-commands AT+CWSTARTSMART and AT+CWSTOPSMART.]
-
-[STRIKEOUT:If users don’t need SmartConfig, you can compile AT Project
-and disable CONFIG_AT_SMARTCONFIG_COMMAND_ENABLE in user_config.h for
-smaller bin size and more memory.]
-
-Add User-defined AT Commands
-----------------------------
-
-TBD
-
-**Revision History**
-
-======== =============================== ==========
-Revision Description                     Date
-V0.1.0   Initial internal review version 2020-07-26
-======== =============================== ==========
-
-|image1|
-
-Disclaimer and Copyright Notice
-
-Information in this document, including URL references, is subject to
-change without notice. Please visit http://www.beefi.io/ for the latest
-information.
-
-THIS CODUMENT IS PROVIDED AS IS WITH NO WARRANTIES WHATSOEVER, INCLUDING
-ANY WARRANTY OF MERCHANTABILITY, NON-INFRINGEMENT, FITNESS FOR ANY
-PARTICULAR PURPOSE, OR ANY WARRANTY OTHERWISE ARISING OUT OF ANY
-PROPOSAL, SPECIFICATION OR SAMPLE.
-
-All liability, including liability for infringement of any proprietary
-rights, relating to the use of information in this document, is
-disclaimed. No licenses express or implied, by estoppel or otherwise, to
-any intellectual property rights are granted herein.
-
-The Wi-Fi Alliance Member logo is a trademark of the Wi-Fi Alliance. The
-Bluetooth logo is a registered trademark of Bluetooth SIG.
-
-All trade names, trademarks and registered trademarks mentioned in this
-document are property of their respective owners and are hereby
-acknowledged.
-
-Copyright©2020 BeeFi Technologies Inc. All rights reserved.
-
-.. |image1| image:: media/image3.png
-   :width: 1.75208in
-   :height: 0.60764in
-,”admin”                    |
-+-----------------+---------------------------------------------------+
-
-AT+CHTTPTR – Sends HTTP Package and Return Received Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------+-----------------------------------------------+
-| **Execute Command** | AT+CHTTPTR                                    |
-|                     |                                               |
-|                     | Function: sends HTTP package and return       |
-|                     | received data.                                |
-+---------------------+-----------------------------------------------+
-| **Response**        | <reply_data>                                  |
-|                     |                                               |
-|                     | OK                                            |
-|                     |                                               |
-|                     | or                                            |
-|                     |                                               |
-|                     | <error_code>                                  |
-+---------------------+-----------------------------------------------+
-| **Parameters**      | <reply_data>: data received from HTTP server. |
-|                     |                                               |
-|                     | <error_code>: a hex number in the form of     |
-|                     | “x7+Standard HTTP error code”.                |
-+---------------------+-----------------------------------------------+
-| **Notes**           | If resource is not found, standard HTTP error |
-|                     | code = 404, the set command would return the  |
-|                     | following error code:                         |
-|                     |                                               |
-|                     | x7194                                         |
-|                     |                                               |
-|                     | Because hex(x7+44)=0x7194                     |
-|                     |                                               |
-|                     | For a complete list of standard HTTP/1.1      |
-|                     | error codes please refer to: RFC 2616:        |
-|                     | https://tools.ietf.org/html/rfc2616           |
-+---------------------+-----------------------------------------------+
-| **Examples**        | AT+CHTTPTR                                    |
-+---------------------+-----------------------------------------------+
-
-Example operation: (is this correct?)
-
-GET:
-
-| AT+CHTTPURL=8,"192.168..18"
-| AT+CHTTPPH=”/usr/local/http"
-| AT+CHTTPTP=0
-| AT+CHTTPTR
-| <reply_data> // GET data
-
-POST:
-
-| AT+CHTTPURL=8,"192.168..18"
-| AT+CHTTPPH=”/usr/local/http"
-| AT+CHTTPTP=1
-| AT+CHTTPCDT=”field1”,”value1” // only 1 name-value pair at a time
-| AT+CHTTPTR
-| AT+CHTTPCDT=”field2”,”value2”
-| AT+CHTTPTR
-| …
-
-Espressif’s HTTP commands:
-
-AT+HTTPCLIENT=<opt>,<content-type>,[<url>],[<host>],[<path>],<transport_type>,[<data>][,"http_req_header"][,"http_req_header"][...]
-
-AT+HTTPGETSIZE
-
-AT+HTTPGETSIZE=<url>
-
-Should we follow their commands?
-
-Internet-of-Things (IoT)-Related AT Commands
-============================================
-
-MQTT Commands Overview
-----------------------
-
-=============== ===============
-**Commands**    **Description**
-AT+CMQNEW       
-AT+CMQCON       
-AT+CMQDISCON    
-AT+CMQSUB       
-AT+CMQUNSUB     
-AT+CMQPUB       
-AT+CMQTTSNEW    
-AT+CMQTTSNEWEXT 
+AT+CMQNEW
+AT+CMQCON
+AT+CMQDISCON
+AT+CMQSUB
+AT+CMQUNSUB
+AT+CMQPUB
+AT+CMQTTSNEW
+AT+CMQTTSNEWEXT
 =============== ===============
 
 CoAP Commands Overview
@@ -4565,10 +4376,10 @@ CoAP Commands Overview
 ============= ===============
 **Commands**  **Description**
 ============= ===============
-AT+CCOAPNEW   
-AT+CCOAPSEND  
-AT+CCOAPCSEND 
-AT+CCOAPDEL   
+AT+CCOAPNEW
+AT+CCOAPSEND
+AT+CCOAPCSEND
+AT+CCOAPDEL
 ============= ===============
 
 TLS Commands Overview
@@ -4576,6 +4387,7 @@ TLS Commands Overview
 
 ============ ===============
 **Commands** **Description**
+============ ===============
 AT+CTLSCFG   
 AT+CTLSCONN  
 AT+CTLSCLOSE 
