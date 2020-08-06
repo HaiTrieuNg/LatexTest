@@ -271,75 +271,81 @@ AT+UART_DEF – Default UART Configuration from Flash
 |            |                           |                           |
 |            | OK                        |                           |
 +------------+---------------------------+---------------------------+
-| Parameters | -  <baudrate>: UART baud  |                           |
-|            |    rate                   |                           |
-|            |                           |                           |
-|            | -  <databits>: data bits  |                           |
-|            |                           |                           |
-|            |    -  5: 5-bit data       |                           |
-|            |                           |                           |
-|            |    -  6: 6-bit data       |                           |
-|            |                           |                           |
-|            |    -  7: 7-bit data       |                           |
-|            |                           |                           |
-|            |    -  8: 8-bit data       |                           |
-|            |                           |                           |
-|            | -  <stopbits>: stop bits  |                           |
-|            |                           |                           |
-|            |    -  1: 1-bit stop bit   |                           |
-|            |                           |                           |
-|            |    -  2: 1.5-bit stop bit |                           |
-|            |                           |                           |
-|            |    -  3: 2-bit stop bit   |                           |
-|            |                           |                           |
-|            | -  <parity>: parity bit   |                           |
-|            |                           |                           |
-|            |    -  : None              |                           |
-|            |                           |                           |
-|            |    -  1: Odd              |                           |
-|            |                           |                           |
-|            |    -  2: Even             |                           |
-|            |                           |                           |
-|            | -  <flow control>: flow   |                           |
-|            |    control                |                           |
-|            |                           |                           |
-|            |    -  : flow control is   |                           |
-|            |       not enabled         |                           |
-|            |                           |                           |
-|            |    -  1: enable RTS       |                           |
-|            |                           |                           |
-|            |    -  2: enable CTS       |                           |
-|            |                           |                           |
-|            |    -  3: enable both RTS  |                           |
-|            |       and CTS             |                           |
+| Parameters |                                                       |
+|            |                                                       |
+|            | -  <baudrate>: UART baud                              |
+|            |    rate                                               |
+|            |                                                       |
+|            | -  <databits>: data bits                              |
+|            |                                                       |
+|            |    -  5: 5-bit data                                   |
+|            |                                                       |
+|            |    -  6: 6-bit data                                   |
+|            |                                                       |
+|            |    -  7: 7-bit data                                   |
+|            |                                                       |
+|            |    -  8: 8-bit data                                   |
+|            |                                                       |
+|            | -  <stopbits>: stop bits                              |
+|            |                                                       |
+|            |    -  1: 1-bit stop bit                               |
+|            |                                                       |
+|            |    -  2: 1.5-bit stop bit                             |
+|            |                                                       |
+|            |    -  3: 2-bit stop bit                               |
+|            |                                                       |
+|            | -  <parity>: parity bit                               |
+|            |                                                       |
+|            |    -  : None                                          |
+|            |                                                       |
+|            |    -  1: Odd                                          |
+|            |                                                       |
+|            |    -  2: Even                                         |
+|            |                                                       |
+|            | -  <flow control>: flow                               |
+|            |    control                                            |
+|            |                                                       |
+|            |    -  : flow control is                               |
+|            |       not enabled                                     |
+|            |                                                       |
+|            |    -  1: enable RTS                                   |
+|            |                                                       |
+|            |    -  2: enable CTS                                   |
+|            |                                                       |
+|            |    -  3: enable both RTS                              |
+|            |       and CTS                                         |
 +------------+---------------------------+---------------------------+
-| Notes      | 1. The configuration      |                           |
-|            |    changes will be saved  |                           |
-|            |    in the user parameter  |                           |
-|            |    area in the flash and  |                           |
-|            |    will still be valid    |                           |
-|            |    when the chip is       |                           |
-|            |    powered on again after |                           |
-|            |    shutdown.              |                           |
-|            |                           |                           |
-|            | 2. The use of flow        |                           |
-|            |    control requires the   |                           |
-|            |    support of hardware:   |                           |
-|            |                           |                           |
-|            |    -  GPIO9 is UART CTS   |                           |
-|            |                           |                           |
-|            |    -  GPIO8 is UART RTS   |                           |
-|            |                           |                           |
-|            |    -  There are 2 UART    |                           |
-|            |       ports, only UART    |                           |
-|            |       has flow control    |                           |
-|            |       (4-wire)            |                           |
-|            |                           |                           |
-|            | 3. The range of baud      |                           |
-|            |    rates supported:       |                           |
-|            |    110~115200*4.          |                           |
+| Notes      |                                                       |
+|            |                                                       |
+|            | 1. The configuration                                  |
+|            |    changes will be saved                              |
+|            |    in the user parameter                              |
+|            |    area in the flash and                              |
+|            |    will still be valid                                |
+|            |    when the chip is                                   |
+|            |    powered on again after                             |
+|            |    shutdown.                                          |
+|            |                                                       |
+|            | 2. The use of flow                                    |
+|            |    control requires the                               |
+|            |    support of hardware:                               |
+|            |                                                       |
+|            |    -  GPIO9 is UART CTS                               |
+|            |                                                       |
+|            |    -  GPIO8 is UART RTS                               |
+|            |                                                       |
+|            |    -  There are 2 UART                                |
+|            |       ports, only UART                                |
+|            |       has flow control                                |
+|            |       (4-wire)                                        |
+|            |                                                       |
+|            | 3. The range of baud                                  |
+|            |    rates supported:                                   |
+|            |    110~115200*4.                                      |
 +------------+---------------------------+---------------------------+
-| Examples   | AT+UART_DEF=1152,8,1, ,3  |                           |
+| Examples   |                                                       |
+|            |                                                       |
+|            | AT+UART_DEF=1152,8,1, ,3                              |
 +------------+---------------------------+---------------------------+
 
 AT+SYSRAM – Checks the Remaining Space on RAM
@@ -365,53 +371,59 @@ AT+SLEEP – Configures the Operating Modes for Power Optimization
 |            |                           |                       |
 |            | OK                        |                       |
 +------------+---------------------------+-----------------------+
-| Parameters | -  <sleep mode>:          |                       |
-|            |                           |                       |
-|            |    -  : Disable sleep     |                       |
-|            |          mode             |                       |
-|            |                           |                       |
-|            |         (high-performance |                       |
-|            |          mode)            |                       |
-|            |                           |                       |
-|            |    -  1: Sleep mode       |                       |
-|            |                           |                       |
-|            |    -  2: Associated mode  |                       |
+| Parameters |                                                   |
+|            |                                                   |
+|            | -  <sleep mode>:                                  |
+|            |                                                   |
+|            |    -  : Disable sleep                             |
+|            |          mode                                     |
+|            |                                                   |
+|            |         (high-performance                         |
+|            |          mode)                                    |
+|            |                                                   |
+|            |    -  1: Sleep mode                               |
+|            |                                                   |
+|            |    -  2: Associated mode                          |
 +------------+---------------------------+-----------------------+
-| Notes      | This command can only be  |                       |
-|            | used in Station mode.     |                       |
-|            | Associated mode is the    |                       |
-|            | default mode.             |                       |
-|            |                           |                       |
-|            | 1. “Disable sleep” means  |                       |
-|            |    chip host CPU and      |                       |
-|            |    everything else are    |                       |
-|            |    all powered on. This   |                       |
-|            |    is the highest         |                       |
-|            |    power-consumption mode |                       |
-|            |    and also the highest   |                       |
-|            |    performance mode.      |                       |
-|            |                           |                       |
-|            | 2. “Sleep” means WLAN     |                       |
-|            |    blocks are powered     |                       |
-|            |    down and clocks are    |                       |
-|            |    suspended, and BFQ4004 |                       |
-|            |    is disconnected from   |                       |
-|            |    access point.          |                       |
-|            |                           |                       |
-|            | 3. “Associated” means     |                       |
-|            |    BFQ4004 is duty        |                       |
-|            |    cycling between sleep  |                       |
-|            |    state and active WLAN  |                       |
-|            |    TX, RX. It is used to  |                       |
-|            |    allow BFQ4004 to       |                       |
-|            |    periodically wake up   |                       |
-|            |    and listen for beacon  |                       |
-|            |    signals from access    |                       |
-|            |    point (AP) to maintain |                       |
-|            |    the connection with    |                       |
-|            |    the AP.                |                       |
+| Notes      |                                                   |
+|            |                                                   |
+|            | This command can only be                          |
+|            | used in Station mode.                             |
+|            | Associated mode is the                            |
+|            | default mode.                                     |
+|            |                                                   |
+|            | 1. “Disable sleep” means                          |
+|            |    chip host CPU and                              |
+|            |    everything else are                            |
+|            |    all powered on. This                           |
+|            |    is the highest                                 |
+|            |    power-consumption mode                         |
+|            |    and also the highest                           |
+|            |    performance mode.                              |
+|            |                                                   |
+|            | 2. “Sleep” means WLAN                             |
+|            |    blocks are powered                             |
+|            |    down and clocks are                            |
+|            |    suspended, and BFQ4004                         |
+|            |    is disconnected from                           |
+|            |    access point.                                  |
+|            |                                                   |
+|            | 3. “Associated” means                             |
+|            |    BFQ4004 is duty                                |
+|            |    cycling between sleep                          |
+|            |    state and active WLAN                          |
+|            |    TX, RX. It is used to                          |
+|            |    allow BFQ4004 to                               |
+|            |    periodically wake up                           |
+|            |    and listen for beacon                          |
+|            |    signals from access                            |
+|            |    point (AP) to maintain                         |
+|            |    the connection with                            |
+|            |    the AP.                                        |
 +------------+---------------------------+-----------------------+
-| Examples   | AT+SLEEP=0                |                       |
+| Examples   |                                                   |
+|            |                                                   |
+|            | AT+SLEEP=0                                        |
 +------------+---------------------------+-----------------------+
 
 AT+GSLP – Enters Suspend (Deep-sleep) Mode
@@ -852,26 +864,30 @@ AT+CWMODE_DEF- Sets Default WiFi Mode Configuration, Saved in Flash
 |            |                 |                 |                 |
 |            | OK              | OK              |                 |
 +------------+-----------------+-----------------+-----------------+
-| Parameters | -  <mode>:      |                 |                 |
-|            |                 |                 |                 |
-|            |    -  1:        |                 |                 |
-|            |       Station   |                 |                 |
-|            |       mode      |                 |                 |
-|            |                 |                 |                 |
-|            |    -  2: SoftAP |                 |                 |
-|            |       mode      |                 |                 |
-|            |                 |                 |                 |
-|            |    -  3:        |                 |                 |
-|            |                 |                 |                 |
-|            |  Station+SoftAP |                 |                 |
-|            |       mode      |                 |                 |
+| Parameters |   '                               |                 |
+|            |                                   |                 |
+|            | -  <mode>:                        |                 |
+|            |                                   |                 |
+|            |    -  1:                          |                 |
+|            |       Station                     |                 |
+|            |       mode                        |                 |
+|            |                                   |                 |
+|            |    -  2: SoftAP                   |                 |
+|            |       mode                        |                 |
+|            |                                   |                 |
+|            |    -  3:                          |                 |
+|            |                                   |                 |
+|            |  Station+SoftAP                   |                 |
+|            |       mode                        |                 |
 +------------+-----------------+-----------------+-----------------+
 | Notes      | The             |                 |                 |
 |            | configuration   |                 |                 |
 |            | changes will be |                 |                 |
 |            | saved in flash. |                 |                 |
 +------------+-----------------+-----------------+-----------------+
-| Examples   | AT+CWMODE_DEF=1 |                 |                 |
+| Examples   |   '                               |                 |
+|            |                                   |                 |
+|            | AT+CWMODE_DEF=1                   |                 |
 +------------+-----------------+-----------------+-----------------+
 
 AT+CWJAP_CUR – Connects to AP, Configuration Not Saved in Flash
@@ -939,31 +955,35 @@ AT+CWJAP_CUR – Connects to AP, Configuration Not Saved in Flash
 |            |                           | characters, such as , or  |
 |            |                           | “ or \\                   |
 +------------+---------------------------+---------------------------+
-| Notes      | The configuration changes |                           |
-|            | will NOT be saved in      |                           |
-|            | flash                     |                           |
+| Notes      |                                                       |
+|            |                                                       |
+|            | The configuration changes                             |
+|            | will NOT be saved in                                  |
+|            | flash                                                 |
 +------------+---------------------------+---------------------------+
-| Examples   | AT+CW                     |                           |
-|            | JAP_CUR="abc","123456789" |                           |
-|            |                           |                           |
-|            | For example, if the       |                           |
-|            | target AP’s SSID is       |                           |
-|            | "ab\,c" and the password  |                           |
-|            | is                        |                           |
-|            |                           |                           |
-|            | "123456789"\", the        |                           |
-|            | command is as follows:    |                           |
-|            |                           |                           |
-|            | AT+CWJAP_CUR=             |                           |
-|            | "ab\\\,c","123456789\"\\" |                           |
-|            |                           |                           |
-|            | If multiple APs have the  |                           |
-|            | same SSID as "abc", the   |                           |
-|            | target AP can be found by |                           |
-|            | BSSID:                    |                           |
-|            |                           |                           |
-|            | AT+CWJAP_CUR="abc","12345 |                           |
-|            | 6789","ca:d7:19:d8:a6:44" |                           |
+| Examples   |   '                                                   |
+|            |                                                       |
+|            | AT+CW                                                 |
+|            | JAP_CUR="abc","123456789"                             |
+|            |                                                       |
+|            | For example, if the                                   |
+|            | target AP’s SSID is                                   |
+|            | "ab\,c" and the password                              |
+|            | is                                                    |
+|            |                                                       |
+|            | "123456789"\", the                                    |
+|            | command is as follows:                                |
+|            |                                                       |
+|            | AT+CWJAP_CUR=                                         |
+|            | "ab\\\,c","123456789\"\\"                             |
+|            |                                                       |
+|            | If multiple APs have the                              |
+|            | same SSID as "abc", the                               |
+|            | target AP can be found by                             |
+|            | BSSID:                                                |
+|            |                                                       |
+|            | AT+CWJAP_CUR="abc","12345                             |
+|            | 6789","ca:d7:19:d8:a6:44"                             |
 +------------+---------------------------+---------------------------+
 
 AT+CWJAP_DEF – Connects to AP, Configuration Saved in Flash
