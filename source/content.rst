@@ -864,30 +864,30 @@ AT+CWMODE_DEF- Sets Default WiFi Mode Configuration, Saved in Flash
 |            |                 |                 |                 |
 |            | OK              | OK              |                 |
 +------------+-----------------+-----------------+-----------------+
-| Parameters |   '                               |                 |
-|            |                                   |                 |
-|            | -  <mode>:                        |                 |
-|            |                                   |                 |
-|            |    -  1:                          |                 |
-|            |       Station                     |                 |
-|            |       mode                        |                 |
-|            |                                   |                 |
-|            |    -  2: SoftAP                   |                 |
-|            |       mode                        |                 |
-|            |                                   |                 |
-|            |    -  3:                          |                 |
-|            |                                   |                 |
-|            |  Station+SoftAP                   |                 |
-|            |       mode                        |                 |
+| Parameters |                                                     |
+|            |                                                     |
+|            | -  <mode>:                                          |
+|            |                                                     |
+|            |    -  1:                                            |
+|            |       Station                                       |
+|            |       mode                                          |
+|            |                                                     |
+|            |    -  2: SoftAP                                     |
+|            |       mode                                          |
+|            |                                                     |
+|            |    -  3:                                            |
+|            |                                                     |
+|            |  Station+SoftAP                                     |
+|            |       mode                                          |
 +------------+-----------------+-----------------+-----------------+
 | Notes      | The             |                 |                 |
 |            | configuration   |                 |                 |
 |            | changes will be |                 |                 |
 |            | saved in flash. |                 |                 |
 +------------+-----------------+-----------------+-----------------+
-| Examples   |   '                               |                 |
-|            |                                   |                 |
-|            | AT+CWMODE_DEF=1                   |                 |
+| Examples   |                                                     |
+|            |                                                     |
+|            | AT+CWMODE_DEF=1                                     |
 +------------+-----------------+-----------------+-----------------+
 
 AT+CWJAP_CUR – Connects to AP, Configuration Not Saved in Flash
@@ -957,11 +957,11 @@ AT+CWJAP_CUR – Connects to AP, Configuration Not Saved in Flash
 +------------+---------------------------+---------------------------+
 | Notes      |                                                       |
 |            |                                                       |
-|            | The configuration changes                             |
-|            | will NOT be saved in                                  |
+|            | The configuratio  changes                             |
+|            | will NOT be save  in                                  |
 |            | flash                                                 |
 +------------+---------------------------+---------------------------+
-| Examples   |   '                                                   |
+| Examples   |                                                       |
 |            |                                                       |
 |            | AT+CW                                                 |
 |            | JAP_CUR="abc","123456789"                             |
@@ -1980,34 +1980,34 @@ AT+CIPAP_CUR – Sets the Current IP Address of the BFQ4004 SoftAP, Configuratio
 |            |                                                       |
 |            | -  [<netmask>]: netmask.                              |
 +------------+---------------------------+---------------------------+
-| Notes      | -    The configuration                                |
-|            |    will NOT be saved to                               |
-|            |    the flash.                                         |
-|            |                                                       |
-|            | -  Currently, only                                    |
-|            |    supports class C IP                                |
-|            |    addresses.                                         |
-|            |                                                       |
-|            | -  The Set Command                                    |
-|            |    interacts with                                     |
-|            |    DHCP-related AT                                    |
-|            |    commands                                           |
-|            |    (AT+CWDHCP-related                                 |
-|            |    commands):                                         |
-|            |                                                       |
-|            |    -  If static IP is                                 |
-|            |       enabled, DHCP will                              |
-|            |       be disabled;                                    |
-|            |                                                       |
-|            |    -  If DHCP is enabled,                             |
-|            |       static IP will be                               |
-|            |       disabled;                                       |
-|            |                                                       |
-|            |    -  Whether it is DHCP                              |
-|            |       or static IP that                               |
-|            |       is enabled depends                              |
-|            |       on the last                                     |
-|            |       configuration.                                  |
+| Notes      | -  ''The configuration    |                           |
+|            |    will NOT be saved to   |                           |
+|            |    the flash.             |                           |
+|            |                           |                           |
+|            | -  Currently, only        |                           |
+|            |    supports class C IP    |                           |
+|            |    addresses.             |                           |
+|            |                           |                           |
+|            | -  The Set Command        |                           |
+|            |    interacts with         |                           |
+|            |    DHCP-related AT        |                           |
+|            |    commands               |                           |
+|            |    (AT+CWDHCP-related     |                           |
+|            |    commands):             |                           |
+|            |                           |                           |
+|            |    -  If static IP is     |                           |
+|            |       enabled, DHCP will  |                           |
+|            |       be disabled;        |                           |
+|            |                           |                           |
+|            |    -  If DHCP is enabled, |                           |
+|            |       static IP will be   |                           |
+|            |       disabled;           |                           |
+|            |                           |                           |
+|            |    -  Whether it is DHCP  |                           |
+|            |       or static IP that   |                           |
+|            |       is enabled depends  |                           |
+|            |       on the last         |                           |
+|            |       configuration.      |                           |
 +------------+---------------------------+---------------------------+
 | Examples   | AT+C                      |                           |
 |            | IPAP_CUR="192.168.5.1","1 |                           |
