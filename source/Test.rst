@@ -1,3 +1,7 @@
+.. |br| raw:: html
+
+     <br/>
+
 BFQ4004
 
 Dual-band Wi-Fi Module
@@ -5,241 +9,6 @@ Dual-band Wi-Fi Module
 AT Command Reference
 
 July 2020
-
-Table of Contents
-=================
-
-**1** **Overview** 5
-
-`2 Command Types and Formats 5 <\l>`__
-
-`3 Basic AT Commands 6 <\l>`__
-
-`3.1 Overview 6 <\l>`__
-
-`3.2 Command Descriptions 6 <\l>`__
-
-`3.2.1 AT – Tests AT Startup 6 <\l>`__
-
-`3.2.2 AT+ATE – Configures Echoing of AT Commands 6 <\l>`__
-
-`3.2.3 AT+RST – Restarts the Module 7 <\l>`__
-
-`3.2.4 AT+GMR – Checks AT Commands Version Information 7 <\l>`__
-
-`3.2.5 AT+RESTORE – Restores Factory Settings 7 <\l>`__
-
-`3.2.6 AT+UART_CUR – Current UART Configuration in RAM 7 <\l>`__
-
-`3.2.7 AT+UART_DEF – Default UART Configuration from Flash 8 <\l>`__
-
-`3.2.8 AT+SYSRAM – Checks the Remaining Space on RAM 9 <\l>`__
-
-`3.2.9 AT+SLEEP – Configures the Operating Modes for Power Optimization
-10 <\l>`__
-
-`3.2.10 AT+GSLP – Enters Suspend (Deep-sleep) Mode 10 <\l>`__
-
-`3.2.11 AT+RFPOWER – Sets Maximum of RF TX Power 11 <\l>`__
-
-`4 Hardware-Related AT Commands 11 <\l>`__
-
-`4.1 Overview 11 <\l>`__
-
-`4.2 Command Descriptions 11 <\l>`__
-
-`4.2.1 AT+SYSIOSETCFG – Configures IO Working Mode 11 <\l>`__
-
-`4.2.2 AT+SYSIOGETCFG – Get IO Working Mode 12 <\l>`__
-
-`4.2.3 AT+SYSGPIODIR – Configures the Direction of GPIO 12 <\l>`__
-
-`4.2.4 AT+SYSGPIOWRITE – Configures the Output Level of a GPIO
-13 <\l>`__
-
-`4.2.5 AT+SYSGPIOREAD – Reads the GPIO Level 13 <\l>`__
-
-`4.2.6 AT+WAKEUPGPIO – Configures a GPIO to Wake BFQ4004 up from Sleep
-Mode 14 <\l>`__
-
-`5 Wi-Fi-Related AT Commands 15 <\l>`__
-
-`5.1 Overview 15 <\l>`__
-
-`5.2 Command Descriptions 16 <\l>`__
-
-`5.2.1 AT+CWMODE_CUR – Sets Current WiFi Mode Configuration, Not Saved
-in Flash 16 <\l>`__
-
-`5.2.2 AT+CWMODE_DEF- Sets Default WiFi Mode Configuration, Saved in
-Flash 17 <\l>`__
-
-`5.2.3 AT+CWJAP_CUR – Connects to AP, Configuration Not Saved in Flash
-17 <\l>`__
-
-`5.2.4 AT+CWJAP_DEF – Connects to AP, Configuration Saved in Flash
-18 <\l>`__
-
-`5.2.5 AT+CWLAPOPT – Sets the Configuration for the Command AT+CWLAP
-19 <\l>`__
-
-`5.2.6 AT+CWLAP – Lists Available APs 21 <\l>`__
-
-`5.2.7 AT+CWQAP – Disconnects from the AP 22 <\l>`__
-
-`5.2.8 AT+CWSAP_CUR – Configures the BFQ4004 SoftAP, Configuration Not
-Saved to Flash 22 <\l>`__
-
-`5.2.9 AT+CWSAP_DEF - Configures the BFQ4004 SoftAP, Configuration Saved
-to Flash 23 <\l>`__
-
-`5.2.10 AT+CWLIF – Gets the IP Addresses of the Stations the BFQ4004
-SoftAP Is Connected With 24 <\l>`__
-
-`5.2.11 AT+CWDHCP_CUR - Enables/Disables DHCP, Configuration Not Saved
-to Flash 25 <\l>`__
-
-`5.2.12 AT+CWDHCP_DEF - Enables/Disables DHCP, Configuration Saved to
-Flash 25 <\l>`__
-
-`5.2.13 AT+CWDHCPS_CUR - Sets the IP address Range the SoftAP DHCP
-Server Can Allocate, Configuration Not Saved to Flash 26 <\l>`__
-
-`5.2.14 AT+CWDHCPS_DEF - Sets the IP address Range the SoftAP DHCP
-Server Can Allocate, Configuration Saved to Flash 27 <\l>`__
-
-`5.2.15 AT+CWAUTOCONN – Automatically Connects to the AP on Power-up or
-Not 28 <\l>`__
-
-`5.2.16 AT+CIPSTA_CUR – Sets the Current IP Address of the BFQ4004
-Station, Configuration Not Saved in Flash 28 <\l>`__
-
-`5.2.17 AT+CIPSTA_DEF - Sets the Default IP Address of the BFQ4004
-Station, Configuration Saved in Flash 29 <\l>`__
-
-`5.2.18 AT+CIPAP_CUR – Sets the Current IP Address of the BFQ4004
-SoftAP, Configuration Not Saved in Flash 30 <\l>`__
-
-`5.2.19 AT+CIPAP_DEF - Sets the Default IP Address of the BFQ4004
-SoftAP, Configuration Saved in Flash 30 <\l>`__
-
-`5.2.20 AT+WPS – Enables the WPS Function 31 <\l>`__
-
-`5.2.21 AT+CWHOSTNAME – Configures the Name of BFQ4004 Station
-31 <\l>`__
-
-`5.2.22 AT+CWCOUNTRY_CUR – Sets the Current Wi-Fi Country Code,
-Configuration Not Saved in Flash 32 <\l>`__
-
-`5.2.23 AT+CWCOUNTRY_DEF – Sets the Default Wi-Fi Country Code,
-Configuration Save in Flash 33 <\l>`__
-
-`6 TCP/IP-Related AT Commands 34 <\l>`__
-
-`6.1 Overview 34 <\l>`__
-
-`6.2 Command Descriptions 35 <\l>`__
-
-`6.2.1 AT+CIPSTATUS – Gets the Connection Status 35 <\l>`__
-
-`6.2.2 AT+CIPDOMAIN – DNS Function 36 <\l>`__
-
-`6.2.3 AT+CIPSTART – Establishes TCP Connection, UDP Transmission or SSL
-Connection 36 <\l>`__
-
-`6.2.4 AT+CIPSSLSIZE – Sets the Size of the SSL Buffer 39 <\l>`__
-
-`6.2.5 AT+CIPSSLCCONF – Configures the SSL Client 39 <\l>`__
-
-`6.2.6 AT+CIPSEND – Sends Data 40 <\l>`__
-
-`6.2.7 AT+CIPSENDEX – Sends Data 42 <\l>`__
-
-`6.2.8 AT+CIPSENDBUF – Writes Data Into the TCP-Send-Buffer 43 <\l>`__
-
-`6.2.9 AT+BUFRESET – Resets the Segment ID Count 44 <\l>`__
-
-`6.2.10 AT+CIPBUFSTATUS – Checks the Status of the TCP-Send-Buffer
-44 <\l>`__
-
-`6.2.11 AT+CIPCHECKSEQ – Checks If a Specific Segment Was Successfully
-Sent 46 <\l>`__
-
-`6.2.12 AT+CIPCLOSE – Closes the TCP/UDP/SSL Connection 46 <\l>`__
-
-`6.2.13 AT+CIFSR – Gets the Local IP Address 46 <\l>`__
-
-`6.2.14 AT+CIPMUX – Enables or Disables Multiple Connections 47 <\l>`__
-
-`6.2.15 AT+CIPSERVER – Creates or Deletes TCP Server 48 <\l>`__
-
-`6.2.16 AT+CIPSERVERMAXCONN – Sets the Maximum Connections Allowed by
-Server 48 <\l>`__
-
-`6.2.17 AT+CIPMODE – Sets Transmission Mode 49 <\l>`__
-
-`6.2.18 AT+CIPSTO – Sets the TCP Server Timeout 49 <\l>`__
-
-`6.2.19 AT+PING – Pings Packets 50 <\l>`__
-
-`6.2.20 AT+CIUPDATE – Updates the Software Through Wi-Fi 50 <\l>`__
-
-`6.2.21 AT+CIPDINFO – Shows the Remote IP and Port with +IPD 51 <\l>`__
-
-`6.2.22 +IPD – Receives Network Data 51 <\l>`__
-
-`6.2.23 AT+CIPRECVMODE – Sets TCP Receive Mode 52 <\l>`__
-
-`6.2.24 AT+CIPRECVDATA – Gets TCP Data In Passive Receive Mode
-52 <\l>`__
-
-`6.2.25 AT+CIPREVLEN – Gets TCP Data Length in Passive Received Mode
-53 <\l>`__
-
-`6.2.26 AT+CIPSNTPCFG – Sets the Configuration of SNTP 53 <\l>`__
-
-`6.2.27 AT+CIPSNTPTIME – Checks the SNTP Time 54 <\l>`__
-
-`6.2.28 AT+CIPDNS_CUR – Sets User-defined DNS Servers, Configuration Not
-Saved to Flash 55 <\l>`__
-
-`6.2.29 AT+CIPDNS_DEF – Sets User-defined DNS Servers, Configuration
-Saved to Flash 56 <\l>`__
-
-`7 HTTP-Related AT Commands 56 <\l>`__
-
-`7.1 Overview 56 <\l>`__
-
-`7.2 Command Descriptions 57 <\l>`__
-
-`7.2.1 AT+CHTTPURL – Sets HTTP Server Port and Address 57 <\l>`__
-
-`7.2.2 AT+CHTTPPH – Sets Path of POST/GET 57 <\l>`__
-
-`7.2.3 AT+CHTTPCTP – Sets Command Type of HTTP (GET or POST) 58 <\l>`__
-
-`7.2.4 AT+CHTTPCDT – Sets Name and Value Pair of Data in HTTP 58 <\l>`__
-
-`7.2.5 AT+CHTTPTR – Sends HTTP Package and Return Received Data
-58 <\l>`__
-
-`8 Internet-of-Things (IoT)-Related AT Commands 60 <\l>`__
-
-`8.1 MQTT Commands Overview 60 <\l>`__
-
-`8.2 CoAP Commands Overview 60 <\l>`__
-
-`8.3 TLS Commands Overview 60 <\l>`__
-
-`9 AWS IoT Core AT Commands 61 <\l>`__
-
-`10 Customizing AT Firmware 61 <\l>`__
-
-`10.1 Compiling AT project 61 <\l>`__
-
-`10.2 Customize AT Functions 61 <\l>`__
-
-`10.3 Add User-defined AT Commands 61 <\l>`__
 
 Overview
 ========
@@ -253,16 +22,10 @@ This document provides detailed information about the BF4004Q WiFi
 module AT commands. It also introduces how to download firmware images
 onto the flash on the module as well as some customization examples.
 
-**︎ Note**
+.. note::
+     -  *Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document.* |br|
+     -  *AT firmware uses priority levels* *and 1 of system_os_task, so only     one task of priority 2 is allowed to be set up by user application.* |br|
 
--  *Please make sure that correct binary file (.bin) has been installed
-   in BFQ4004 module before using the AT commands in this document.*
-
--  *AT firmware uses priority levels* *and 1 of system_os_task, so only
-   one task of priority 2 is allowed to be set up by user application.*
-
-**#**
-=====
 
 Command Types and Formats
 =========================
@@ -271,7 +34,7 @@ Each command set contains four types of AT commands.
 
 +-----------------+--------------------+-----------------------------+
 | **Type**        | **Command Format** | **Description**             |
-+-----------------+--------------------+-----------------------------+
++=================+====================+=============================+
 | Test Command    | AT+<X>=?           | Queries the Set Commands’   |
 |                 |                    | internal parameters and     |
 |                 |                    | their range of values.      |
@@ -288,23 +51,13 @@ Each command set contains four types of AT commands.
 |                 |                    | user-defined parameter.     |
 +-----------------+--------------------+-----------------------------+
 
-**︎ Note**
+.. note::
+     -  *Not all AT commands support all four varioations mentioned above.* |br|
+     -  *Square brackets “[]” designate the default value. It is not always     required or may not appear.* |br|
+     -  *String values need to be included in double quotation markets, for     example:     AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4* |br|
+     -  *The default baud rate is 1152.* |br|
+     -  *AT commands have to be capitalized and must end with a new line (CR     LF).* |br|
 
--  *Not all AT commands support all four varioations mentioned above.*
-
--  *Square brackets “[]” designate the default value. It is not always
-   required or may not appear.*
-
--  *String values need to be included in double quotation markets, for
-   example:
-   AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4*
-
--  *The default baud rate is 1152.*
-
--  *AT commands have to be capitalized and must end with a new line (CR
-   LF).*
-
-#
 
 Basic AT Commands
 =================
@@ -316,6 +69,7 @@ Overview
 
 ============ =====================================================
 **Commands** **Description**
+============ =====================================================
 AT           Tests AT startup.
 ATE          Configures echoing of AT commands.
 AT+RST       Restarts the module.
@@ -338,7 +92,7 @@ AT – Tests AT Startup
 =================== ==
 **Execute Command** AT
 **Response**        OK
-**Parameters**      -
+**Parameters**      \-
 =================== ==
 
 AT+ATE – Configures Echoing of AT Commands
@@ -367,7 +121,7 @@ AT+RST – Restarts the Module
 =================== ======
 **Execute Command** AT+RST
 **Response**        OK
-**Parameters**      -
+**Parameters**      \-
 =================== ======
 
 AT+GMR – Checks AT Commands Version Information
@@ -376,13 +130,13 @@ AT+GMR – Checks AT Commands Version Information
 =================== ==================
 **Execute Command** AT+GMR
 **Response**        <AT version info>
-
+                    
                     <SDK version info>
-
+                    
                     <compile time>
-
+                    
                     OK
-**Parameters**      -
+**Parameters**      \-
 =================== ==================
 
 AT+RESTORE – Restores Factory Settings
@@ -417,7 +171,7 @@ AT+UART_CUR – Current UART Configuration in RAM
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | Command AT+UART_CUR?    | -                       |
+| **Notes**      | Command AT+UART_CUR?    | \-                      |
 |                | will return the actual  |                         |
 |                | value of UART           |                         |
 |                | configuration           |                         |
@@ -434,73 +188,73 @@ AT+UART_CUR – Current UART Configuration in RAM
 |                | command AT+UART_CUR?    |                         |
 |                | could be 115273.        |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <baudrate>: UART     |                         |
-|                |    baud rate            |                         |
-|                |                         |                         |
-|                | -  <databits>: data     |                         |
-|                |    bits                 |                         |
-|                |                         |                         |
-|                |    -  5: 5-bit data     |                         |
-|                |                         |                         |
-|                |    -  6: 6-bit data     |                         |
-|                |                         |                         |
-|                |    -  7: 7-bit data     |                         |
-|                |                         |                         |
-|                |    -  8: 8-bit data     |                         |
-|                |                         |                         |
-|                | -  <stopbits>: stop     |                         |
-|                |    bits                 |                         |
-|                |                         |                         |
-|                |    -  1: 1-bit stop bit |                         |
-|                |                         |                         |
-|                |    -  2: 1.5-bit stop   |                         |
-|                |       bit               |                         |
-|                |                         |                         |
-|                |    -  3: 2-bit stop bit |                         |
-|                |                         |                         |
-|                | -  <parity>: parity bit |                         |
-|                |                         |                         |
-|                |    -  : None            |                         |
-|                |                         |                         |
-|                |    -  1: Odd            |                         |
-|                |                         |                         |
-|                |    -  2: Even           |                         |
-|                |                         |                         |
-|                | -  <flow control>: flow |                         |
-|                |    control              |                         |
-|                |                         |                         |
-|                |    -  : flow control is |                         |
-|                |       not enabled       |                         |
-|                |                         |                         |
-|                |    -  1: enable RTS     |                         |
-|                |                         |                         |
-|                |    -  2: enable CTS     |                         |
-|                |                         |                         |
-|                |    -  3: enable both    |                         |
-|                |       RTS and CTS       |                         |
+| **Parameters** | -  <baudrate>: UART                               |
+|                |    baud rate                                      |
+|                |                                                   |
+|                | -  <databits>: data                               |
+|                |    bits                                           |
+|                |                                                   |
+|                |    -  5: 5-bit data                               |
+|                |                                                   |
+|                |    -  6: 6-bit data                               |
+|                |                                                   |
+|                |    -  7: 7-bit data                               |
+|                |                                                   |
+|                |    -  8: 8-bit data                               |
+|                |                                                   |
+|                | -  <stopbits>: stop                               |
+|                |    bits                                           |
+|                |                                                   |
+|                |    -  1: 1-bit stop bit                           |
+|                |                                                   |
+|                |    -  2: 1.5-bit stop                             |
+|                |       bit                                         |
+|                |                                                   |
+|                |    -  3: 2-bit stop bit                           |
+|                |                                                   |
+|                | -  <parity>: parity bit                           |
+|                |                                                   |
+|                |    -  : None                                      |
+|                |                                                   |
+|                |    -  1: Odd                                      |
+|                |                                                   |
+|                |    -  2: Even                                     |
+|                |                                                   |
+|                | -  <flow control>: flow                           |
+|                |    control                                        |
+|                |                                                   |
+|                |    -  : flow control is                           |
+|                |       not enabled                                 |
+|                |                                                   |
+|                |    -  1: enable RTS                               |
+|                |                                                   |
+|                |    -  2: enable CTS                               |
+|                |                                                   |
+|                |    -  3: enable both                              |
+|                |       RTS and CTS                                 |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | 1. The configuration    |                         |
-|                |    changes will NOT be  |                         |
-|                |    saved in the flash.  |                         |
-|                |                         |                         |
-|                | 2. The use of flow      |                         |
-|                |    control requires the |                         |
-|                |    support of hardware: |                         |
-|                |                         |                         |
-|                |    -  GPIO9 is UART CTS |                         |
-|                |                         |                         |
-|                |    -  GPIO8 is UART RTS |                         |
-|                |                         |                         |
-|                |    -  There are 2 UART  |                         |
-|                |       ports, only UART  |                         |
-|                |       has flow control  |                         |
-|                |       (4-wire)          |                         |
-|                |                         |                         |
-|                | 3. The range of baud    |                         |
-|                |    rates supported:     |                         |
-|                |    110~115200*4.        |                         |
+| **Notes**      | 1. The configuration                              |
+|                |    changes will NOT be                            |
+|                |    saved in the flash.                            |
+|                |                                                   |
+|                | 2. The use of flow                                |
+|                |    control requires the                           |
+|                |    support of hardware:                           |
+|                |                                                   |
+|                |    -  GPIO9 is UART CTS                           |
+|                |                                                   |
+|                |    -  GPIO8 is UART RTS                           |
+|                |                                                   |
+|                |    -  There are 2 UART                            |
+|                |       ports, only UART                            |
+|                |       has flow control                            |
+|                |       (4-wire)                                    |
+|                |                                                   |
+|                | 3. The range of baud                              |
+|                |    rates supported:                               |
+|                |    110~115200*4.                                  |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+UART_CUR=1152,8,1,,3 |                         |
+| **Examples**   | AT+UART_CUR=1152,8,1,,3                           |
 +----------------+-------------------------+-------------------------+
 
 AT+UART_DEF – Default UART Configuration from Flash
@@ -520,80 +274,80 @@ AT+UART_DEF – Default UART Configuration from Flash
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <baudrate>: UART     |                         |
-|                |    baud rate            |                         |
-|                |                         |                         |
-|                | -  <databits>: data     |                         |
-|                |    bits                 |                         |
-|                |                         |                         |
-|                |    -  5: 5-bit data     |                         |
-|                |                         |                         |
-|                |    -  6: 6-bit data     |                         |
-|                |                         |                         |
-|                |    -  7: 7-bit data     |                         |
-|                |                         |                         |
-|                |    -  8: 8-bit data     |                         |
-|                |                         |                         |
-|                | -  <stopbits>: stop     |                         |
-|                |    bits                 |                         |
-|                |                         |                         |
-|                |    -  1: 1-bit stop bit |                         |
-|                |                         |                         |
-|                |    -  2: 1.5-bit stop   |                         |
-|                |       bit               |                         |
-|                |                         |                         |
-|                |    -  3: 2-bit stop bit |                         |
-|                |                         |                         |
-|                | -  <parity>: parity bit |                         |
-|                |                         |                         |
-|                |    -  : None            |                         |
-|                |                         |                         |
-|                |    -  1: Odd            |                         |
-|                |                         |                         |
-|                |    -  2: Even           |                         |
-|                |                         |                         |
-|                | -  <flow control>: flow |                         |
-|                |    control              |                         |
-|                |                         |                         |
-|                |    -  : flow control is |                         |
-|                |       not enabled       |                         |
-|                |                         |                         |
-|                |    -  1: enable RTS     |                         |
-|                |                         |                         |
-|                |    -  2: enable CTS     |                         |
-|                |                         |                         |
-|                |    -  3: enable both    |                         |
-|                |       RTS and CTS       |                         |
+| **Parameters** | -  <baudrate>: UART                               |
+|                |    baud rate                                      |
+|                |                                                   |
+|                | -  <databits>: data                               |
+|                |    bits                                           |
+|                |                                                   |
+|                |    -  5: 5-bit data                               |
+|                |                                                   |
+|                |    -  6: 6-bit data                               |
+|                |                                                   |
+|                |    -  7: 7-bit data                               |
+|                |                                                   |
+|                |    -  8: 8-bit data                               |
+|                |                                                   |
+|                | -  <stopbits>: stop                               |
+|                |    bits                                           |
+|                |                                                   |
+|                |    -  1: 1-bit stop bit                           |
+|                |                                                   |
+|                |    -  2: 1.5-bit stop                             |
+|                |       bit                                         |
+|                |                                                   |
+|                |    -  3: 2-bit stop bit                           |
+|                |                                                   |
+|                | -  <parity>: parity bit                           |
+|                |                                                   |
+|                |    -  : None                                      |
+|                |                                                   |
+|                |    -  1: Odd                                      |
+|                |                                                   |
+|                |    -  2: Even                                     |
+|                |                                                   |
+|                | -  <flow control>: flow                           |
+|                |    control                                        |
+|                |                                                   |
+|                |    -  : flow control is                           |
+|                |       not enabled                                 |
+|                |                                                   |
+|                |    -  1: enable RTS                               |
+|                |                                                   |
+|                |    -  2: enable CTS                               |
+|                |                                                   |
+|                |    -  3: enable both                              |
+|                |       RTS and CTS                                 |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | 1. The configuration    |                         |
-|                |    changes will be      |                         |
-|                |    saved in the user    |                         |
-|                |    parameter area in    |                         |
-|                |    the flash and will   |                         |
-|                |    still be valid when  |                         |
-|                |    the chip is powered  |                         |
-|                |    on again after       |                         |
-|                |    shutdown.            |                         |
-|                |                         |                         |
-|                | 2. The use of flow      |                         |
-|                |    control requires the |                         |
-|                |    support of hardware: |                         |
-|                |                         |                         |
-|                |    -  GPIO9 is UART CTS |                         |
-|                |                         |                         |
-|                |    -  GPIO8 is UART RTS |                         |
-|                |                         |                         |
-|                |    -  There are 2 UART  |                         |
-|                |       ports, only UART  |                         |
-|                |       has flow control  |                         |
-|                |       (4-wire)          |                         |
-|                |                         |                         |
-|                | 3. The range of baud    |                         |
-|                |    rates supported:     |                         |
-|                |    110~115200*4.        |                         |
+| **Notes**      | 1. The configuration                              |
+|                |    changes will be                                |
+|                |    saved in the user                              |
+|                |    parameter area in                              |
+|                |    the flash and will                             |
+|                |    still be valid when                            |
+|                |    the chip is powered                            |
+|                |    on again after                                 |
+|                |    shutdown.                                      |
+|                |                                                   |
+|                | 2. The use of flow                                |
+|                |    control requires the                           |
+|                |    support of hardware:                           |
+|                |                                                   |
+|                |    -  GPIO9 is UART CTS                           |
+|                |                                                   |
+|                |    -  GPIO8 is UART RTS                           |
+|                |                                                   |
+|                |    -  There are 2 UART                            |
+|                |       ports, only UART                            |
+|                |       has flow control                            |
+|                |       (4-wire)                                    |
+|                |                                                   |
+|                | 3. The range of baud                              |
+|                |    rates supported:                               |
+|                |    110~115200*4.                                  |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+UART_DEF=1152,8,1,   |                         |
-|                | ,3                      |                         |
+| **Examples**   | AT+UART_DEF=1152,8,1,                             |
+|                | ,3                                                |
 +----------------+-------------------------+-------------------------+
 
 AT+SYSRAM – Checks the Remaining Space on RAM
@@ -620,58 +374,58 @@ AT+SLEEP – Configures the Operating Modes for Power Optimization
 |                |                         |                       |
 |                | OK                      |                       |
 +----------------+-------------------------+-----------------------+
-| **Parameters** | -  <sleep mode>:        |                       |
-|                |                         |                       |
-|                |    -  : Disable sleep   |                       |
-|                |          mode           |                       |
-|                |                         |                       |
-|                |       (high-performance |                       |
-|                |          mode)          |                       |
-|                |                         |                       |
-|                |    -  1: Sleep mode     |                       |
-|                |                         |                       |
-|                |    -  2: Associated     |                       |
-|                |          mode           |                       |
+| **Parameters** | -  <sleep mode>:                                |
+|                |                                                 |
+|                |    -  : Disable sleep                           |
+|                |          mode                                   |
+|                |                                                 |
+|                |       (high-performance                         |
+|                |          mode)                                  |
+|                |                                                 |
+|                |    -  1: Sleep mode                             |
+|                |                                                 |
+|                |    -  2: Associated                             |
+|                |          mode                                   |
 +----------------+-------------------------+-----------------------+
-| **Notes**      | This command can only   |                       |
-|                | be used in Station      |                       |
-|                | mode. Associated mode   |                       |
-|                | is the default mode.    |                       |
-|                |                         |                       |
-|                | 1. “Disable sleep”      |                       |
-|                |    means chip host CPU  |                       |
-|                |    and everything else  |                       |
-|                |    are all powered on.  |                       |
-|                |    This is the highest  |                       |
-|                |    power-consumption    |                       |
-|                |    mode and also the    |                       |
-|                |    highest performance  |                       |
-|                |    mode.                |                       |
-|                |                         |                       |
-|                | 2. “Sleep” means WLAN   |                       |
-|                |    blocks are powered   |                       |
-|                |    down and clocks are  |                       |
-|                |    suspended, and       |                       |
-|                |    BFQ4004 is           |                       |
-|                |    disconnected from    |                       |
-|                |    access point.        |                       |
-|                |                         |                       |
-|                | 3. “Associated” means   |                       |
-|                |    BFQ4004 is duty      |                       |
-|                |    cycling between      |                       |
-|                |    sleep state and      |                       |
-|                |    active WLAN TX, RX.  |                       |
-|                |    It is used to allow  |                       |
-|                |    BFQ4004 to           |                       |
-|                |    periodically wake up |                       |
-|                |    and listen for       |                       |
-|                |    beacon signals from  |                       |
-|                |    access point (AP) to |                       |
-|                |    maintain the         |                       |
-|                |    connection with the  |                       |
-|                |    AP.                  |                       |
+| **Notes**      | This command can only                           |
+|                | be used in Station                              |
+|                | mode. Associated mode                           |
+|                | is the default mode.                            |
+|                |                                                 |
+|                | 1. “Disable sleep”                              |
+|                |    means chip host CPU                          |
+|                |    and everything else                          |
+|                |    are all powered on.                          |
+|                |    This is the highest                          |
+|                |    power-consumption                            |
+|                |    mode and also the                            |
+|                |    highest performance                          |
+|                |    mode.                                        |
+|                |                                                 |
+|                | 2. “Sleep” means WLAN                           |
+|                |    blocks are powered                           |
+|                |    down and clocks are                          |
+|                |    suspended, and                               |
+|                |    BFQ4004 is                                   |
+|                |    disconnected from                            |
+|                |    access point.                                |
+|                |                                                 |
+|                | 3. “Associated” means                           |
+|                |    BFQ4004 is duty                              |
+|                |    cycling between                              |
+|                |    sleep state and                              |
+|                |    active WLAN TX, RX.                          |
+|                |    It is used to allow                          |
+|                |    BFQ4004 to                                   |
+|                |    periodically wake up                         |
+|                |    and listen for                               |
+|                |    beacon signals from                          |
+|                |    access point (AP) to                         |
+|                |    maintain the                                 |
+|                |    connection with the                          |
+|                |    AP.                                          |
 +----------------+-------------------------+-----------------------+
-| **Examples**   | AT+SLEEP=0              |                       |
+| **Examples**   | AT+SLEEP=0                                      |
 +----------------+-------------------------+-----------------------+
 
 AT+GSLP – Enters Suspend (Deep-sleep) Mode
@@ -729,6 +483,7 @@ Overview
 
 =============== =====================================================
 **Commands**    **Description**
+=============== =====================================================
 AT+SYSIOSETCFG  Configures IO working mode.
 AT+SYSIOGETCFG  Checks the working mode of IO pin.
 AT+SYSGPIODIR   Configures the direction of GPIO.
@@ -988,7 +743,7 @@ Overview
 
 +------------------+--------------------------------------------------+
 | **Commands**     | **Description**                                  |
-+------------------+--------------------------------------------------+
++==================+==================================================+
 | AT+CWMODE_CUR    | Sets the Wi-Fi mode                              |
 |                  | (Station/SoftAP/Station+SoftAP); configuration   |
 |                  | not saved in flash.                              |
@@ -1079,29 +834,29 @@ AT+CWMODE_CUR – Sets Current WiFi Mode Configuration, Not Saved in Flash
 |                |                |                |                |
 |                | OK             | OK             |                |
 +----------------+----------------+----------------+----------------+
-| **Parameters** | -  <mode>:     |                |                |
-|                |                |                |                |
-|                |    -  1:       |                |                |
-|                |       Station  |                |                |
-|                |       mode     |                |                |
-|                |                |                |                |
-|                |    -  2:       |                |                |
-|                |       SoftAP   |                |                |
-|                |       mode     |                |                |
-|                |                |                |                |
-|                |    -  3:       |                |                |
-|                |                |                |                |
-|                | Station+SoftAP |                |                |
-|                |       mode     |                |                |
+| **Parameters** | -  <mode>:                                       |
+|                |                                                  |
+|                |    -  1:                                         |
+|                |       Station                                    |
+|                |       mode                                       |
+|                |                                                  |
+|                |    -  2:                                         |
+|                |       SoftAP                                     |
+|                |       mode                                       |
+|                |                                                  |
+|                |    -  3:                                         |
+|                |                                                  |
+|                | Station+SoftAP                                   |
+|                |       mode                                       |
 +----------------+----------------+----------------+----------------+
-| **Notes**      | The            |                |                |
-|                | configuration  |                |                |
-|                | changes will   |                |                |
-|                | NOT be saved   |                |                |
-|                | in flash.      |                |                |
+| **Notes**      | The                                              |
+|                | configuration                                    |
+|                | changes will                                     |
+|                | NOT be saved                                     |
+|                | in flash.                                        |
 +----------------+----------------+----------------+----------------+
-| **Examples**   | A              |                |                |
-|                | T+CWMODE_CUR=1 |                |                |
+| **Examples**   | A                                                |
+|                | T+CWMODE_CUR=1                                   |
 +----------------+----------------+----------------+----------------+
 
 AT+CWMODE_DEF- Sets Default WiFi Mode Configuration, Saved in Flash
@@ -1124,29 +879,29 @@ AT+CWMODE_DEF- Sets Default WiFi Mode Configuration, Saved in Flash
 |                |                |                |                |
 |                | OK             | OK             |                |
 +----------------+----------------+----------------+----------------+
-| **Parameters** | -  <mode>:     |                |                |
-|                |                |                |                |
-|                |    -  1:       |                |                |
-|                |       Station  |                |                |
-|                |       mode     |                |                |
-|                |                |                |                |
-|                |    -  2:       |                |                |
-|                |       SoftAP   |                |                |
-|                |       mode     |                |                |
-|                |                |                |                |
-|                |    -  3:       |                |                |
-|                |                |                |                |
-|                | Station+SoftAP |                |                |
-|                |       mode     |                |                |
+| **Parameters** | -  <mode>:                                       |
+|                |                                                  |
+|                |    -  1:                                         |
+|                |       Station                                    |
+|                |       mode                                       |
+|                |                                                  |
+|                |    -  2:                                         |
+|                |       SoftAP                                     |
+|                |       mode                                       |
+|                |                                                  |
+|                |    -  3:                                         |
+|                |                                                  |
+|                | Station+SoftAP                                   |
+|                |       mode                                       |
 +----------------+----------------+----------------+----------------+
-| **Notes**      | The            |                |                |
-|                | configuration  |                |                |
-|                | changes will   |                |                |
-|                | be saved in    |                |                |
-|                | flash.         |                |                |
+| **Notes**      | The                                              |
+|                | configuration                                    |
+|                | changes will                                     |
+|                | be saved in                                      |
+|                | flash.                                           |
 +----------------+----------------+----------------+----------------+
-| **Examples**   | A              |                |                |
-|                | T+CWMODE_DEF=1 |                |                |
+| **Examples**   | A                                                |
+|                | T+CWMODE_DEF=1                                   |
 +----------------+----------------+----------------+----------------+
 
 AT+CWJAP_CUR – Connects to AP, Configuration Not Saved in Flash
@@ -1216,32 +971,32 @@ AT+CWJAP_CUR – Connects to AP, Configuration Not Saved in Flash
 |                |                         | special characters,     |
 |                |                         | such as , or “ or \\    |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | The configuration       |                         |
-|                | changes will NOT be     |                         |
-|                | saved in flash          |                         |
+| **Notes**      | The configuration                                 |
+|                | changes will NOT be                               |
+|                | saved in flash                                    |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CWJA                 |                         |
-|                | P_CUR="abc","123456789" |                         |
-|                |                         |                         |
-|                | For example, if the     |                         |
-|                | target AP’s SSID is     |                         |
-|                | "ab\,c" and the         |                         |
-|                | password is             |                         |
-|                |                         |                         |
-|                | "123456789"\", the      |                         |
-|                | command is as follows:  |                         |
-|                |                         |                         |
-|                | AT+CWJAP_CUR="a         |                         |
-|                | b\\\,c","123456789\"\\" |                         |
-|                |                         |                         |
-|                | If multiple APs have    |                         |
-|                | the same SSID as "abc", |                         |
-|                | the target AP can be    |                         |
-|                | found by BSSID:         |                         |
-|                |                         |                         |
-|                | AT+C                    |                         |
-|                | WJAP_CUR="abc","1234567 |                         |
-|                | 89","ca:d7:19:d8:a6:44" |                         |
+| **Examples**   | AT+CWJA                                           |
+|                | P_CUR="abc","123456789"                           |
+|                |                                                   |
+|                | For example, if the                               |
+|                | target AP’s SSID is                               |
+|                | "ab\,c" and the                                   |
+|                | password is                                       |
+|                |                                                   |
+|                | "123456789"\", the                                |
+|                | command is as follows:                            |
+|                |                                                   |
+|                | AT+CWJAP_CUR="a                                   |
+|                | b\\\,c","123456789\"\\"                           |
+|                |                                                   |
+|                | If multiple APs have                              |
+|                | the same SSID as "abc",                           |
+|                | the target AP can be                              |
+|                | found by BSSID:                                   |
+|                |                                                   |
+|                | AT+C                                              |
+|                | WJAP_CUR="abc","1234567                           |
+|                | 89","ca:d7:19:d8:a6:44"                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CWJAP_DEF – Connects to AP, Configuration Saved in Flash
@@ -1311,34 +1066,34 @@ AT+CWJAP_DEF – Connects to AP, Configuration Saved in Flash
 |                |                         | special characters,     |
 |                |                         | such as , or “ or \\    |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | The configuration       |                         |
-|                | changes will be saved   |                         |
-|                | in the system           |                         |
-|                | parameters area in the  |                         |
-|                | flash                   |                         |
+| **Notes**      | The configuration                                 |
+|                | changes will be saved                             |
+|                | in the system                                     |
+|                | parameters area in the                            |
+|                | flash                                             |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CWJA                 |                         |
-|                | P_DEF="abc","123456789" |                         |
-|                |                         |                         |
-|                | For example, if the     |                         |
-|                | target AP’s SSID is     |                         |
-|                | "ab\,c" and the         |                         |
-|                | password is             |                         |
-|                |                         |                         |
-|                | "123456789"\", the      |                         |
-|                | command is as follows:  |                         |
-|                |                         |                         |
-|                | AT+CWJAP_DEF="a         |                         |
-|                | b\\\,c","123456789\"\\" |                         |
-|                |                         |                         |
-|                | If multiple APs have    |                         |
-|                | the same SSID as "abc", |                         |
-|                | the target AP can be    |                         |
-|                | found by BSSID:         |                         |
-|                |                         |                         |
-|                | AT+C                    |                         |
-|                | WJAP_DEF="abc","1234567 |                         |
-|                | 89","ca:d7:19:d8:a6:44" |                         |
+| **Examples**   | AT+CWJA                                           |
+|                | P_DEF="abc","123456789"                           |
+|                |                                                   |
+|                | For example, if the                               |
+|                | target AP’s SSID is                               |
+|                | "ab\,c" and the                                   |
+|                | password is                                       |
+|                |                                                   |
+|                | "123456789"\", the                                |
+|                | command is as follows:                            |
+|                |                                                   |
+|                | AT+CWJAP_DEF="a                                   |
+|                | b\\\,c","123456789\"\\"                           |
+|                |                                                   |
+|                | If multiple APs have                              |
+|                | the same SSID as "abc",                           |
+|                | the target AP can be                              |
+|                | found by BSSID:                                   |
+|                |                                                   |
+|                | AT+C                                              |
+|                | WJAP_DEF="abc","1234567                           |
+|                | 89","ca:d7:19:d8:a6:44"                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CWLAPOPT – Sets the Configuration for the Command AT+CWLAP
@@ -1446,161 +1201,161 @@ AT+CWLAP – Lists Available APs
 |                |                         | OK                      |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  [<scan_type>]:       |                         |
-|                |    optional parameter   |                         |
-|                |                         |                         |
-|                |    -  : active scan     |                         |
-|                |                         |                         |
-|                |    -  1: passive scan   |                         |
-|                |                         |                         |
-|                | -  [<scan_time_min>] :  |                         |
-|                |    optional parameter,  |                         |
-|                |    unit: ms, range:     |                         |
-|                |    [,15]                |                         |
-|                |                         |                         |
-|                |    -  For active scan   |                         |
-|                |       mode,             |                         |
-|                |       <scan_time_min>   |                         |
-|                |       is the minimum    |                         |
-|                |       scan time for     |                         |
-|                |       each channel,     |                         |
-|                |       default is .      |                         |
-|                |                         |                         |
-|                |    -  For passive scan  |                         |
-|                |       mode,             |                         |
-|                |       <scan_time_min>   |                         |
-|                |       is meaningless    |                         |
-|                |       and can be        |                         |
-|                |       omitted.          |                         |
-|                |                         |                         |
-|                | -  [<scan_time_max>] :  |                         |
-|                |    optional parameter,  |                         |
-|                |    unit: ms, range:     |                         |
-|                |    [,15]                |                         |
-|                |                         |                         |
-|                |    -  For active scan   |                         |
-|                |       mode,             |                         |
-|                |       <scan_time_max>   |                         |
-|                |       is the maximum    |                         |
-|                |       scan time for     |                         |
-|                |       each channel. If  |                         |
-|                |       it is set to be , |                         |
-|                |       the default value |                         |
-|                |       of 12 ms will be  |                         |
-|                |       used.             |                         |
-|                |                         |                         |
-|                |    -  For passive scan  |                         |
-|                |       mode,             |                         |
-|                |       <scan_time_max>   |                         |
-|                |       is the scan time  |                         |
-|                |       for each channel, |                         |
-|                |       the default is 36 |                         |
-|                |       ms.               |                         |
-|                |                         |                         |
-|                | -  <ecn>: encryption    |                         |
-|                |    method.              |                         |
-|                |                         |                         |
-|                |    -  : OPEN            |                         |
-|                |                         |                         |
-|                |    -  1: WEP            |                         |
-|                |                         |                         |
-|                |    -  2: WPA_PSK        |                         |
-|                |                         |                         |
-|                |    -  3: WPA2_PSK       |                         |
-|                |                         |                         |
-|                |    -  4: WPA_WPA2_PSK   |                         |
-|                |                         |                         |
-|                |    -  5:                |                         |
-|                |                         |                         |
-|                |         WPA2_Enterprise |                         |
-|                |          (AT can NOT    |                         |
-|                |          connect to     |                         |
-|                |                         |                         |
-|                |         WPA2_Enterprise |                         |
-|                |          AP for now.)   |                         |
-|                |                         |                         |
-|                | -  <ssid>: string       |                         |
-|                |    parameter indicating |                         |
-|                |    the SSID of the AP.  |                         |
-|                |                         |                         |
-|                | -  <rssi>: received     |                         |
-|                |    signal strength from |                         |
-|                |    the AP.              |                         |
-|                |                         |                         |
-|                | -  <mac>: string        |                         |
-|                |    parameter indicating |                         |
-|                |    the MAC address of   |                         |
-|                |    the AP.              |                         |
-|                |                         |                         |
-|                | -  <channel>: WiFi      |                         |
-|                |    channel number.      |                         |
-|                |                         |                         |
-|                | -  <freq_offset>:       |                         |
-|                |    frequency offset of  |                         |
-|                |    the AP; unit: KHz.   |                         |
-|                |    The value of ppm is  |                         |
-|                |    <freq_offset>/2.4.   |                         |
-|                |                         |                         |
-|                | -  <freq_cali>:         |                         |
-|                |    calibration for      |                         |
-|                |    frequency offset.    |                         |
-|                |                         |                         |
-|                | -  <pairwise_cipher>:   |                         |
-|                |                         |                         |
+| **Parameters** | -  [<scan_type>]:                                 |
+|                |    optional parameter                             |
+|                |                                                   |
+|                |    -  : active scan                               |
+|                |                                                   |
+|                |    -  1: passive scan                             |
+|                |                                                   |
+|                | -  [<scan_time_min>] :                            |
+|                |    optional parameter,                            |
+|                |    unit: ms, range:                               |
+|                |    [,15]                                          |
+|                |                                                   |
+|                |    -  For active scan                             |
+|                |       mode,                                       |
+|                |       <scan_time_min>                             |
+|                |       is the minimum                              |
+|                |       scan time for                               |
+|                |       each channel,                               |
+|                |       default is .                                |
+|                |                                                   |
+|                |    -  For passive scan                            |
+|                |       mode,                                       |
+|                |       <scan_time_min>                             |
+|                |       is meaningless                              |
+|                |       and can be                                  |
+|                |       omitted.                                    |
+|                |                                                   |
+|                | -  [<scan_time_max>] :                            |
+|                |    optional parameter,                            |
+|                |    unit: ms, range:                               |
+|                |    [,15]                                          |
+|                |                                                   |
+|                |    -  For active scan                             |
+|                |       mode,                                       |
+|                |       <scan_time_max>                             |
+|                |       is the maximum                              |
+|                |       scan time for                               |
+|                |       each channel. If                            |
+|                |       it is set to be ,                           |
+|                |       the default value                           |
+|                |       of 12 ms will be                            |
+|                |       used.                                       |
+|                |                                                   |
+|                |    -  For passive scan                            |
+|                |       mode,                                       |
+|                |       <scan_time_max>                             |
+|                |       is the scan time                            |
+|                |       for each channel,                           |
+|                |       the default is 36                           |
+|                |       ms.                                         |
+|                |                                                   |
+|                | -  <ecn>: encryption                              |
+|                |    method.                                        |
+|                |                                                   |
+|                |    -  : OPEN                                      |
+|                |                                                   |
+|                |    -  1: WEP                                      |
+|                |                                                   |
+|                |    -  2: WPA_PSK                                  |
+|                |                                                   |
+|                |    -  3: WPA2_PSK                                 |
+|                |                                                   |
+|                |    -  4: WPA_WPA2_PSK                             |
+|                |                                                   |
+|                |    -  5:                                          |
+|                |                                                   |
+|                |         WPA2_Enterprise                           |
+|                |          (AT can NOT                              |
+|                |          connect to                               |
+|                |                                                   |
+|                |         WPA2_Enterprise                           |
+|                |          AP for now.)                             |
+|                |                                                   |
+|                | -  <ssid>: string                                 |
+|                |    parameter indicating                           |
+|                |    the SSID of the AP.                            |
+|                |                                                   |
+|                | -  <rssi>: received                               |
+|                |    signal strength from                           |
+|                |    the AP.                                        |
+|                |                                                   |
+|                | -  <mac>: string                                  |
+|                |    parameter indicating                           |
+|                |    the MAC address of                             |
+|                |    the AP.                                        |
+|                |                                                   |
+|                | -  <channel>: WiFi                                |
+|                |    channel number.                                |
+|                |                                                   |
+|                | -  <freq_offset>:                                 |
+|                |    frequency offset of                            |
+|                |    the AP; unit: KHz.                             |
+|                |    The value of ppm is                            |
+|                |    <freq_offset>/2.4.                             |
+|                |                                                   |
+|                | -  <freq_cali>:                                   |
+|                |    calibration for                                |
+|                |    frequency offset.                              |
+|                |                                                   |
+|                | -  <pairwise_cipher>:                             |
+|                |                                                   |
 |                |    -  ：CIPHER_NONE     |                         |
-|                |                         |                         |
+|                |                                                   |
 |                |    -  1：CIPHER_WEP40   |                         |
-|                |                         |                         |
+|                |                                                   |
 |                |    -  2：CIPHER_WEP104  |                         |
-|                |                         |                         |
+|                |                                                   |
 |                |    -  3：CIPHER_TKIP    |                         |
-|                |                         |                         |
+|                |                                                   |
 |                |    -  4：CIPHER_CCMP    |                         |
-|                |                         |                         |
-|                |                         |                         |
+|                |                                                   |
+|                |                                                   |
 |                |  -  5：CIPHER_TKIP_CCMP |                         |
-|                |                         |                         |
+|                |                                                   |
 |                |    -  6：CIPHER_UNKNOWN |                         |
-|                |                         |                         |
-|                | -  <group_cipher>: the  |                         |
-|                |    definitions of       |                         |
-|                |    cipher types are the |                         |
-|                |    same as              |                         |
-|                |    <pairwise_cipher>    |                         |
-|                |                         |                         |
-|                | -  <bgn>:               |                         |
-|                |                         |                         |
-|                |    -  Bit is for        |                         |
-|                |       802.11b mode;     |                         |
-|                |       bit1 is for       |                         |
-|                |       802.11g mode;     |                         |
-|                |       bit2 is for       |                         |
-|                |       802.11n mode;     |                         |
-|                |                         |                         |
-|                |    -  if the value of   |                         |
-|                |       the bit is 1, the |                         |
-|                |       corresponding     |                         |
-|                |       802.11 mode is    |                         |
-|                |       enabled; if the   |                         |
-|                |       bit value is 0,   |                         |
-|                |       the mode is       |                         |
-|                |       disabled.         |                         |
-|                |                         |                         |
+|                |                                                   |
+|                | -  <group_cipher>: the                            |
+|                |    definitions of                                 |
+|                |    cipher types are the                           |
+|                |    same as                                        |
+|                |    <pairwise_cipher>                              |
+|                |                                                   |
+|                | -  <bgn>:                                         |
+|                |                                                   |
+|                |    -  Bit is for                                  |
+|                |       802.11b mode;                               |
+|                |       bit1 is for                                 |
+|                |       802.11g mode;                               |
+|                |       bit2 is for                                 |
+|                |       802.11n mode;                               |
+|                |                                                   |
+|                |    -  if the value of                             |
+|                |       the bit is 1, the                           |
+|                |       corresponding                               |
+|                |       802.11 mode is                              |
+|                |       enabled; if the                             |
+|                |       bit value is 0,                             |
+|                |       the mode is                                 |
+|                |       disabled.                                   |
+|                |                                                   |
 |                | -  <wps>：:WPS is       |                         |
-|                |    disabled; 1:WPS is   |                         |
-|                |    enabled              |                         |
+|                |    disabled; 1:WPS is                             |
+|                |    enabled                                        |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CWLAP="Wi-Fi         |                         |
-|                | ","ca:d7:19:d8:a6:44",6 |                         |
-|                |                         |                         |
-|                | or search for APs with  |                         |
-|                | a designated SSID:      |                         |
-|                |                         |                         |
-|                | AT+CWLAP="Wi-Fi"        |                         |
-|                |                         |                         |
-|                | or enable passive scan: |                         |
-|                |                         |                         |
-|                | AT+CWLAP=,,,1,,         |                         |
+| **Examples**   | AT+CWLAP="Wi-Fi                                   |
+|                | ","ca:d7:19:d8:a6:44",6                           |
+|                |                                                   |
+|                | or search for APs with                            |
+|                | a designated SSID:                                |
+|                |                                                   |
+|                | AT+CWLAP="Wi-Fi"                                  |
+|                |                                                   |
+|                | or enable passive scan:                           |
+|                |                                                   |
+|                | AT+CWLAP=,,,1,,                                   |
 +----------------+-------------------------+-------------------------+
 
 AT+CWQAP – Disconnects from the AP
@@ -1609,7 +1364,7 @@ AT+CWQAP – Disconnects from the AP
 =================== ========
 **Execute Command** AT+CWQAP
 **Response**        OK
-**Parameters**      -
+**Parameters**      \-
 =================== ========
 
 AT+CWSAP_CUR – Configures the BFQ4004 SoftAP, Configuration Not Saved to Flash
@@ -1638,60 +1393,60 @@ AT+CWSAP_CUR – Configures the BFQ4004 SoftAP, Configuration Not Saved to Flash
 |                |                         |                         |
 |                | <ssid_hidden>]          |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <ssid>: string       |                         |
-|                |    parameter, the SSID  |                         |
-|                |    of the AP.           |                         |
-|                |                         |                         |
-|                | -  <pwd>: string        |                         |
-|                |    parameter, length of |                         |
-|                |    password: 8 ~ 64     |                         |
-|                |    bytes ASCII.         |                         |
-|                |                         |                         |
-|                | -  <chl>: channel ID.   |                         |
-|                |                         |                         |
-|                | -  <ecn>: encryption    |                         |
-|                |    method               |                         |
-|                |                         |                         |
-|                |    -  : OPEN            |                         |
-|                |                         |                         |
-|                |    -  1: WEP            |                         |
-|                |                         |                         |
-|                |    -  2: WPA_PSK        |                         |
-|                |                         |                         |
-|                |    -  3: WPA2_PSK       |                         |
-|                |                         |                         |
-|                |    -  4: WPA_WPA2_PSK   |                         |
-|                |                         |                         |
-|                | -  [<max_conn>]         |                         |
-|                |    (optional): maximum  |                         |
-|                |    number of Stations   |                         |
-|                |    to which BFQ4004     |                         |
-|                |    SoftAP can be        |                         |
-|                |    connected to, range  |                         |
-|                |    of [1, 8].           |                         |
-|                |                         |                         |
-|                | -  [<ssid_hidden>]      |                         |
-|                |    (optional):          |                         |
-|                |                         |                         |
-|                |    -  : SSID is         |                         |
-|                |       broadcasted. (the |                         |
-|                |       default setting)  |                         |
-|                |                         |                         |
-|                |    -  1: SSID is not    |                         |
-|                |       broadcasted.      |                         |
+| **Parameters** | -  <ssid>: string                                 |
+|                |    parameter, the SSID                            |
+|                |    of the AP.                                     |
+|                |                                                   |
+|                | -  <pwd>: string                                  |
+|                |    parameter, length of                           |
+|                |    password: 8 ~ 64                               |
+|                |    bytes ASCII.                                   |
+|                |                                                   |
+|                | -  <chl>: channel ID.                             |
+|                |                                                   |
+|                | -  <ecn>: encryption                              |
+|                |    method                                         |
+|                |                                                   |
+|                |    -  : OPEN                                      |
+|                |                                                   |
+|                |    -  1: WEP                                      |
+|                |                                                   |
+|                |    -  2: WPA_PSK                                  |
+|                |                                                   |
+|                |    -  3: WPA2_PSK                                 |
+|                |                                                   |
+|                |    -  4: WPA_WPA2_PSK                             |
+|                |                                                   |
+|                | -  [<max_conn>]                                   |
+|                |    (optional): maximum                            |
+|                |    number of Stations                             |
+|                |    to which BFQ4004                               |
+|                |    SoftAP can be                                  |
+|                |    connected to, range                            |
+|                |    of [1, 8].                                     |
+|                |                                                   |
+|                | -  [<ssid_hidden>]                                |
+|                |    (optional):                                    |
+|                |                                                   |
+|                |    -  : SSID is                                   |
+|                |       broadcasted. (the                           |
+|                |       default setting)                            |
+|                |                                                   |
+|                |    -  1: SSID is not                              |
+|                |       broadcasted.                                |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The configuration    |                         |
-|                |    will NOT be saved to |                         |
-|                |    the flash.           |                         |
-|                |                         |                         |
-|                | -  This command is      |                         |
-|                |    available only when  |                         |
-|                |    BFQ4004 is in softAP |                         |
-|                |    mode. See            |                         |
-|                |    AT+CWDHCP_CUR.       |                         |
+| **Notes**      | -  The configuration                              |
+|                |    will NOT be saved to                           |
+|                |    the flash.                                     |
+|                |                                                   |
+|                | -  This command is                                |
+|                |    available only when                            |
+|                |    BFQ4004 is in softAP                           |
+|                |    mode. See                                      |
+|                |    AT+CWDHCP_CUR.                                 |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CWSAP_CUR="BFQ       |                         |
-|                | 4004AP","123456789",5,3 |                         |
+| **Examples**   | AT+CWSAP_CUR="BFQ                                 |
+|                | 4004AP","123456789",5,3                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CWSAP_DEF - Configures the BFQ4004 SoftAP, Configuration Saved to Flash
@@ -1720,60 +1475,60 @@ AT+CWSAP_DEF - Configures the BFQ4004 SoftAP, Configuration Saved to Flash
 |                |                         |                         |
 |                | <ssid_hidden>]          |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <ssid>: string       |                         |
-|                |    parameter, the SSID  |                         |
-|                |    of the AP.           |                         |
-|                |                         |                         |
-|                | -  <pwd>: string        |                         |
-|                |    parameter, length of |                         |
-|                |    password: 8 ~ 64     |                         |
-|                |    bytes ASCII.         |                         |
-|                |                         |                         |
-|                | -  <chl>: channel ID.   |                         |
-|                |                         |                         |
-|                | -  <ecn>: encryption    |                         |
-|                |    method               |                         |
-|                |                         |                         |
-|                |    -  : OPEN            |                         |
-|                |                         |                         |
-|                |    -  1: WEP            |                         |
-|                |                         |                         |
-|                |    -  2: WPA_PSK        |                         |
-|                |                         |                         |
-|                |    -  3: WPA2_PSK       |                         |
-|                |                         |                         |
-|                |    -  4: WPA_WPA2_PSK   |                         |
-|                |                         |                         |
-|                | -  [<max_conn>]         |                         |
-|                |    (optional): maximum  |                         |
-|                |    number of Stations   |                         |
-|                |    to which BFQ4004     |                         |
-|                |    SoftAP can be        |                         |
-|                |    connected to, range  |                         |
-|                |    of [1, 8].           |                         |
-|                |                         |                         |
-|                | -  [<ssid_hidden>]      |                         |
-|                |    (optional):          |                         |
-|                |                         |                         |
-|                |    -  : SSID is         |                         |
-|                |       broadcasted. (the |                         |
-|                |       default setting)  |                         |
-|                |                         |                         |
-|                |    -  1: SSID is not    |                         |
-|                |       broadcasted.      |                         |
+| **Parameters** | -  <ssid>: string                                 |
+|                |    parameter, the SSID                            |
+|                |    of the AP.                                     |
+|                |                                                   |
+|                | -  <pwd>: string                                  |
+|                |    parameter, length of                           |
+|                |    password: 8 ~ 64                               |
+|                |    bytes ASCII.                                   |
+|                |                                                   |
+|                | -  <chl>: channel ID.                             |
+|                |                                                   |
+|                | -  <ecn>: encryption                              |
+|                |    method                                         |
+|                |                                                   |
+|                |    -  : OPEN                                      |
+|                |                                                   |
+|                |    -  1: WEP                                      |
+|                |                                                   |
+|                |    -  2: WPA_PSK                                  |
+|                |                                                   |
+|                |    -  3: WPA2_PSK                                 |
+|                |                                                   |
+|                |    -  4: WPA_WPA2_PSK                             |
+|                |                                                   |
+|                | -  [<max_conn>]                                   |
+|                |    (optional): maximum                            |
+|                |    number of Stations                             |
+|                |    to which BFQ4004                               |
+|                |    SoftAP can be                                  |
+|                |    connected to, range                            |
+|                |    of [1, 8].                                     |
+|                |                                                   |
+|                | -  [<ssid_hidden>]                                |
+|                |    (optional):                                    |
+|                |                                                   |
+|                |    -  : SSID is                                   |
+|                |       broadcasted. (the                           |
+|                |       default setting)                            |
+|                |                                                   |
+|                |    -  1: SSID is not                              |
+|                |       broadcasted.                                |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The configuration    |                         |
-|                |    will be saved to the |                         |
-|                |    flash.               |                         |
-|                |                         |                         |
-|                | -  This command is      |                         |
-|                |    available only when  |                         |
-|                |    BFQ4004 is in softAP |                         |
-|                |    mode. See            |                         |
-|                |    AT+CWDHCP_DEF.       |                         |
+| **Notes**      | -  The configuration                              |
+|                |    will be saved to the                           |
+|                |    flash.                                         |
+|                |                                                   |
+|                | -  This command is                                |
+|                |    available only when                            |
+|                |    BFQ4004 is in softAP                           |
+|                |    mode. See                                      |
+|                |    AT+CWDHCP_DEF.                                 |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CWSAP_DEF="BFQ       |                         |
-|                | 4004AP","123456789",5,3 |                         |
+| **Examples**   | AT+CWSAP_DEF="BFQ                                 |
+|                | 4004AP","123456789",5,3                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CWLIF – Gets the IP Addresses of the Stations the BFQ4004 SoftAP Is Connected With
@@ -1816,7 +1571,7 @@ AT+CWDHCP_CUR - Enables/Disables DHCP, Configuration Not Saved to Flash
 |                |                         |                         |
 |                | <softap_dhcp_status>    |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -                       | -  <mode>:              |
+| **Parameters** | \-                      | -  <mode>:              |
 |                |  <station_dhcp_status>: |                         |
 |                |                         |    -  : Sets BFQ4004    |
 |                |    -  : Station DHCP is |       SoftAP            |
@@ -1834,35 +1589,35 @@ AT+CWDHCP_CUR - Enables/Disables DHCP, Configuration Not Saved to Flash
 |                |    -  1: SoftAP DHCP is |                         |
 |                |          enabled.       |    -  1: Enables DHCP   |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The configuration    |                         |
-|                |    changes will not be  |                         |
-|                |    saved in flash.      |                         |
-|                |                         |                         |
-|                | -  The Set Command      |                         |
-|                |    interacts with       |                         |
-|                |    static-IP-related AT |                         |
-|                |    commands             |                         |
-|                |    (AT+CIPSTA-related   |                         |
-|                |    and AT+CIPA-related  |                         |
-|                |    commands):           |                         |
-|                |                         |                         |
-|                |    -  If DHCP is        |                         |
-|                |       enabled, static   |                         |
-|                |       IP will be        |                         |
-|                |       disabled;         |                         |
-|                |                         |                         |
-|                |    -  If static IP is   |                         |
-|                |       enabled, DHCP     |                         |
-|                |       will be disabled; |                         |
-|                |                         |                         |
-|                |    -  Whether it is     |                         |
-|                |       DHCP or static IP |                         |
-|                |       that is enabled   |                         |
-|                |       depends on the    |                         |
-|                |       last              |                         |
-|                |       configuration.    |                         |
+| **Notes**      | -  The configuration                              |
+|                |    changes will not be                            |
+|                |    saved in flash.                                |
+|                |                                                   |
+|                | -  The Set Command                                |
+|                |    interacts with                                 |
+|                |    static-IP-related AT                           |
+|                |    commands                                       |
+|                |    (AT+CIPSTA-related                             |
+|                |    and AT+CIPA-related                            |
+|                |    commands):                                     |
+|                |                                                   |
+|                |    -  If DHCP is                                  |
+|                |       enabled, static                             |
+|                |       IP will be                                  |
+|                |       disabled;                                   |
+|                |                                                   |
+|                |    -  If static IP is                             |
+|                |       enabled, DHCP                               |
+|                |       will be disabled;                           |
+|                |                                                   |
+|                |    -  Whether it is                               |
+|                |       DHCP or static IP                           |
+|                |       that is enabled                             |
+|                |       depends on the                              |
+|                |       last                                        |
+|                |       configuration.                              |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CWDHCP_CUR=,1        |                         |
+| **Examples**   | AT+CWDHCP_CUR=,1                                  |
 +----------------+-------------------------+-------------------------+
 
 AT+CWDHCP_DEF - Enables/Disables DHCP, Configuration Saved to Flash
@@ -1883,7 +1638,7 @@ AT+CWDHCP_DEF - Enables/Disables DHCP, Configuration Saved to Flash
 |                |                         |                         |
 |                | <softap_dhcp_status>    |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -                       | -  <mode>:              |
+| **Parameters** | \-                      | -  <mode>:              |
 |                |  <station_dhcp_status>: |                         |
 |                |                         |    -  : Sets BFQ4004    |
 |                |    -  : Station DHCP is |       SoftAP            |
@@ -1901,35 +1656,35 @@ AT+CWDHCP_DEF - Enables/Disables DHCP, Configuration Saved to Flash
 |                |    -  1: SoftAP DHCP is |                         |
 |                |          enabled.       |    -  1: Enables DHCP   |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The configuration    |                         |
-|                |    changes will not be  |                         |
-|                |    saved in flash.      |                         |
-|                |                         |                         |
-|                | -  The Set Command      |                         |
-|                |    interacts with       |                         |
-|                |    static-IP-related AT |                         |
-|                |    commands             |                         |
-|                |    (AT+CIPSTA-related   |                         |
-|                |    and AT+CIPA-related  |                         |
-|                |    commands):           |                         |
-|                |                         |                         |
-|                |    -  If DHCP is        |                         |
-|                |       enabled, static   |                         |
-|                |       IP will be        |                         |
-|                |       disabled;         |                         |
-|                |                         |                         |
-|                |    -  If static IP is   |                         |
-|                |       enabled, DHCP     |                         |
-|                |       will be disabled; |                         |
-|                |                         |                         |
-|                |    -  Whether it is     |                         |
-|                |       DHCP or static IP |                         |
-|                |       that is enabled   |                         |
-|                |       depends on the    |                         |
-|                |       last              |                         |
-|                |       configuration.    |                         |
+| **Notes**      | -  The configuration                              |
+|                |    changes will not be                            |
+|                |    saved in flash.                                |
+|                |                                                   |
+|                | -  The Set Command                                |
+|                |    interacts with                                 |
+|                |    static-IP-related AT                           |
+|                |    commands                                       |
+|                |    (AT+CIPSTA-related                             |
+|                |    and AT+CIPA-related                            |
+|                |    commands):                                     |
+|                |                                                   |
+|                |    -  If DHCP is                                  |
+|                |       enabled, static                             |
+|                |       IP will be                                  |
+|                |       disabled;                                   |
+|                |                                                   |
+|                |    -  If static IP is                             |
+|                |       enabled, DHCP                               |
+|                |       will be disabled;                           |
+|                |                                                   |
+|                |    -  Whether it is                               |
+|                |       DHCP or static IP                           |
+|                |       that is enabled                             |
+|                |       depends on the                              |
+|                |       last                                        |
+|                |       configuration.                              |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CWDHCP_DEF=,1        |                         |
+| **Examples**   | AT+CWDHCP_DEF=,1                                  |
 +----------------+-------------------------+-------------------------+
 
 AT+CWDHCPS_CUR - Sets the IP address Range the SoftAP DHCP Server Can Allocate, Configuration Not Saved to Flash
@@ -1954,62 +1709,62 @@ AT+CWDHCPS_CUR - Sets the IP address Range the SoftAP DHCP Server Can Allocate, 
 |                |                         |                         |
 |                | <start_IP>,<end_IP>     |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <enable>:            |                         |
-|                |                         |                         |
-|                |    -  : Disable the     |                         |
-|                |       settings and use  |                         |
-|                |       the default IP    |                         |
-|                |       range.            |                         |
-|                |                         |                         |
-|                |    -  1: Enable setting |                         |
-|                |       the IP range, and |                         |
-|                |       the parameters    |                         |
-|                |       below have to be  |                         |
-|                |       set.              |                         |
-|                |                         |                         |
-|                | -  <lease_time>: lease  |                         |
-|                |    time; unit: minute;  |                         |
-|                |    range [1, 288].      |                         |
-|                |                         |                         |
-|                | -  <star\_ IP>: start   |                         |
-|                |    IP address of the IP |                         |
-|                |    range that can be    |                         |
-|                |    obtained from        |                         |
-|                |    BFQ4004 SoftAP DHCP  |                         |
-|                |    server.              |                         |
-|                |                         |                         |
-|                | -  <end_IP>: end IP     |                         |
-|                |    address of the IP    |                         |
-|                |    range that can be    |                         |
-|                |    obtained from        |                         |
-|                |    BFQ4004 SoftAP DHCP  |                         |
-|                |    server.              |                         |
+| **Parameters** | -  <enable>:                                      |
+|                |                                                   |
+|                |    -  : Disable the                               |
+|                |       settings and use                            |
+|                |       the default IP                              |
+|                |       range.                                      |
+|                |                                                   |
+|                |    -  1: Enable setting                           |
+|                |       the IP range, and                           |
+|                |       the parameters                              |
+|                |       below have to be                            |
+|                |       set.                                        |
+|                |                                                   |
+|                | -  <lease_time>: lease                            |
+|                |    time; unit: minute;                            |
+|                |    range [1, 288].                                |
+|                |                                                   |
+|                | -  <star\_ IP>: start                             |
+|                |    IP address of the IP                           |
+|                |    range that can be                              |
+|                |    obtained from                                  |
+|                |    BFQ4004 SoftAP DHCP                            |
+|                |    server.                                        |
+|                |                                                   |
+|                | -  <end_IP>: end IP                               |
+|                |    address of the IP                              |
+|                |    range that can be                              |
+|                |    obtained from                                  |
+|                |    BFQ4004 SoftAP DHCP                            |
+|                |    server.                                        |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The configuration    |                         |
-|                |    will NOT be saved to |                         |
-|                |    the flash.           |                         |
-|                |                         |                         |
-|                | -  This AT command is   |                         |
-|                |    enabled when BFQ4004 |                         |
-|                |    is configured as     |                         |
-|                |    SoftAP, with DHCP    |                         |
-|                |    enabled. The IP      |                         |
-|                |    address should be in |                         |
-|                |    the same network     |                         |
-|                |    segment as the IP    |                         |
-|                |    address of BFQ4004   |                         |
-|                |    SoftAP.              |                         |
+| **Notes**      | -  The configuration                              |
+|                |    will NOT be saved to                           |
+|                |    the flash.                                     |
+|                |                                                   |
+|                | -  This AT command is                             |
+|                |    enabled when BFQ4004                           |
+|                |    is configured as                               |
+|                |    SoftAP, with DHCP                              |
+|                |    enabled. The IP                                |
+|                |    address should be in                           |
+|                |    the same network                               |
+|                |    segment as the IP                              |
+|                |    address of BFQ4004                             |
+|                |    SoftAP.                                        |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | A                       |                         |
-|                | T+CWDHCPS_CUR=1,3,"192. |                         |
-|                | 168.4.1","192.168.4.15" |                         |
-|                |                         |                         |
-|                | or                      |                         |
-|                |                         |                         |
-|                | AT+CWDHCPS_CUR=         |                         |
-|                | //Disable the settings  |                         |
-|                | and use the default IP  |                         |
-|                | range.                  |                         |
+| **Examples**   | A                                                 |
+|                | T+CWDHCPS_CUR=1,3,"192.                           |
+|                | 168.4.1","192.168.4.15"                           |
+|                |                                                   |
+|                | or                                                |
+|                |                                                   |
+|                | AT+CWDHCPS_CUR=                                   |
+|                | //Disable the settings                            |
+|                | and use the default IP                            |
+|                | range.                                            |
 +----------------+-------------------------+-------------------------+
 
 AT+CWDHCPS_DEF - Sets the IP address Range the SoftAP DHCP Server Can Allocate, Configuration Saved to Flash
@@ -2034,62 +1789,62 @@ AT+CWDHCPS_DEF - Sets the IP address Range the SoftAP DHCP Server Can Allocate, 
 |                |                         |                         |
 |                | <start_IP>,<end_IP>     |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <enable>:            |                         |
-|                |                         |                         |
-|                |    -  : Disable the     |                         |
-|                |       settings and use  |                         |
-|                |       the default IP    |                         |
-|                |       range.            |                         |
-|                |                         |                         |
-|                |    -  1: Enable setting |                         |
-|                |       the IP range, and |                         |
-|                |       the parameters    |                         |
-|                |       below have to be  |                         |
-|                |       set.              |                         |
-|                |                         |                         |
-|                | -  <lease_time>: lease  |                         |
-|                |    time; unit: minute;  |                         |
-|                |    range [1, 288].      |                         |
-|                |                         |                         |
-|                | -  <star\_ IP>: start   |                         |
-|                |    IP address of the IP |                         |
-|                |    range that can be    |                         |
-|                |    obtained from        |                         |
-|                |    BFQ4004 SoftAP DHCP  |                         |
-|                |    server.              |                         |
-|                |                         |                         |
-|                | -  <end_IP>: end IP     |                         |
-|                |    address of the IP    |                         |
-|                |    range that can be    |                         |
-|                |    obtained from        |                         |
-|                |    BFQ4004 SoftAP DHCP  |                         |
-|                |    server.              |                         |
+| **Parameters** | -  <enable>:                                      |
+|                |                                                   |
+|                |    -  : Disable the                               |
+|                |       settings and use                            |
+|                |       the default IP                              |
+|                |       range.                                      |
+|                |                                                   |
+|                |    -  1: Enable setting                           |
+|                |       the IP range, and                           |
+|                |       the parameters                              |
+|                |       below have to be                            |
+|                |       set.                                        |
+|                |                                                   |
+|                | -  <lease_time>: lease                            |
+|                |    time; unit: minute;                            |
+|                |    range [1, 288].                                |
+|                |                                                   |
+|                | -  <star\_ IP>: start                             |
+|                |    IP address of the IP                           |
+|                |    range that can be                              |
+|                |    obtained from                                  |
+|                |    BFQ4004 SoftAP DHCP                            |
+|                |    server.                                        |
+|                |                                                   |
+|                | -  <end_IP>: end IP                               |
+|                |    address of the IP                              |
+|                |    range that can be                              |
+|                |    obtained from                                  |
+|                |    BFQ4004 SoftAP DHCP                            |
+|                |    server.                                        |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The configuration    |                         |
-|                |    will NOT be saved to |                         |
-|                |    the flash.           |                         |
-|                |                         |                         |
-|                | -  This AT command is   |                         |
-|                |    enabled when BFQ4004 |                         |
-|                |    is configured as     |                         |
-|                |    SoftAP, with DHCP    |                         |
-|                |    enabled. The IP      |                         |
-|                |    address should be in |                         |
-|                |    the same network     |                         |
-|                |    segment as the IP    |                         |
-|                |    address of BFQ4004   |                         |
-|                |    SoftAP.              |                         |
+| **Notes**      | -  The configuration                              |
+|                |    will NOT be saved to                           |
+|                |    the flash.                                     |
+|                |                                                   |
+|                | -  This AT command is                             |
+|                |    enabled when BFQ4004                           |
+|                |    is configured as                               |
+|                |    SoftAP, with DHCP                              |
+|                |    enabled. The IP                                |
+|                |    address should be in                           |
+|                |    the same network                               |
+|                |    segment as the IP                              |
+|                |    address of BFQ4004                             |
+|                |    SoftAP.                                        |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | A                       |                         |
-|                | T+CWDHCPS_DEF=1,3,"192. |                         |
-|                | 168.4.1","192.168.4.15" |                         |
-|                |                         |                         |
-|                | or                      |                         |
-|                |                         |                         |
-|                | AT+CWDHCPS_DEF=         |                         |
-|                | //Disable the settings  |                         |
-|                | and use the default IP  |                         |
-|                | range.                  |                         |
+| **Examples**   | A                                                 |
+|                | T+CWDHCPS_DEF=1,3,"192.                           |
+|                | 168.4.1","192.168.4.15"                           |
+|                |                                                   |
+|                | or                                                |
+|                |                                                   |
+|                | AT+CWDHCPS_DEF=                                   |
+|                | //Disable the settings                            |
+|                | and use the default IP                            |
+|                | range.                                            |
 +----------------+-------------------------+-------------------------+
 
 AT+CWAUTOCONN – Automatically Connects to the AP on Power-up or Not
@@ -2136,54 +1891,54 @@ AT+CIPSTA_CUR – Sets the Current IP Address of the BFQ4004 Station, Configurat
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <ip>: string         |                         |
-|                |    parameter, the IP    |                         |
-|                |    address of the       |                         |
-|                |    BFQ4004 Station.     |                         |
-|                |                         |                         |
-|                | -  [<gateway>]:         |                         |
-|                |    gateway.             |                         |
-|                |                         |                         |
-|                | -  [<netmask>]:         |                         |
-|                |    netmask.             |                         |
+| **Parameters** | -  <ip>: string                                   |
+|                |    parameter, the IP                              |
+|                |    address of the                                 |
+|                |    BFQ4004 Station.                               |
+|                |                                                   |
+|                | -  [<gateway>]:                                   |
+|                |    gateway.                                       |
+|                |                                                   |
+|                | -  [<netmask>]:                                   |
+|                |    netmask.                                       |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | ️ **Warning:**          |                         |
-|                |                         |                         |
-|                | Only when the BFQ4004   |                         |
-|                | Station is connected to |                         |
-|                | an AP can its IP        |                         |
-|                | address be queried.     |                         |
-|                |                         |                         |
-|                | -  The configuration    |                         |
-|                |    will NOT be saved to |                         |
-|                |    the flash.           |                         |
-|                |                         |                         |
-|                | -  The Set Command      |                         |
-|                |    interacts with       |                         |
-|                |    DHCP-related AT      |                         |
-|                |    commands             |                         |
-|                |    (AT+CWDHCP-related   |                         |
-|                |    commands):           |                         |
-|                |                         |                         |
-|                |    -  If static IP is   |                         |
-|                |       enabled, DHCP     |                         |
-|                |       will be disabled; |                         |
-|                |                         |                         |
-|                |    -  If DHCP is        |                         |
-|                |       enabled, static   |                         |
-|                |       IP will be        |                         |
-|                |       disabled;         |                         |
-|                |                         |                         |
-|                |    -  Whether it is     |                         |
-|                |       DHCP or static IP |                         |
-|                |       that is enabled   |                         |
-|                |       depends on the    |                         |
-|                |       last              |                         |
-|                |       configuration.    |                         |
+| **Notes**      | ️ **Warning:**                                    |
+|                |                                                   |
+|                | Only when the BFQ4004                             |
+|                | Station is connected to                           |
+|                | an AP can its IP                                  |
+|                | address be queried.                               |
+|                |                                                   |
+|                | -  The configuration                              |
+|                |    will NOT be saved to                           |
+|                |    the flash.                                     |
+|                |                                                   |
+|                | -  The Set Command                                |
+|                |    interacts with                                 |
+|                |    DHCP-related AT                                |
+|                |    commands                                       |
+|                |    (AT+CWDHCP-related                             |
+|                |    commands):                                     |
+|                |                                                   |
+|                |    -  If static IP is                             |
+|                |       enabled, DHCP                               |
+|                |       will be disabled;                           |
+|                |                                                   |
+|                |    -  If DHCP is                                  |
+|                |       enabled, static                             |
+|                |       IP will be                                  |
+|                |       disabled;                                   |
+|                |                                                   |
+|                |    -  Whether it is                               |
+|                |       DHCP or static IP                           |
+|                |       that is enabled                             |
+|                |       depends on the                              |
+|                |       last                                        |
+|                |       configuration.                              |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPSTA_              |                         |
-|                | CUR="192.168.6.1","192. |                         |
-|                | 168.6.1","255.255.255.” |                         |
+| **Examples**   | AT+CIPSTA_                                        |
+|                | CUR="192.168.6.1","192.                           |
+|                | 168.6.1","255.255.255.”                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPSTA_DEF - Sets the Default IP Address of the BFQ4004 Station, Configuration Saved in Flash
@@ -2209,54 +1964,54 @@ AT+CIPSTA_DEF - Sets the Default IP Address of the BFQ4004 Station, Configuratio
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <ip>: string         |                         |
-|                |    parameter, the IP    |                         |
-|                |    address of the       |                         |
-|                |    BFQ4004 Station.     |                         |
-|                |                         |                         |
-|                | -  [<gateway>]:         |                         |
-|                |    gateway.             |                         |
-|                |                         |                         |
-|                | -  [<netmask>]:         |                         |
-|                |    netmask.             |                         |
+| **Parameters** | -  <ip>: string                                   |
+|                |    parameter, the IP                              |
+|                |    address of the                                 |
+|                |    BFQ4004 Station.                               |
+|                |                                                   |
+|                | -  [<gateway>]:                                   |
+|                |    gateway.                                       |
+|                |                                                   |
+|                | -  [<netmask>]:                                   |
+|                |    netmask.                                       |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | ️ **Warning:**          |                         |
-|                |                         |                         |
-|                | Only when the BFQ4004   |                         |
-|                | Station is connected to |                         |
-|                | an AP can its IP        |                         |
-|                | address be queried.     |                         |
-|                |                         |                         |
-|                | -  The configuration    |                         |
-|                |    will be saved to the |                         |
-|                |    flash.               |                         |
-|                |                         |                         |
-|                | -  The Set Command      |                         |
-|                |    interacts with       |                         |
-|                |    DHCP-related AT      |                         |
-|                |    commands             |                         |
-|                |    (AT+CWDHCP-related   |                         |
-|                |    commands):           |                         |
-|                |                         |                         |
-|                |    -  If static IP is   |                         |
-|                |       enabled, DHCP     |                         |
-|                |       will be disabled; |                         |
-|                |                         |                         |
-|                |    -  If DHCP is        |                         |
-|                |       enabled, static   |                         |
-|                |       IP will be        |                         |
-|                |       disabled;         |                         |
-|                |                         |                         |
-|                |    -  Whether it is     |                         |
-|                |       DHCP or static IP |                         |
-|                |       that is enabled   |                         |
-|                |       depends on the    |                         |
-|                |       last              |                         |
-|                |       configuration.    |                         |
+| **Notes**      | ️ **Warning:**                                    |
+|                |                                                   |
+|                | Only when the BFQ4004                             |
+|                | Station is connected to                           |
+|                | an AP can its IP                                  |
+|                | address be queried.                               |
+|                |                                                   |
+|                | -  The configuration                              |
+|                |    will be saved to the                           |
+|                |    flash.                                         |
+|                |                                                   |
+|                | -  The Set Command                                |
+|                |    interacts with                                 |
+|                |    DHCP-related AT                                |
+|                |    commands                                       |
+|                |    (AT+CWDHCP-related                             |
+|                |    commands):                                     |
+|                |                                                   |
+|                |    -  If static IP is                             |
+|                |       enabled, DHCP                               |
+|                |       will be disabled;                           |
+|                |                                                   |
+|                |    -  If DHCP is                                  |
+|                |       enabled, static                             |
+|                |       IP will be                                  |
+|                |       disabled;                                   |
+|                |                                                   |
+|                |    -  Whether it is                               |
+|                |       DHCP or static IP                           |
+|                |       that is enabled                             |
+|                |       depends on the                              |
+|                |       last                                        |
+|                |       configuration.                              |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPSTA_              |                         |
-|                | DEF="192.168.6.1","192. |                         |
-|                | 168.6.1","255.255.255.” |                         |
+| **Examples**   | AT+CIPSTA_                                        |
+|                | DEF="192.168.6.1","192.                           |
+|                | 168.6.1","255.255.255.”                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPAP_CUR – Sets the Current IP Address of the BFQ4004 SoftAP, Configuration Not Saved in Flash
@@ -2282,51 +2037,51 @@ AT+CIPAP_CUR – Sets the Current IP Address of the BFQ4004 SoftAP, Configuratio
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <ip>: string         |                         |
-|                |    parameter, the IP    |                         |
-|                |    address of the       |                         |
-|                |    BFQ4004 SoftAP.      |                         |
-|                |                         |                         |
-|                | -  [<gateway>]:         |                         |
-|                |    gateway.             |                         |
-|                |                         |                         |
-|                | -  [<netmask>]:         |                         |
-|                |    netmask.             |                         |
+| **Parameters** | -  <ip>: string                                   |
+|                |    parameter, the IP                              |
+|                |    address of the                                 |
+|                |    BFQ4004 SoftAP.                                |
+|                |                                                   |
+|                | -  [<gateway>]:                                   |
+|                |    gateway.                                       |
+|                |                                                   |
+|                | -  [<netmask>]:                                   |
+|                |    netmask.                                       |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The configuration    |                         |
-|                |    will NOT be saved to |                         |
-|                |    the flash.           |                         |
-|                |                         |                         |
-|                | -  Currently, only      |                         |
-|                |    supports class C IP  |                         |
-|                |    addresses.           |                         |
-|                |                         |                         |
-|                | -  The Set Command      |                         |
-|                |    interacts with       |                         |
-|                |    DHCP-related AT      |                         |
-|                |    commands             |                         |
-|                |    (AT+CWDHCP-related   |                         |
-|                |    commands):           |                         |
-|                |                         |                         |
-|                |    -  If static IP is   |                         |
-|                |       enabled, DHCP     |                         |
-|                |       will be disabled; |                         |
-|                |                         |                         |
-|                |    -  If DHCP is        |                         |
-|                |       enabled, static   |                         |
-|                |       IP will be        |                         |
-|                |       disabled;         |                         |
-|                |                         |                         |
-|                |    -  Whether it is     |                         |
-|                |       DHCP or static IP |                         |
-|                |       that is enabled   |                         |
-|                |       depends on the    |                         |
-|                |       last              |                         |
-|                |       configuration.    |                         |
+| **Notes**      | -  The configuration                              |
+|                |    will NOT be saved to                           |
+|                |    the flash.                                     |
+|                |                                                   |
+|                | -  Currently, only                                |
+|                |    supports class C IP                            |
+|                |    addresses.                                     |
+|                |                                                   |
+|                | -  The Set Command                                |
+|                |    interacts with                                 |
+|                |    DHCP-related AT                                |
+|                |    commands                                       |
+|                |    (AT+CWDHCP-related                             |
+|                |    commands):                                     |
+|                |                                                   |
+|                |    -  If static IP is                             |
+|                |       enabled, DHCP                               |
+|                |       will be disabled;                           |
+|                |                                                   |
+|                |    -  If DHCP is                                  |
+|                |       enabled, static                             |
+|                |       IP will be                                  |
+|                |       disabled;                                   |
+|                |                                                   |
+|                |    -  Whether it is                               |
+|                |       DHCP or static IP                           |
+|                |       that is enabled                             |
+|                |       depends on the                              |
+|                |       last                                        |
+|                |       configuration.                              |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPAP_               |                         |
-|                | CUR="192.168.5.1","192. |                         |
-|                | 168.5.1","255.255.255." |                         |
+| **Examples**   | AT+CIPAP_                                         |
+|                | CUR="192.168.5.1","192.                           |
+|                | 168.5.1","255.255.255."                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPAP_DEF - Sets the Default IP Address of the BFQ4004 SoftAP, Configuration Saved in Flash
@@ -2352,51 +2107,51 @@ AT+CIPAP_DEF - Sets the Default IP Address of the BFQ4004 SoftAP, Configuration 
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <ip>: string         |                         |
-|                |    parameter, the IP    |                         |
-|                |    address of the       |                         |
-|                |    BFQ4004 SoftAP.      |                         |
-|                |                         |                         |
-|                | -  [<gateway>]:         |                         |
-|                |    gateway.             |                         |
-|                |                         |                         |
-|                | -  [<netmask>]:         |                         |
-|                |    netmask.             |                         |
+| **Parameters** | -  <ip>: string                                   |
+|                |    parameter, the IP                              |
+|                |    address of the                                 |
+|                |    BFQ4004 SoftAP.                                |
+|                |                                                   |
+|                | -  [<gateway>]:                                   |
+|                |    gateway.                                       |
+|                |                                                   |
+|                | -  [<netmask>]:                                   |
+|                |    netmask.                                       |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The configuration    |                         |
-|                |    will be saved to the |                         |
-|                |    flash.               |                         |
-|                |                         |                         |
-|                | -  Currently, only      |                         |
-|                |    supports class C IP  |                         |
-|                |    addresses.           |                         |
-|                |                         |                         |
-|                | -  The Set Command      |                         |
-|                |    interacts with       |                         |
-|                |    DHCP-related AT      |                         |
-|                |    commands             |                         |
-|                |    (AT+CWDHCP-related   |                         |
-|                |    commands):           |                         |
-|                |                         |                         |
-|                |    -  If static IP is   |                         |
-|                |       enabled, DHCP     |                         |
-|                |       will be disabled; |                         |
-|                |                         |                         |
-|                |    -  If DHCP is        |                         |
-|                |       enabled, static   |                         |
-|                |       IP will be        |                         |
-|                |       disabled;         |                         |
-|                |                         |                         |
-|                |    -  Whether it is     |                         |
-|                |       DHCP or static IP |                         |
-|                |       that is enabled   |                         |
-|                |       depends on the    |                         |
-|                |       last              |                         |
-|                |       configuration.    |                         |
+| **Notes**      | -  The configuration                              |
+|                |    will be saved to the                           |
+|                |    flash.                                         |
+|                |                                                   |
+|                | -  Currently, only                                |
+|                |    supports class C IP                            |
+|                |    addresses.                                     |
+|                |                                                   |
+|                | -  The Set Command                                |
+|                |    interacts with                                 |
+|                |    DHCP-related AT                                |
+|                |    commands                                       |
+|                |    (AT+CWDHCP-related                             |
+|                |    commands):                                     |
+|                |                                                   |
+|                |    -  If static IP is                             |
+|                |       enabled, DHCP                               |
+|                |       will be disabled;                           |
+|                |                                                   |
+|                |    -  If DHCP is                                  |
+|                |       enabled, static                             |
+|                |       IP will be                                  |
+|                |       disabled;                                   |
+|                |                                                   |
+|                |    -  Whether it is                               |
+|                |       DHCP or static IP                           |
+|                |       that is enabled                             |
+|                |       depends on the                              |
+|                |       last                                        |
+|                |       configuration.                              |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPAP_               |                         |
-|                | DEF="192.168.5.1","192. |                         |
-|                | 168.5.1","255.255.255." |                         |
+| **Examples**   | AT+CIPAP_                                         |
+|                | DEF="192.168.5.1","192.                           |
+|                | 168.5.1","255.255.255."                           |
 +----------------+-------------------------+-------------------------+
 
 AT+WPS – Enables the WPS Function
@@ -2449,29 +2204,29 @@ AT+CWHOSTNAME – Configures the Name of BFQ4004 Station
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | <hostname>: the host    |                         |
-|                | name of the BFQ4004     |                         |
-|                | Station, the maximum    |                         |
-|                | length is 32 bytes.     |                         |
+| **Parameters** | <hostname>: the host                              |
+|                | name of the BFQ4004                               |
+|                | Station, the maximum                              |
+|                | length is 32 bytes.                               |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The configuration    |                         |
-|                |    changes are NOT      |                         |
-|                |    saved in the flash.  |                         |
-|                |                         |                         |
-|                | -  The default host     |                         |
-|                |    name of the BFQ4004  |                         |
-|                |    Station is           |                         |
-|                |    BFQ4004_XXXXXX;      |                         |
-|                |    XXXXXX is the lower  |                         |
-|                |    3 bytes of the MAC   |                         |
-|                |    address, for         |                         |
-|                |    example,             |                         |
-|                |    +CWHOS               |                         |
-|                | TNAME:<BFQ4004_A378DA>. |                         |
+| **Notes**      | -  The configuration                              |
+|                |    changes are NOT                                |
+|                |    saved in the flash.                            |
+|                |                                                   |
+|                | -  The default host                               |
+|                |    name of the BFQ4004                            |
+|                |    Station is                                     |
+|                |    BFQ4004_XXXXXX;                                |
+|                |    XXXXXX is the lower                            |
+|                |    3 bytes of the MAC                             |
+|                |    address, for                                   |
+|                |    example,                                       |
+|                |    +CWHOS                                         |
+|                | TNAME:<BFQ4004_A378DA>.                           |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CWMODE=1             |                         |
-|                |                         |                         |
-|                | AT+CWHOSTNAME="my_test" |                         |
+| **Examples**   | AT+CWMODE=1                                       |
+|                |                                                   |
+|                | AT+CWHOSTNAME="my_test"                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CWCOUNTRY_CUR – Sets the Current Wi-Fi Country Code, Configuration Not Saved in Flash
@@ -2508,48 +2263,48 @@ AT+CWCOUNTRY_CUR – Sets the Current Wi-Fi Country Code, Configuration Not Save
 |                | changed to the same as  |                         |
 |                | the AP it connected to. |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <country_policy>:    |                         |
-|                |                         |                         |
-|                |    -  : will change the |                         |
-|                |       county code to be |                         |
-|                |       the same as the   |                         |
-|                |       AP that BFQ4004   |                         |
-|                |       is connected to   |                         |
-|                |                         |                         |
-|                |    -  1: the country    |                         |
-|                |       code will not     |                         |
-|                |       change, always be |                         |
-|                |       the one set by    |                         |
-|                |       command.          |                         |
-|                |                         |                         |
-|                | -  <country_code>:      |                         |
-|                |    country code, the    |                         |
-|                |    length can be 3      |                         |
-|                |    characters at most;  |                         |
-|                |    but the third        |                         |
-|                |    character is a       |                         |
-|                |    special character    |                         |
-|                |    which will not be    |                         |
-|                |    shown when querying  |                         |
-|                |    by command           |                         |
-|                |    AT+CWCOUNTRY_CUR?    |                         |
-|                |                         |                         |
-|                | -  <start_channel> :    |                         |
-|                |    the channel number   |                         |
-|                |    to start at.         |                         |
-|                |                         |                         |
-|                | -                       |                         |
-|                |   <total_channel_count> |                         |
-|                |    : channel count.     |                         |
+| **Parameters** | -  <country_policy>:                              |
+|                |                                                   |
+|                |    -  : will change the                           |
+|                |       county code to be                           |
+|                |       the same as the                             |
+|                |       AP that BFQ4004                             |
+|                |       is connected to                             |
+|                |                                                   |
+|                |    -  1: the country                              |
+|                |       code will not                               |
+|                |       change, always be                           |
+|                |       the one set by                              |
+|                |       command.                                    |
+|                |                                                   |
+|                | -  <country_code>:                                |
+|                |    country code, the                              |
+|                |    length can be 3                                |
+|                |    characters at most;                            |
+|                |    but the third                                  |
+|                |    character is a                                 |
+|                |    special character                              |
+|                |    which will not be                              |
+|                |    shown when querying                            |
+|                |    by command                                     |
+|                |    AT+CWCOUNTRY_CUR?                              |
+|                |                                                   |
+|                | -  <start_channel> :                              |
+|                |    the channel number                             |
+|                |    to start at.                                   |
+|                |                                                   |
+|                | -                                                 |
+|                |   <total_channel_count>                           |
+|                |    : channel count.                               |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | The configuration       |                         |
-|                | changes are NOT saved   |                         |
-|                | in the flash.           |                         |
+| **Notes**      | The configuration                                 |
+|                | changes are NOT saved                             |
+|                | in the flash.                                     |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CWMODE=1             |                         |
-|                |                         |                         |
-|                | AT+CW                   |                         |
-|                | COUNTRY_CUR=1,”US”,1,13 |                         |
+| **Examples**   | AT+CWMODE=1                                       |
+|                |                                                   |
+|                | AT+CW                                             |
+|                | COUNTRY_CUR=1,”US”,1,13                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CWCOUNTRY_DEF – Sets the Default Wi-Fi Country Code, Configuration Save in Flash
@@ -2584,49 +2339,49 @@ AT+CWCOUNTRY_DEF – Sets the Default Wi-Fi Country Code, Configuration Save in 
 |                | code stored in the      |                         |
 |                | flash.                  |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <country_policy>:    |                         |
-|                |                         |                         |
-|                |    -  : will change the |                         |
-|                |       county code to be |                         |
-|                |       the same as the   |                         |
-|                |       AP that BFQ4004   |                         |
-|                |       is connected to   |                         |
-|                |                         |                         |
-|                |    -  1: the country    |                         |
-|                |       code will not     |                         |
-|                |       change, always be |                         |
-|                |       the one set by    |                         |
-|                |       command.          |                         |
-|                |                         |                         |
-|                | -  <country_code>:      |                         |
-|                |    country code, the    |                         |
-|                |    length can be 3      |                         |
-|                |    characters at most;  |                         |
-|                |    but the third        |                         |
-|                |    character is a       |                         |
-|                |    special character    |                         |
-|                |    which will not be    |                         |
-|                |    shown when querying  |                         |
-|                |    by command           |                         |
-|                |    AT+CWCOUNTRY_DEF?    |                         |
-|                |                         |                         |
-|                | -  <start_channel> :    |                         |
-|                |    the channel number   |                         |
-|                |    to start at.         |                         |
-|                |                         |                         |
-|                | -                       |                         |
-|                |   <total_channel_count> |                         |
-|                |    : channel count.     |                         |
+| **Parameters** | -  <country_policy>:                              |
+|                |                                                   |
+|                |    -  : will change the                           |
+|                |       county code to be                           |
+|                |       the same as the                             |
+|                |       AP that BFQ4004                             |
+|                |       is connected to                             |
+|                |                                                   |
+|                |    -  1: the country                              |
+|                |       code will not                               |
+|                |       change, always be                           |
+|                |       the one set by                              |
+|                |       command.                                    |
+|                |                                                   |
+|                | -  <country_code>:                                |
+|                |    country code, the                              |
+|                |    length can be 3                                |
+|                |    characters at most;                            |
+|                |    but the third                                  |
+|                |    character is a                                 |
+|                |    special character                              |
+|                |    which will not be                              |
+|                |    shown when querying                            |
+|                |    by command                                     |
+|                |    AT+CWCOUNTRY_DEF?                              |
+|                |                                                   |
+|                | -  <start_channel> :                              |
+|                |    the channel number                             |
+|                |    to start at.                                   |
+|                |                                                   |
+|                | -                                                 |
+|                |   <total_channel_count>                           |
+|                |    : channel count.                               |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | The configuration       |                         |
-|                | changes are saved in    |                         |
-|                | the user parameter area |                         |
-|                | of the flash.           |                         |
+| **Notes**      | The configuration                                 |
+|                | changes are saved in                              |
+|                | the user parameter area                           |
+|                | of the flash.                                     |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CWMODE=1             |                         |
-|                |                         |                         |
-|                | AT+CW                   |                         |
-|                | COUNTRY_DEF=1,”US”,1,13 |                         |
+| **Examples**   | AT+CWMODE=1                                       |
+|                |                                                   |
+|                | AT+CW                                             |
+|                | COUNTRY_DEF=1,”US”,1,13                           |
 +----------------+-------------------------+-------------------------+
 
 TCP/IP-Related AT Commands
@@ -2639,7 +2394,7 @@ Overview
 
 +---------------------+-----------------------------------------------+
 | **Commands**        | **Description**                               |
-+---------------------+-----------------------------------------------+
++=====================+===============================================+
 | AT+CIPSTATUS        | Gets the connection status                    |
 +---------------------+-----------------------------------------------+
 | AT+CIPDOMAIN        | DNS function                                  |
@@ -2809,71 +2564,71 @@ Establish TCP Connection
 |                 | | [,<TCP_keep_alive>]  | | <remote_po           |
 |                 |                        | rt>[,<TCP_keep_alive>] |
 +-----------------+------------------------+------------------------+
-| **Response**    | OK                     |                        |
-|                 |                        |                        |
-|                 | or                     |                        |
-|                 |                        |                        |
-|                 | ERROR                  |                        |
-|                 |                        |                        |
-|                 | If the TCP connection  |                        |
-|                 | is already             |                        |
-|                 | established, the       |                        |
-|                 | response is:           |                        |
-|                 |                        |                        |
-|                 | ALREADY CONNECTED      |                        |
+| **Response**    | OK                                              |
+|                 |                                                 |
+|                 | or                                              |
+|                 |                                                 |
+|                 | ERROR                                           |
+|                 |                                                 |
+|                 | If the TCP connection                           |
+|                 | is already                                      |
+|                 | established, the                                |
+|                 | response is:                                    |
+|                 |                                                 |
+|                 | ALREADY CONNECTED                               |
 +-----------------+------------------------+------------------------+
-| **Parameters**  | -  <link_ID>: ID of    |                        |
-|                 |    network connection  |                        |
-|                 |    (0~4), used for     |                        |
-|                 |    multiple            |                        |
-|                 |    connections.        |                        |
-|                 |                        |                        |
-|                 | -  <conn_type>: string |                        |
-|                 |    parameter           |                        |
-|                 |    indicating the      |                        |
-|                 |    connection type:    |                        |
-|                 |    "TCP", "UDP" or     |                        |
-|                 |    "SSL".              |                        |
-|                 |                        |                        |
-|                 | -  <r                  |                        |
-|                 | emote_IP/domain_name>: |                        |
-|                 |    string parameter    |                        |
-|                 |    indicating the      |                        |
-|                 |    remote IP address   |                        |
-|                 |    or domain name to   |                        |
-|                 |    connect to.         |                        |
-|                 |                        |                        |
-|                 | -  <remote_port>: the  |                        |
-|                 |    remote port number. |                        |
-|                 |                        |                        |
-|                 | -  [<TCP_keep_alive>]: |                        |
-|                 |    optional; detection |                        |
-|                 |    time interval when  |                        |
-|                 |    TCP is kept alive.  |                        |
-|                 |                        |                        |
-|                 |    -  : disable TCP    |                        |
-|                 |       keep-alive       |                        |
-|                 |       (default)        |                        |
-|                 |                        |                        |
-|                 |    -  1 ~ 72:          |                        |
-|                 |       detection time   |                        |
-|                 |       interval; unit:  |                        |
-|                 |       second (s).      |                        |
+| **Parameters**  | -  <link_ID>: ID of                             |
+|                 |    network connection                           |
+|                 |    (0~4), used for                              |
+|                 |    multiple                                     |
+|                 |    connections.                                 |
+|                 |                                                 |
+|                 | -  <conn_type>: string                          |
+|                 |    parameter                                    |
+|                 |    indicating the                               |
+|                 |    connection type:                             |
+|                 |    "TCP", "UDP" or                              |
+|                 |    "SSL".                                       |
+|                 |                                                 |
+|                 | -  <r                                           |
+|                 | emote_IP/domain_name>:                          |
+|                 |    string parameter                             |
+|                 |    indicating the                               |
+|                 |    remote IP address                            |
+|                 |    or domain name to                            |
+|                 |    connect to.                                  |
+|                 |                                                 |
+|                 | -  <remote_port>: the                           |
+|                 |    remote port number.                          |
+|                 |                                                 |
+|                 | -  [<TCP_keep_alive>]:                          |
+|                 |    optional; detection                          |
+|                 |    time interval when                           |
+|                 |    TCP is kept alive.                           |
+|                 |                                                 |
+|                 |    -  : disable TCP                             |
+|                 |       keep-alive                                |
+|                 |       (default)                                 |
+|                 |                                                 |
+|                 |    -  1 ~ 72:                                   |
+|                 |       detection time                            |
+|                 |       interval; unit:                           |
+|                 |       second (s).                               |
 +-----------------+------------------------+------------------------+
-| **Notes**       | The configuration      |                        |
-|                 | changes are saved in   |                        |
-|                 | the user parameter     |                        |
-|                 | area of the flash.     |                        |
+| **Notes**       | The configuration                               |
+|                 | changes are saved in                            |
+|                 | the user parameter                              |
+|                 | area of the flash.                              |
 +-----------------+------------------------+------------------------+
-| **Examples**    | AT+CIPSTART=           |                        |
-|                 | "TCP","www.beefi.io",8 |                        |
-|                 |                        |                        |
-|                 | AT+CIPSTART="          |                        |
-|                 | TCP","192.168.11.11",1 |                        |
-|                 |                        |                        |
-|                 | For more information   |                        |
-|                 | please see: BFQ4004 AT |                        |
-|                 | Command Examples.      |                        |
+| **Examples**    | AT+CIPSTART=                                    |
+|                 | "TCP","www.beefi.io",8                          |
+|                 |                                                 |
+|                 | AT+CIPSTART="                                   |
+|                 | TCP","192.168.11.11",1                          |
+|                 |                                                 |
+|                 | For more information                            |
+|                 | please see: BFQ4004 AT                          |
+|                 | Command Examples.                               |
 +-----------------+------------------------+------------------------+
 
 Establish UDP Transmission
@@ -2892,84 +2647,84 @@ Establish UDP Transmission
 |                 | ocal_port>,<UDP_mode>] | | [,<l                 |
 |                 |                        | ocal_port>,<UDP_mode>] |
 +-----------------+------------------------+------------------------+
-| **Response**    | OK                     |                        |
-|                 |                        |                        |
-|                 | or                     |                        |
-|                 |                        |                        |
-|                 | ERROR                  |                        |
-|                 |                        |                        |
-|                 | If the UDP             |                        |
-|                 | transmission is        |                        |
-|                 | already established,   |                        |
-|                 | the response is:       |                        |
-|                 |                        |                        |
-|                 | ALREADY CONNECTED      |                        |
+| **Response**    | OK                                              |
+|                 |                                                 |
+|                 | or                                              |
+|                 |                                                 |
+|                 | ERROR                                           |
+|                 |                                                 |
+|                 | If the UDP                                      |
+|                 | transmission is                                 |
+|                 | already established,                            |
+|                 | the response is:                                |
+|                 |                                                 |
+|                 | ALREADY CONNECTED                               |
 +-----------------+------------------------+------------------------+
-| **Parameters**  | -  <link_ID>: ID of    |                        |
-|                 |    network connection  |                        |
-|                 |    (0~4), used for     |                        |
-|                 |    multiple            |                        |
-|                 |    connections.        |                        |
-|                 |                        |                        |
-|                 | -  <conn_type>: string |                        |
-|                 |    parameter           |                        |
-|                 |    indicating the      |                        |
-|                 |    connection type:    |                        |
-|                 |    "TCP", "UDP" or     |                        |
-|                 |    "SSL".              |                        |
-|                 |                        |                        |
-|                 | -  <r                  |                        |
-|                 | emote_IP/domain_name>: |                        |
-|                 |    string parameter    |                        |
-|                 |    indicating the      |                        |
-|                 |    remote IP address   |                        |
-|                 |    or domain name to   |                        |
-|                 |    connect to.         |                        |
-|                 |                        |                        |
-|                 | -  <remote_port>: the  |                        |
-|                 |    remote port number. |                        |
-|                 |                        |                        |
-|                 | -  [<local_port>]:     |                        |
-|                 |    optional; UDP port  |                        |
-|                 |    of BFQ4004.         |                        |
-|                 |                        |                        |
-|                 | -  [<UDP_mode>]:       |                        |
-|                 |    optional; In the    |                        |
-|                 |    UDP transparent     |                        |
-|                 |    transmission, the   |                        |
-|                 |    value of this       |                        |
-|                 |    parameter has to be |                        |
-|                 |    .                   |                        |
-|                 |                        |                        |
-|                 |    -  : the            |                        |
-|                 |       destination peer |                        |
-|                 |       entity of UDP    |                        |
-|                 |       will not change  |                        |
-|                 |       (default).       |                        |
-|                 |                        |                        |
-|                 |    -  1: the           |                        |
-|                 |       destination peer |                        |
-|                 |       entity of UDP    |                        |
-|                 |       can change once. |                        |
-|                 |                        |                        |
-|                 |    -  2: the           |                        |
-|                 |       destination peer |                        |
-|                 |       entity of UDP is |                        |
-|                 |       allowed to       |                        |
-|                 |       change.          |                        |
-|                 |                        |                        |
-|                 | ️ **Warning:**         |                        |
-|                 |                        |                        |
-|                 | To use <UDP_mode>,     |                        |
-|                 | <local_port> must be   |                        |
-|                 | set first.             |                        |
+| **Parameters**  | -  <link_ID>: ID of                             |
+|                 |    network connection                           |
+|                 |    (0~4), used for                              |
+|                 |    multiple                                     |
+|                 |    connections.                                 |
+|                 |                                                 |
+|                 | -  <conn_type>: string                          |
+|                 |    parameter                                    |
+|                 |    indicating the                               |
+|                 |    connection type:                             |
+|                 |    "TCP", "UDP" or                              |
+|                 |    "SSL".                                       |
+|                 |                                                 |
+|                 | -  <r                                           |
+|                 | emote_IP/domain_name>:                          |
+|                 |    string parameter                             |
+|                 |    indicating the                               |
+|                 |    remote IP address                            |
+|                 |    or domain name to                            |
+|                 |    connect to.                                  |
+|                 |                                                 |
+|                 | -  <remote_port>: the                           |
+|                 |    remote port number.                          |
+|                 |                                                 |
+|                 | -  [<local_port>]:                              |
+|                 |    optional; UDP port                           |
+|                 |    of BFQ4004.                                  |
+|                 |                                                 |
+|                 | -  [<UDP_mode>]:                                |
+|                 |    optional; In the                             |
+|                 |    UDP transparent                              |
+|                 |    transmission, the                            |
+|                 |    value of this                                |
+|                 |    parameter has to be                          |
+|                 |    .                                            |
+|                 |                                                 |
+|                 |    -  : the                                     |
+|                 |       destination peer                          |
+|                 |       entity of UDP                             |
+|                 |       will not change                           |
+|                 |       (default).                                |
+|                 |                                                 |
+|                 |    -  1: the                                    |
+|                 |       destination peer                          |
+|                 |       entity of UDP                             |
+|                 |       can change once.                          |
+|                 |                                                 |
+|                 |    -  2: the                                    |
+|                 |       destination peer                          |
+|                 |       entity of UDP is                          |
+|                 |       allowed to                                |
+|                 |       change.                                   |
+|                 |                                                 |
+|                 | ️ **Warning:**                                  |
+|                 |                                                 |
+|                 | To use <UDP_mode>,                              |
+|                 | <local_port> must be                            |
+|                 | set first.                                      |
 +-----------------+------------------------+------------------------+
-| **Examples**    | AT+CIPSTART="UDP",     |                        |
-|                 | "192.168.11.11",1,12,2 |                        |
-|                 |                        |                        |
-|                 | For more information   |                        |
-|                 | please see: BFQ4004 AT |                        |
-|                 | Command Examples.      |                        |
+| **Examples**    | AT+CIPSTART="UDP",                              |
+|                 | "192.168.11.11",1,12,2                          |
+|                 |                                                 |
+|                 | For more information                            |
+|                 | please see: BFQ4004 AT                          |
+|                 | Command Examples.                               |
 +-----------------+------------------------+------------------------+
 
 Establish SSL Connection
@@ -3066,98 +2821,98 @@ AT+CIPSSLCCONF – Configures the SSL Client
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | <SSL mode>: a value     |                         |
-|                | from -3 representing 2  |                         |
-|                | bits used to configure  |                         |
-|                | the SSL as described    |                         |
-|                | below:                  |                         |
-|                |                         |                         |
+| **Parameters** | <SSL mode>: a value                               |
+|                | from -3 representing 2                            |
+|                | bits used to configure                            |
+|                | the SSL as described                              |
+|                | below:                                            |
+|                |                                                   |
 |                | -  Bit：if set to 1,    |                         |
-|                |    certificate and      |                         |
-|                |    private key will be  |                         |
-|                |    enabled, so SSL      |                         |
-|                |    server can verify    |                         |
-|                |    BFQ4004; if 0, then  |                         |
-|                |    certificate and      |                         |
-|                |    private key will not |                         |
-|                |    be enable.           |                         |
-|                |                         |                         |
+|                |    certificate and                                |
+|                |    private key will be                            |
+|                |    enabled, so SSL                                |
+|                |    server can verify                              |
+|                |    BFQ4004; if 0, then                            |
+|                |    certificate and                                |
+|                |    private key will not                           |
+|                |    be enable.                                     |
+|                |                                                   |
 |                | -  bit1：if set to 1,   |                         |
-|                |    CA will be enabled,  |                         |
-|                |    so BFQ4004 can       |                         |
-|                |    verify SSL server;   |                         |
-|                |    if 0, CA will not be |                         |
-|                |    enabled.             |                         |
-|                |                         |                         |
-|                | (Looks like ESP8266 can |                         |
-|                | also do mutual SSL      |                         |
-|                | according to the above  |                         |
-|                | 2-bit settings? What    |                         |
-|                | should be added to      |                         |
-|                | cover mutual SSL        |                         |
-|                | feature BFQ4004         |                         |
-|                | provides?)              |                         |
+|                |    CA will be enabled,                            |
+|                |    so BFQ4004 can                                 |
+|                |    verify SSL server;                             |
+|                |    if 0, CA will not be                           |
+|                |    enabled.                                       |
+|                |                                                   |
+|                | (Looks like ESP8266 can                           |
+|                | also do mutual SSL                                |
+|                | according to the above                            |
+|                | 2-bit settings? What                              |
+|                | should be added to                                |
+|                | cover mutual SSL                                  |
+|                | feature BFQ4004                                   |
+|                | provides?)                                        |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  If certificates need |                         |
-|                |    to be enabled,       |                         |
-|                |    please call this     |                         |
-|                |    command before SSL   |                         |
-|                |    connection is        |                         |
-|                |    established.         |                         |
-|                |                         |                         |
-|                | -  If certificates need |                         |
-|                |    to be enabled,       |                         |
-|                |    please refer to the  |                         |
-|                |    BFQ4004 SSL User     |                         |
-|                |    Guide to generate    |                         |
-|                |    certificates.        |                         |
-|                |                         |                         |
-|                |    -  esp_ca_cert.bin   |                         |
-|                |       downloads to      |                         |
-|                |       0xFB000 by        |                         |
-|                |       default           |                         |
-|                |                         |                         |
-|                |    -  e                 |                         |
-|                | sp_cert_private_key.bin |                         |
-|                |       downloads to      |                         |
-|                |       0xFC000 by        |                         |
-|                |       default           |                         |
-|                |                         |                         |
-|                |    -  Users can revise  |                         |
-|                |       the               |                         |
-|                |       SYSTEM_PARTI      |                         |
-|                | TION_SSL_CLIENT_CA_ADDR |                         |
-|                |       and               |                         |
-|                |                         |                         |
-|                |  SYSTEM_PARTITION_SSL_C |                         |
-|                | LIENT_CERT_PRIVKEY_ADDR |                         |
-|                |       in user_main.c to |                         |
-|                |       change the        |                         |
-|                |       downloading       |                         |
-|                |       addresses.        |                         |
-|                |                         |                         |
-|                | This configuration will |                         |
-|                | be saved in the user    |                         |
-|                | parameter area of the   |                         |
-|                | flash.                  |                         |
+| **Notes**      | -  If certificates need                           |
+|                |    to be enabled,                                 |
+|                |    please call this                               |
+|                |    command before SSL                             |
+|                |    connection is                                  |
+|                |    established.                                   |
+|                |                                                   |
+|                | -  If certificates need                           |
+|                |    to be enabled,                                 |
+|                |    please refer to the                            |
+|                |    BFQ4004 SSL User                               |
+|                |    Guide to generate                              |
+|                |    certificates.                                  |
+|                |                                                   |
+|                |    -  esp_ca_cert.bin                             |
+|                |       downloads to                                |
+|                |       0xFB000 by                                  |
+|                |       default                                     |
+|                |                                                   |
+|                |    -  e                                           |
+|                | sp_cert_private_key.bin                           |
+|                |       downloads to                                |
+|                |       0xFC000 by                                  |
+|                |       default                                     |
+|                |                                                   |
+|                |    -  Users can revise                            |
+|                |       the                                         |
+|                |       SYSTEM_PARTI                                |
+|                | TION_SSL_CLIENT_CA_ADDR                           |
+|                |       and                                         |
+|                |                                                   |
+|                |  SYSTEM_PARTITION_SSL_C                           |
+|                | LIENT_CERT_PRIVKEY_ADDR                           |
+|                |       in user_main.c to                           |
+|                |       change the                                  |
+|                |       downloading                                 |
+|                |       addresses.                                  |
+|                |                                                   |
+|                | This configuration will                           |
+|                | be saved in the user                              |
+|                | parameter area of the                             |
+|                | flash.                                            |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CWMODE=1 // enable   |                         |
-|                | sta mode                |                         |
-|                |                         |                         |
-|                | AT+                     |                         |
-|                | CWJAP="SSID","PASSWORD" |                         |
-|                | // connect to an AP     |                         |
-|                |                         |                         |
-|                | AT+CIPSNTPCFG=1,8 //    |                         |
-|                | set SNTP time zone      |                         |
-|                |                         |                         |
-|                | AT+CIPSNTPTIME? // get  |                         |
-|                | SNTP time               |                         |
-|                |                         |                         |
-|                | AT+CIPSSLCCONF=2        |                         |
-|                |                         |                         |
-|                | AT+CIPSTART="S          |                         |
-|                | SL","192.168.3.38",8443 |                         |
+| **Examples**   | AT+CWMODE=1 // enable                             |
+|                | sta mode                                          |
+|                |                                                   |
+|                | AT+                                               |
+|                | CWJAP="SSID","PASSWORD"                           |
+|                | // connect to an AP                               |
+|                |                                                   |
+|                | AT+CIPSNTPCFG=1,8 //                              |
+|                | set SNTP time zone                                |
+|                |                                                   |
+|                | AT+CIPSNTPTIME? // get                            |
+|                | SNTP time                                         |
+|                |                                                   |
+|                | AT+CIPSSLCCONF=2                                  |
+|                |                                                   |
+|                | AT+CIPSTART="S                                    |
+|                | SL","192.168.3.38",8443                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPSEND – Sends Data
@@ -3227,7 +2982,7 @@ AT+CIPSEND – Sends Data
 |                |                         | when using AT+CIPSTART. |
 |                | SEND FAIL               |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <link_ID>: ID of the | -                       |
+| **Parameters** | -  <link_ID>: ID of the | \-                      |
 |                |       connection (~4),  |                         |
 |                |       for multiple      |                         |
 |                |       connections.      |                         |
@@ -3248,11 +3003,11 @@ AT+CIPSEND – Sends Data
 |                |       set for UDP       |                         |
 |                |       transmission.     |                         |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPSEND=124 //       |                         |
-|                | +CIPMUX=                |                         |
-|                |                         |                         |
-|                | AT+CIPSEND=2,124 //     |                         |
-|                | +CIPMUX=1               |                         |
+| **Examples**   | AT+CIPSEND=124 //                                 |
+|                | +CIPMUX=                                          |
+|                |                                                   |
+|                | AT+CIPSEND=2,124 //                               |
+|                | +CIPMUX=1                                         |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPSENDEX – Sends Data
@@ -3554,20 +3309,20 @@ AT+CIPCLOSE – Closes the TCP/UDP/SSL Connection
 |                | particular link_ID      | Function: to close all  |
 |                | TCP/UDP connection.     | TCP/UDP connections.    |
 +----------------+-------------------------+-------------------------+
-| **Response**   | OK                      |                         |
+| **Response**   | OK                                                |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | <link_ID>: ID of the    | -                       |
+| **Parameters** | <link_ID>: ID of the    | \-                      |
 |                | connection to be        |                         |
 |                | closed. When ID is 5,   |                         |
 |                | all connections will be |                         |
 |                | closed. In server mode, |                         |
 |                | ID=5 has no effect.     |                         |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPSEND=124 //       |                         |
-|                | +CIPMUX=                |                         |
-|                |                         |                         |
-|                | AT+CIPSEND=2,124 //     |                         |
-|                | +CIPMUX=1               |                         |
+| **Examples**   | AT+CIPSEND=124 //                                 |
+|                | +CIPMUX=                                          |
+|                |                                                   |
+|                | AT+CIPSEND=2,124 //                               |
+|                | +CIPMUX=1                                         |
 +----------------+-------------------------+-------------------------+
 
 AT+CIFSR – Gets the Local IP Address
@@ -3617,37 +3372,37 @@ AT+CIPMUX – Enables or Disables Multiple Connections
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | <mode>:                 |                         |
-|                |                         |                         |
+| **Parameters** | <mode>:                                           |
+|                |                                                   |
 |                | -  ：single connection. |                         |
-|                |                         |                         |
+|                |                                                   |
 |                | -  1：multiple          |                         |
-|                |    connections.         |                         |
+|                |    connections.                                   |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The default mode is  |                         |
-|                |    single connection.   |                         |
-|                |                         |                         |
-|                | -  Multiple connections |                         |
-|                |    can only be set when |                         |
-|                |    transparent          |                         |
-|                |    transmission is      |                         |
-|                |    disabled             |                         |
-|                |    (AT+CIPMODE=).       |                         |
-|                |                         |                         |
-|                | -  This mode can only   |                         |
-|                |    be changed after all |                         |
-|                |    connections are      |                         |
-|                |    disconnected.        |                         |
-|                |                         |                         |
-|                | -  If the TCP server is |                         |
-|                |    running, it must be  |                         |
-|                |    deleted              |                         |
-|                |    (AT+CIPSERVER=)      |                         |
-|                |    before the single    |                         |
-|                |    connection mode is   |                         |
-|                |    activated.           |                         |
+| **Notes**      | -  The default mode is                            |
+|                |    single connection.                             |
+|                |                                                   |
+|                | -  Multiple connections                           |
+|                |    can only be set when                           |
+|                |    transparent                                    |
+|                |    transmission is                                |
+|                |    disabled                                       |
+|                |    (AT+CIPMODE=).                                 |
+|                |                                                   |
+|                | -  This mode can only                             |
+|                |    be changed after all                           |
+|                |    connections are                                |
+|                |    disconnected.                                  |
+|                |                                                   |
+|                | -  If the TCP server is                           |
+|                |    running, it must be                            |
+|                |    deleted                                        |
+|                |    (AT+CIPSERVER=)                                |
+|                |    before the single                              |
+|                |    connection mode is                             |
+|                |    activated.                                     |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPMUX=1             |                         |
+| **Examples**   | AT+CIPMUX=1                                       |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPSERVER – Creates or Deletes TCP Server
@@ -3701,24 +3456,24 @@ AT+CIPSERVERMAXCONN – Sets the Maximum Connections Allowed by Server
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | <num>: the maximum      |                         |
-|                | number of clients       |                         |
-|                | allowed to connect to   |                         |
-|                | the TCP or SSL server,  |                         |
-|                | range:[1~5].            |                         |
+| **Parameters** | <num>: the maximum                                |
+|                | number of clients                                 |
+|                | allowed to connect to                             |
+|                | the TCP or SSL server,                            |
+|                | range:[1~5].                                      |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | AT                      |                         |
-|                | +CIPSERVERMAXCONN=<num> |                         |
-|                | should be used to set   |                         |
-|                | up the correct          |                         |
-|                | configuration before    |                         |
-|                | creating a server.      |                         |
+| **Notes**      | AT                                                |
+|                | +CIPSERVERMAXCONN=<num>                           |
+|                | should be used to set                             |
+|                | up the correct                                    |
+|                | configuration before                              |
+|                | creating a server.                                |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPMUX=1             |                         |
-|                |                         |                         |
-|                | AT+CIPSERVERMAXCONN=2   |                         |
-|                |                         |                         |
-|                | AT+CIPSERVER=1,8        |                         |
+| **Examples**   | AT+CIPMUX=1                                       |
+|                |                                                   |
+|                | AT+CIPSERVERMAXCONN=2                             |
+|                |                                                   |
+|                | AT+CIPSERVER=1,8                                  |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPMODE – Sets Transmission Mode
@@ -3736,46 +3491,46 @@ AT+CIPMODE – Sets Transmission Mode
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | <mode>:                 |                         |
-|                |                         |                         |
-|                | -  : normal             |                         |
-|                |    transmission mode.   |                         |
-|                |                         |                         |
-|                | -  1: UART-Wi-Fi        |                         |
-|                |    passthrough mode     |                         |
-|                |    (transparent         |                         |
-|                |    transmission), which |                         |
-|                |    can only be enabled  |                         |
-|                |    in TCP single        |                         |
-|                |    connection mode or   |                         |
-|                |    in UDP mode when the |                         |
-|                |    remote IP and port   |                         |
-|                |    do not change.       |                         |
+| **Parameters** | <mode>:                                           |
+|                |                                                   |
+|                | -  : normal                                       |
+|                |    transmission mode.                             |
+|                |                                                   |
+|                | -  1: UART-Wi-Fi                                  |
+|                |    passthrough mode                               |
+|                |    (transparent                                   |
+|                |    transmission), which                           |
+|                |    can only be enabled                            |
+|                |    in TCP single                                  |
+|                |    connection mode or                             |
+|                |    in UDP mode when the                           |
+|                |    remote IP and port                             |
+|                |    do not change.                                 |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The configuration    |                         |
-|                |    changes will NOT be  |                         |
-|                |    saved in flash.      |                         |
-|                |                         |                         |
-|                | -  During the           |                         |
-|                |    UART-Wi-Fi           |                         |
-|                |    passthrough          |                         |
-|                |    transmission, if the |                         |
-|                |    TCP connection       |                         |
-|                |    breaks, BFQ4004 will |                         |
-|                |    keep trying to       |                         |
-|                |    reconnect until +++  |                         |
-|                |    is inputted to exit  |                         |
-|                |    the transmission.    |                         |
-|                |                         |                         |
-|                | -  If it is a normal    |                         |
-|                |    TCP transmission and |                         |
-|                |    the TCP connection   |                         |
-|                |    breaks, BFQ4004 will |                         |
-|                |    give a prompt and    |                         |
-|                |    will not attempt to  |                         |
-|                |    reconnect.           |                         |
+| **Notes**      | -  The configuration                              |
+|                |    changes will NOT be                            |
+|                |    saved in flash.                                |
+|                |                                                   |
+|                | -  During the                                     |
+|                |    UART-Wi-Fi                                     |
+|                |    passthrough                                    |
+|                |    transmission, if the                           |
+|                |    TCP connection                                 |
+|                |    breaks, BFQ4004 will                           |
+|                |    keep trying to                                 |
+|                |    reconnect until +++                            |
+|                |    is inputted to exit                            |
+|                |    the transmission.                              |
+|                |                                                   |
+|                | -  If it is a normal                              |
+|                |    TCP transmission and                           |
+|                |    the TCP connection                             |
+|                |    breaks, BFQ4004 will                           |
+|                |    give a prompt and                              |
+|                |    will not attempt to                            |
+|                |    reconnect.                                     |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPMODE=1            |                         |
+| **Examples**   | AT+CIPMODE=1                                      |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPSTO – Sets the TCP Server Timeout
@@ -3794,30 +3549,30 @@ AT+CIPSTO – Sets the TCP Server Timeout
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | <time>: TCP server      |                         |
-|                | timeout duration,       |                         |
-|                | range: ~72 seconds (s). |                         |
+| **Parameters** | <time>: TCP server                                |
+|                | timeout duration,                                 |
+|                | range: ~72 seconds (s).                           |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  BFQ4004 configured   |                         |
-|                |    as a TCP server will |                         |
-|                |    disconnect from the  |                         |
-|                |    TCP client that has  |                         |
-|                |    not communicated     |                         |
-|                |    with it for a        |                         |
-|                |    duration equal to    |                         |
-|                |    the <time> set.      |                         |
-|                |                         |                         |
-|                | -  If AT+CIPSTO=, the   |                         |
-|                |    connection will      |                         |
-|                |    never time out. This |                         |
-|                |    configuration is not |                         |
-|                |    recommended.         |                         |
+| **Notes**      | -  BFQ4004 configured                             |
+|                |    as a TCP server will                           |
+|                |    disconnect from the                            |
+|                |    TCP client that has                            |
+|                |    not communicated                               |
+|                |    with it for a                                  |
+|                |    duration equal to                              |
+|                |    the <time> set.                                |
+|                |                                                   |
+|                | -  If AT+CIPSTO=, the                             |
+|                |    connection will                                |
+|                |    never time out. This                           |
+|                |    configuration is not                           |
+|                |    recommended.                                   |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPMUX=1             |                         |
-|                |                         |                         |
-|                | AT+CIPSERVER=1,11       |                         |
-|                |                         |                         |
-|                | AT+CIPSTO=1             |                         |
+| **Examples**   | AT+CIPMUX=1                                       |
+|                |                                                   |
+|                | AT+CIPSERVER=1,11                                 |
+|                |                                                   |
+|                | AT+CIPSTO=1                                       |
 +----------------+-------------------------+-------------------------+
 
 AT+PING – Pings Packets
@@ -3928,33 +3683,33 @@ AT+CIPDINFO – Shows the Remote IP and Port with +IPD
 |                | <data>                  |                         |
 |                |                         | <data>                  |
 +----------------+-------------------------+-------------------------+
-| **Parameters** |    The command is valid |                         |
-|                |    in normal command    |                         |
-|                |    mode. When the       |                         |
-|                |    module receives      |                         |
-|                |    network data, it     |                         |
-|                |    will send the data   |                         |
-|                |    through the serial   |                         |
-|                |    port using the +IPD  |                         |
-|                |    command.             |                         |
-|                |                         |                         |
-|                | -  [<remote_IP>]:       |                         |
-|                |    remote IP, enabled   |                         |
-|                |    by command           |                         |
-|                |    AT+CIPDINFO=1.       |                         |
-|                |                         |                         |
-|                | -  [<remote_port>]:     |                         |
-|                |    remote port, enabled |                         |
-|                |    by command           |                         |
-|                |    AT+CIPDINFO=1.       |                         |
-|                |                         |                         |
-|                | -  <link_ID>: ID number |                         |
-|                |    of connection.       |                         |
-|                |                         |                         |
-|                | -  <len>: data length.  |                         |
-|                |                         |                         |
-|                | -  <data>: data         |                         |
-|                |    received.            |                         |
+| **Parameters** |    The command is valid                           |
+|                |    in normal command                              |
+|                |    mode. When the                                 |
+|                |    module receives                                |
+|                |    network data, it                               |
+|                |    will send the data                             |
+|                |    through the serial                             |
+|                |    port using the +IPD                            |
+|                |    command.                                       |
+|                |                                                   |
+|                | -  [<remote_IP>]:                                 |
+|                |    remote IP, enabled                             |
+|                |    by command                                     |
+|                |    AT+CIPDINFO=1.                                 |
+|                |                                                   |
+|                | -  [<remote_port>]:                               |
+|                |    remote port, enabled                           |
+|                |    by command                                     |
+|                |    AT+CIPDINFO=1.                                 |
+|                |                                                   |
+|                | -  <link_ID>: ID number                           |
+|                |    of connection.                                 |
+|                |                                                   |
+|                | -  <len>: data length.                            |
+|                |                                                   |
+|                | -  <data>: data                                   |
+|                |    received.                                      |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPRECVMODE – Sets TCP Receive Mode
@@ -3973,62 +3728,62 @@ AT+CIPRECVMODE – Sets TCP Receive Mode
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | <mode>: the receive     |                         |
-|                | mode of TCP data.       |                         |
-|                |                         |                         |
-|                | -  : active mode        |                         |
-|                |    (default) – BFQ4004  |                         |
-|                |    will send all the    |                         |
-|                |    received TCP data    |                         |
-|                |    instantly to host    |                         |
-|                |    MCU through UART     |                         |
-|                |    with header “+IPD".  |                         |
-|                |                         |                         |
-|                | -  1: passive mode –    |                         |
-|                |    BFQ4004 will keep    |                         |
-|                |    the received TCP     |                         |
-|                |    data in an internal  |                         |
-|                |    buffer (default is   |                         |
-|                |    292 bytes), and wait |                         |
-|                |    for host MCU to read |                         |
-|                |    the data. If the     |                         |
-|                |    buffer is full, the  |                         |
-|                |    TCP transmission     |                         |
-|                |    will be blocked.     |                         |
+| **Parameters** | <mode>: the receive                               |
+|                | mode of TCP data.                                 |
+|                |                                                   |
+|                | -  : active mode                                  |
+|                |    (default) – BFQ4004                            |
+|                |    will send all the                              |
+|                |    received TCP data                              |
+|                |    instantly to host                              |
+|                |    MCU through UART                               |
+|                |    with header “+IPD".                            |
+|                |                                                   |
+|                | -  1: passive mode –                              |
+|                |    BFQ4004 will keep                              |
+|                |    the received TCP                               |
+|                |    data in an internal                            |
+|                |    buffer (default is                             |
+|                |    292 bytes), and wait                           |
+|                |    for host MCU to read                           |
+|                |    the data. If the                               |
+|                |    buffer is full, the                            |
+|                |    TCP transmission                               |
+|                |    will be blocked.                               |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  The configuration is |                         |
-|                |    for normal TCP       |                         |
-|                |    transmission only,   |                         |
-|                |    and cannot be used   |                         |
-|                |    on SSL, UDP or WiFi- |                         |
-|                |    UART passthrough     |                         |
-|                |    modes.               |                         |
-|                |                         |                         |
-|                | -  If the passive mode  |                         |
-|                |    is enabled, when     |                         |
-|                |    BFQ4004 receives TCP |                         |
-|                |    data, it will prompt |                         |
-|                |    the following        |                         |
-|                |    message in different |                         |
-|                |    scenarios:           |                         |
-|                |                         |                         |
-|                | -  For multiple         |                         |
-|                |    connection mode      |                         |
-|                |    (AT+CIPMUX=1), the   |                         |
-|                |    message is:          |                         |
-|                |    +IPD,<link_ID>,<len> |                         |
-|                |                         |                         |
-|                | -  For single           |                         |
-|                |    connection mode      |                         |
-|                |    (AT+CIPMUX=), the    |                         |
-|                |    message is:          |                         |
-|                |    +IPD,<len>           |                         |
-|                |                         |                         |
-|                | -  <len> is the total   |                         |
-|                |    length of TCP data   |                         |
-|                |    in buffer            |                         |
+| **Notes**      | -  The configuration is                           |
+|                |    for normal TCP                                 |
+|                |    transmission only,                             |
+|                |    and cannot be used                             |
+|                |    on SSL, UDP or WiFi-                           |
+|                |    UART passthrough                               |
+|                |    modes.                                         |
+|                |                                                   |
+|                | -  If the passive mode                            |
+|                |    is enabled, when                               |
+|                |    BFQ4004 receives TCP                           |
+|                |    data, it will prompt                           |
+|                |    the following                                  |
+|                |    message in different                           |
+|                |    scenarios:                                     |
+|                |                                                   |
+|                | -  For multiple                                   |
+|                |    connection mode                                |
+|                |    (AT+CIPMUX=1), the                             |
+|                |    message is:                                    |
+|                |    +IPD,<link_ID>,<len>                           |
+|                |                                                   |
+|                | -  For single                                     |
+|                |    connection mode                                |
+|                |    (AT+CIPMUX=), the                              |
+|                |    message is:                                    |
+|                |    +IPD,<len>                                     |
+|                |                                                   |
+|                | -  <len> is the total                             |
+|                |    length of TCP data                             |
+|                |    in buffer                                      |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPRECVMODE=1        |                         |
+| **Examples**   | AT+CIPRECVMODE=1                                  |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPRECVDATA – Gets TCP Data In Passive Receive Mode
@@ -4043,59 +3798,59 @@ AT+CIPRECVDATA – Gets TCP Data In Passive Receive Mode
 |                 |                        | AT+CIPRE               |
 |                 |                        | CVDATA=<link_ID>,<len> |
 +-----------------+------------------------+------------------------+
-| **Response**    | +CIPRECVDAT            |                        |
-|                 | A:<actual_leng>,<data> |                        |
-|                 |                        |                        |
-|                 | OK                     |                        |
+| **Response**    | +CIPRECVDAT                                     |
+|                 | A:<actual_leng>,<data>                          |
+|                 |                                                 |
+|                 | OK                                              |
 +-----------------+------------------------+------------------------+
-| **Parameters**  | -  <link_ID>:          |                        |
-|                 |    connection ID in    |                        |
-|                 |    multiple connection |                        |
-|                 |    mode.               |                        |
-|                 |                        |                        |
-|                 | -  <len>: data length  |                        |
-|                 |    requested, max is   |                        |
-|                 |    248 bytes for each  |                        |
-|                 |    request.            |                        |
-|                 |                        |                        |
-|                 | -  <actual_len>:       |                        |
-|                 |    length of the data  |                        |
-|                 |    actually received   |                        |
-|                 |                        |                        |
-|                 | -  <data>: the data    |                        |
-|                 |    received            |                        |
+| **Parameters**  | -  <link_ID>:                                   |
+|                 |    connection ID in                             |
+|                 |    multiple connection                          |
+|                 |    mode.                                        |
+|                 |                                                 |
+|                 | -  <len>: data length                           |
+|                 |    requested, max is                            |
+|                 |    248 bytes for each                           |
+|                 |    request.                                     |
+|                 |                                                 |
+|                 | -  <actual_len>:                                |
+|                 |    length of the data                           |
+|                 |    actually received                            |
+|                 |                                                 |
+|                 | -  <data>: the data                             |
+|                 |    received                                     |
 +-----------------+------------------------+------------------------+
-| **Notes**       | In case of             |                        |
-|                 | disconnection, the     |                        |
-|                 | buffered TCP data will |                        |
-|                 | still be there and can |                        |
-|                 | be read by MCU until a |                        |
-|                 | new connection is      |                        |
-|                 | established. If the    |                        |
-|                 | newly established      |                        |
-|                 | connection happens to  |                        |
-|                 | use the same link ID,  |                        |
-|                 | the previously         |                        |
-|                 | buffered data in the   |                        |
-|                 | last connection will   |                        |
-|                 | be lost.               |                        |
+| **Notes**       | In case of                                      |
+|                 | disconnection, the                              |
+|                 | buffered TCP data will                          |
+|                 | still be there and can                          |
+|                 | be read by MCU until a                          |
+|                 | new connection is                               |
+|                 | established. If the                             |
+|                 | newly established                               |
+|                 | connection happens to                           |
+|                 | use the same link ID,                           |
+|                 | the previously                                  |
+|                 | buffered data in the                            |
+|                 | last connection will                            |
+|                 | be lost.                                        |
 +-----------------+------------------------+------------------------+
-| **Examples**    | AT+CIPRECVMODE=1       |                        |
-|                 |                        |                        |
-|                 | // For example, if     |                        |
-|                 | host MCU got a message |                        |
-|                 | of receiving 1 bytes   |                        |
-|                 | data in connection     |                        |
-|                 | with connection , the  |                        |
-|                 | message will be as     |                        |
-|                 | following: +IPD,,1     |                        |
-|                 |                        |                        |
-|                 | // then you can read   |                        |
-|                 | those 100 bytes by     |                        |
-|                 | using the command      |                        |
-|                 | below                  |                        |
-|                 |                        |                        |
-|                 | AT+CIPRECVDATA=,1      |                        |
+| **Examples**    | AT+CIPRECVMODE=1                                |
+|                 |                                                 |
+|                 | // For example, if                              |
+|                 | host MCU got a message                          |
+|                 | of receiving 1 bytes                            |
+|                 | data in connection                              |
+|                 | with connection , the                           |
+|                 | message will be as                              |
+|                 | following: +IPD,,1                              |
+|                 |                                                 |
+|                 | // then you can read                            |
+|                 | those 100 bytes by                              |
+|                 | using the command                               |
+|                 | below                                           |
+|                 |                                                 |
+|                 | AT+CIPRECVDATA=,1                               |
 +-----------------+------------------------+------------------------+
 
 AT+CIPREVLEN – Gets TCP Data Length in Passive Received Mode
@@ -4149,49 +3904,49 @@ AT+CIPSNTPCFG – Sets the Configuration of SNTP
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <enable>:            |                         |
-|                |                         |                         |
-|                | -  : SNTP is disabled;  |                         |
-|                |                         |                         |
-|                | -  1: SNTP is enabled.  |                         |
-|                |                         |                         |
-|                | -  <timezone>: time     |                         |
-|                |    zone; range:         |                         |
-|                |    [-11,13]; if SNTP is |                         |
-|                |    enabled, the         |                         |
-|                |    <timezone> must be   |                         |
-|                |    set;                 |                         |
-|                |                         |                         |
-|                | -  <SNTP server>:       |                         |
-|                |    optional parameter   |                         |
-|                |    indicating the first |                         |
-|                |    SNTP server;         |                         |
-|                |                         |                         |
-|                | -  <SNTP server1>:      |                         |
-|                |    optional parameter   |                         |
-|                |    indicating the       |                         |
-|                |    second SNTP server;  |                         |
-|                |                         |                         |
-|                | -  <SNTP server2>:      |                         |
-|                |    optional parameter   |                         |
-|                |    indicating the third |                         |
-|                |    SNTP server.         |                         |
+| **Parameters** | -  <enable>:                                      |
+|                |                                                   |
+|                | -  : SNTP is disabled;                            |
+|                |                                                   |
+|                | -  1: SNTP is enabled.                            |
+|                |                                                   |
+|                | -  <timezone>: time                               |
+|                |    zone; range:                                   |
+|                |    [-11,13]; if SNTP is                           |
+|                |    enabled, the                                   |
+|                |    <timezone> must be                             |
+|                |    set;                                           |
+|                |                                                   |
+|                | -  <SNTP server>:                                 |
+|                |    optional parameter                             |
+|                |    indicating the first                           |
+|                |    SNTP server;                                   |
+|                |                                                   |
+|                | -  <SNTP server1>:                                |
+|                |    optional parameter                             |
+|                |    indicating the                                 |
+|                |    second SNTP server;                            |
+|                |                                                   |
+|                | -  <SNTP server2>:                                |
+|                |    optional parameter                             |
+|                |    indicating the third                           |
+|                |    SNTP server.                                   |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | If the <SNTP server>    |                         |
-|                | parameters are not set, |                         |
-|                | servers                 |                         |
-|                | "cn.ntp.org             |                         |
-|                | .cn","ntp.sjtu.edu.cn", |                         |
-|                | and "us.pool.ntp.org"   |                         |
-|                | (change to              |                         |
-|                | “0.pool.ntp.org”,       |                         |
-|                | “1.pool.ntp.org” and    |                         |
-|                | “2.pool.ntp.org”?) will |                         |
-|                | be used by default.     |                         |
+| **Notes**      | If the <SNTP server>                              |
+|                | parameters are not set,                           |
+|                | servers                                           |
+|                | "cn.ntp.org                                       |
+|                | .cn","ntp.sjtu.edu.cn",                           |
+|                | and "us.pool.ntp.org"                             |
+|                | (change to                                        |
+|                | “0.pool.ntp.org”,                                 |
+|                | “1.pool.ntp.org” and                              |
+|                | “2.pool.ntp.org”?) will                           |
+|                | be used by default.                               |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIPSNTPCFG=1,8,"0.p  |                         |
-|                | ool.ntp.org","1.pool.nt |                         |
-|                | p.org","2.pool.ntp.org" |                         |
+| **Examples**   | AT+CIPSNTPCFG=1,8,"0.p                            |
+|                | ool.ntp.org","1.pool.nt                           |
+|                | p.org","2.pool.ntp.org"                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPSNTPTIME – Checks the SNTP Time
@@ -4248,61 +4003,61 @@ AT+CIPDNS_CUR – Sets User-defined DNS Servers, Configuration Not Saved to Flas
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <enable>:            |                         |
-|                |                         |                         |
-|                | -  : disables           |                         |
-|                |    user-defined DNS     |                         |
-|                |    servers;             |                         |
-|                |                         |                         |
-|                | -  1: enables           |                         |
-|                |    user-defined DNS     |                         |
-|                |    servers.             |                         |
-|                |                         |                         |
-|                | -  <DNS server>:        |                         |
-|                |    optional parameter   |                         |
-|                |    indicating the first |                         |
-|                |    DNS server;          |                         |
-|                |                         |                         |
-|                | -  <DNS server1>:       |                         |
-|                |    optional parameter   |                         |
-|                |    indicating the       |                         |
-|                |    second DNS server;   |                         |
+| **Parameters** | -  <enable>:                                      |
+|                |                                                   |
+|                | -  : disables                                     |
+|                |    user-defined DNS                               |
+|                |    servers;                                       |
+|                |                                                   |
+|                | -  1: enables                                     |
+|                |    user-defined DNS                               |
+|                |    servers.                                       |
+|                |                                                   |
+|                | -  <DNS server>:                                  |
+|                |    optional parameter                             |
+|                |    indicating the first                           |
+|                |    DNS server;                                    |
+|                |                                                   |
+|                | -  <DNS server1>:                                 |
+|                |    optional parameter                             |
+|                |    indicating the                                 |
+|                |    second DNS server;                             |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  For command:         |                         |
-|                |    AT+CIPDNS_CUR=       |                         |
-|                |    (disable             |                         |
-|                |    user-defined DNS     |                         |
-|                |    servers),            |                         |
-|                |    "28.67.222.222" will |                         |
-|                |    be used as DNS       |                         |
-|                |    server by default.   |                         |
-|                |    And the DNS server   |                         |
-|                |    may change according |                         |
-|                |    to the configuration |                         |
-|                |    of the router the    |                         |
-|                |    BFQ4004 is connected |                         |
-|                |    to.                  |                         |
-|                |                         |                         |
-|                | -  | For command:       |                         |
-|                |      AT+CIPDNS_CUR=1    |                         |
-|                |      (enable            |                         |
-|                |      user-defined DNS   |                         |
-|                |      servers, but the   |                         |
-|                |      <DNS server>       |                         |
-|                |      parameters are not |                         |
-|                |      set), servers      |                         |
-|                |    | "28.67.222.222"    |                         |
-|                |      will be used as    |                         |
-|                |      DNS server by      |                         |
-|                |      default.           |                         |
-|                |                         |                         |
-|                | -  <DNS server> and     |                         |
-|                |    <DNS server1> cannot |                         |
-|                |    be set to the same   |                         |
-|                |    server.              |                         |
+| **Notes**      | -  For command:                                   |
+|                |    AT+CIPDNS_CUR=                                 |
+|                |    (disable                                       |
+|                |    user-defined DNS                               |
+|                |    servers),                                      |
+|                |    "28.67.222.222" will                           |
+|                |    be used as DNS                                 |
+|                |    server by default.                             |
+|                |    And the DNS server                             |
+|                |    may change according                           |
+|                |    to the configuration                           |
+|                |    of the router the                              |
+|                |    BFQ4004 is connected                           |
+|                |    to.                                            |
+|                |                                                   |
+|                | -  | For command:                                 |
+|                |      AT+CIPDNS_CUR=1                              |
+|                |      (enable                                      |
+|                |      user-defined DNS                             |
+|                |      servers, but the                             |
+|                |      <DNS server>                                 |
+|                |      parameters are not                           |
+|                |      set), servers                                |
+|                |    | "28.67.222.222"                              |
+|                |      will be used as                              |
+|                |      DNS server by                                |
+|                |      default.                                     |
+|                |                                                   |
+|                | -  <DNS server> and                               |
+|                |    <DNS server1> cannot                           |
+|                |    be set to the same                             |
+|                |    server.                                        |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIP                  |                         |
-|                | DNS_CUR=1,"28.67.22.22" |                         |
+| **Examples**   | AT+CIP                                            |
+|                | DNS_CUR=1,"28.67.22.22"                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CIPDNS_DEF – Sets User-defined DNS Servers, Configuration Saved to Flash
@@ -4329,61 +4084,61 @@ AT+CIPDNS_DEF – Sets User-defined DNS Servers, Configuration Saved to Flash
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <enable>:            |                         |
-|                |                         |                         |
-|                | -  : disables           |                         |
-|                |    user-defined DNS     |                         |
-|                |    servers;             |                         |
-|                |                         |                         |
-|                | -  1: enables           |                         |
-|                |    user-defined DNS     |                         |
-|                |    servers.             |                         |
-|                |                         |                         |
-|                | -  <DNS server>:        |                         |
-|                |    optional parameter   |                         |
-|                |    indicating the first |                         |
-|                |    DNS server;          |                         |
-|                |                         |                         |
-|                | -  <DNS server1>:       |                         |
-|                |    optional parameter   |                         |
-|                |    indicating the       |                         |
-|                |    second DNS server;   |                         |
+| **Parameters** | -  <enable>:                                      |
+|                |                                                   |
+|                | -  : disables                                     |
+|                |    user-defined DNS                               |
+|                |    servers;                                       |
+|                |                                                   |
+|                | -  1: enables                                     |
+|                |    user-defined DNS                               |
+|                |    servers.                                       |
+|                |                                                   |
+|                | -  <DNS server>:                                  |
+|                |    optional parameter                             |
+|                |    indicating the first                           |
+|                |    DNS server;                                    |
+|                |                                                   |
+|                | -  <DNS server1>:                                 |
+|                |    optional parameter                             |
+|                |    indicating the                                 |
+|                |    second DNS server;                             |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | -  For command:         |                         |
-|                |    AT+CIPDNS_DEF=       |                         |
-|                |    (disable             |                         |
-|                |    user-defined DNS     |                         |
-|                |    servers),            |                         |
-|                |    "28.67.222.222" will |                         |
-|                |    be used as DNS       |                         |
-|                |    server by default.   |                         |
-|                |    And the DNS server   |                         |
-|                |    may change according |                         |
-|                |    to the configuration |                         |
-|                |    of the router the    |                         |
-|                |    BFQ4004 is connected |                         |
-|                |    to.                  |                         |
-|                |                         |                         |
-|                | -  | For command:       |                         |
-|                |      AT+CIPDNS_DEF=1    |                         |
-|                |      (enable            |                         |
-|                |      user-defined DNS   |                         |
-|                |      servers, but the   |                         |
-|                |      <DNS server>       |                         |
-|                |      parameters are not |                         |
-|                |      set), servers      |                         |
-|                |    | "28.67.222.222"    |                         |
-|                |      will be used as    |                         |
-|                |      DNS server by      |                         |
-|                |      default.           |                         |
-|                |                         |                         |
-|                | -  <DNS server> and     |                         |
-|                |    <DNS server1> cannot |                         |
-|                |    be set to the same   |                         |
-|                |    server.              |                         |
+| **Notes**      | -  For command:                                   |
+|                |    AT+CIPDNS_DEF=                                 |
+|                |    (disable                                       |
+|                |    user-defined DNS                               |
+|                |    servers),                                      |
+|                |    "28.67.222.222" will                           |
+|                |    be used as DNS                                 |
+|                |    server by default.                             |
+|                |    And the DNS server                             |
+|                |    may change according                           |
+|                |    to the configuration                           |
+|                |    of the router the                              |
+|                |    BFQ4004 is connected                           |
+|                |    to.                                            |
+|                |                                                   |
+|                | -  | For command:                                 |
+|                |      AT+CIPDNS_DEF=1                              |
+|                |      (enable                                      |
+|                |      user-defined DNS                             |
+|                |      servers, but the                             |
+|                |      <DNS server>                                 |
+|                |      parameters are not                           |
+|                |      set), servers                                |
+|                |    | "28.67.222.222"                              |
+|                |      will be used as                              |
+|                |      DNS server by                                |
+|                |      default.                                     |
+|                |                                                   |
+|                | -  <DNS server> and                               |
+|                |    <DNS server1> cannot                           |
+|                |    be set to the same                             |
+|                |    server.                                        |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CIP                  |                         |
-|                | DNS_DEF=1,"28.67.22.22" |                         |
+| **Examples**   | AT+CIP                                            |
+|                | DNS_DEF=1,"28.67.22.22"                           |
 +----------------+-------------------------+-------------------------+
 
 .. _section-1:
@@ -4398,6 +4153,7 @@ Overview
 
 ============ ===========================================
 **Commands** **Description**
+============ ===========================================
 AT+CHTTPURL  Set HTTP server port and address.
 AT+CHTTPPH   Set path of POST/GET.
 AT+CHTTPTP   Set command type of HTTP (GET or POST).
@@ -4430,43 +4186,43 @@ AT+CHTTPURL – Sets HTTP Server Port and Address
 |                | OK                      |                         |
 |                |                         | <error_code>            |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | -  <port>: a number     |                         |
-|                |    representing the     |                         |
-|                |    port of the HTTP     |                         |
-|                |    server.              |                         |
-|                |                         |                         |
-|                | -  <IP_address>: a      |                         |
-|                |    string representing  |                         |
-|                |    the IP address or    |                         |
-|                |    domain name of the   |                         |
-|                |    HTTP server.         |                         |
-|                |                         |                         |
-|                | -  <error_code>: a hex  |                         |
-|                |    number in the form   |                         |
-|                |    of “x7+Standard HTTP |                         |
-|                |    error code”.         |                         |
+| **Parameters** | -  <port>: a number                               |
+|                |    representing the                               |
+|                |    port of the HTTP                               |
+|                |    server.                                        |
+|                |                                                   |
+|                | -  <IP_address>: a                                |
+|                |    string representing                            |
+|                |    the IP address or                              |
+|                |    domain name of the                             |
+|                |    HTTP server.                                   |
+|                |                                                   |
+|                | -  <error_code>: a hex                            |
+|                |    number in the form                             |
+|                |    of “x7+Standard HTTP                           |
+|                |    error code”.                                   |
 +----------------+-------------------------+-------------------------+
-| **Notes**      | If resource is not      |                         |
-|                | found, standard HTTP    |                         |
-|                | error code = 404, the   |                         |
-|                | set command would       |                         |
-|                | return the following    |                         |
-|                | error code:             |                         |
-|                |                         |                         |
-|                | x7194                   |                         |
-|                |                         |                         |
-|                | Because                 |                         |
-|                | hex(x7+44)=0x7194       |                         |
-|                |                         |                         |
-|                | For a complete list of  |                         |
-|                | standard HTTP/1.1 error |                         |
-|                | codes please refer to:  |                         |
-|                | RFC 2616:               |                         |
-|                | https://tool            |                         |
-|                | s.ietf.org/html/rfc2616 |                         |
+| **Notes**      | If resource is not                                |
+|                | found, standard HTTP                              |
+|                | error code = 404, the                             |
+|                | set command would                                 |
+|                | return the following                              |
+|                | error code:                                       |
+|                |                                                   |
+|                | x7194                                             |
+|                |                                                   |
+|                | Because                                           |
+|                | hex(x7+44)=0x7194                                 |
+|                |                                                   |
+|                | For a complete list of                            |
+|                | standard HTTP/1.1 error                           |
+|                | codes please refer to:                            |
+|                | RFC 2616:                                         |
+|                | https://tool                                      |
+|                | s.ietf.org/html/rfc2616                           |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+C                    |                         |
-|                | HTTPURL=8,"192.168..18" |                         |
+| **Examples**   | AT+C                                              |
+|                | HTTPURL=8,"192.168..18"                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CHTTPPH – Sets Path of POST/GET
@@ -4484,11 +4240,11 @@ AT+CHTTPPH – Sets Path of POST/GET
 |                |                         |                         |
 |                | OK                      |                         |
 +----------------+-------------------------+-------------------------+
-| **Parameters** | <path>: a string        |                         |
-|                | representing the path   |                         |
-|                | of POST/GET.            |                         |
+| **Parameters** | <path>: a string                                  |
+|                | representing the path                             |
+|                | of POST/GET.                                      |
 +----------------+-------------------------+-------------------------+
-| **Examples**   | AT+CHTTPPH=”/userLogin" |                         |
+| **Examples**   | AT+CHTTPPH=”/userLogin"                           |
 +----------------+-------------------------+-------------------------+
 
 AT+CHTTPCTP – Sets Command Type of HTTP (GET or POST)
@@ -4496,13 +4252,12 @@ AT+CHTTPCTP – Sets Command Type of HTTP (GET or POST)
 
 =============== ==================================================
 **Set Command** AT+CHTTPCTP=<type>
-
                 Function: sets command type of either POST or GET.
 **Response**    OK
 **Parameters**  <type>: a number representing GET or POST command.
-
+                
                 -  : GET (default);
-
+                
                 -  1: POST.
 **Examples**    AT+CHTTPCTP=1
 =============== ==================================================
@@ -4603,14 +4358,15 @@ MQTT Commands Overview
 
 =============== ===============
 **Commands**    **Description**
-AT+CMQNEW
-AT+CMQCON
-AT+CMQDISCON
-AT+CMQSUB
-AT+CMQUNSUB
-AT+CMQPUB
-AT+CMQTTSNEW
-AT+CMQTTSNEWEXT
+=============== ===============
+AT+CMQNEW       
+AT+CMQCON       
+AT+CMQDISCON    
+AT+CMQSUB       
+AT+CMQUNSUB     
+AT+CMQPUB       
+AT+CMQTTSNEW    
+AT+CMQTTSNEWEXT 
 =============== ===============
 
 CoAP Commands Overview
@@ -4618,10 +4374,11 @@ CoAP Commands Overview
 
 ============= ===============
 **Commands**  **Description**
-AT+CCOAPNEW
-AT+CCOAPSEND
-AT+CCOAPCSEND
-AT+CCOAPDEL
+============= ===============
+AT+CCOAPNEW   
+AT+CCOAPSEND  
+AT+CCOAPCSEND 
+AT+CCOAPDEL   
 ============= ===============
 
 TLS Commands Overview
@@ -4629,12 +4386,13 @@ TLS Commands Overview
 
 ============ ===============
 **Commands** **Description**
-AT+CTLSCFG
-AT+CTLSCONN
-AT+CTLSCLOSE
-AT+CTLSSEND
-AT+CTLSRECV
-AT+CSETCA
+============ ===============
+AT+CTLSCFG   
+AT+CTLSCONN  
+AT+CTLSCLOSE 
+AT+CTLSSEND  
+AT+CTLSRECV  
+AT+CSETCA    
 ============ ===============
 
 AWS IoT Core AT Commands
