@@ -138,8 +138,10 @@ th {
      width: 240px !important;
   } 
 
+   
   /*Change version Menu text from "Read the Docs" to "Switch Version"*/
-  span.fa.fa-book{
+  /*
+   span.fa.fa-book{
     visibility: hidden;
     position: relative;
   }
@@ -151,21 +153,38 @@ th {
     left: 0;
     content: "Switch Version";
   }
-
+*/
   /*Change Top link in content area from "Docs" to "Home"*/   
+   /*
   .wy-breadcrumbs li:first-child a:first-child {
      visibility: hidden;
     position: relative;
   }
 
-  .wy-breadcrumbs li:first-child a:first-child:after {
+   
+  .wy-breadcrumbs li:first-child a:first-child:before {
     visibility: visible;
     position: absolute;
     top: 1;
     left: 0;
-    content: "Home";
+    content: "\f015 Home";
   }
-  
+  */
+   
+    .wy-breadcrumbs li:first-child a:first-child:before {
+    visibility: visible;
+    position: absolute;
+    top: 1;
+    left: 0;
+    content: "\f015 Home";
+  }
+   
+   
+   
+   
+   
+   
+   
    table {
      width : 95%  !important;
    }
