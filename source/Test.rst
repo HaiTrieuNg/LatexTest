@@ -18,6 +18,14 @@ BFQ4004 AT Firmware, officially launched by BeeFi Technologies
 Users may also find AT Project where BeeFi created example demo code for
 users to customize their AT firmware.
 
+.. code-block:: python
+
+    def some_function():
+        interesting = False
+                      print 'This line is highlighted.'
+                      print 'This one is not...'
+                      print '...but this one is.'
+
 .. important::
     -  *Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document.* |br|
     -  *AT firmware uses priority levels* *and 1 of system_os_task, so only     one task of priority 2 is allowed to be set up by user application.* |br|
