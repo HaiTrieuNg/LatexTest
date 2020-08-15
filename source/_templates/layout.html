@@ -9,6 +9,45 @@
 }
  */  
    
+a.btn.btn-neutral.float-left {
+    visibility: hidden;
+    position: relative;
+}
+  
+a.btn.btn-neutral.float-left:before {
+    font-family: "FontAwesome";
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-decoration: inherit;
+    visibility: visible;
+    position: absolute;
+    top: 1;
+    content: "\f0a8";
+}
+  
+  
+  
+a.btn.btn-neutral.float-right {
+    visibility: hidden;
+    position: relative;
+}
+  
+a.btn.btn-neutral.float-right:before {
+    font-family: "FontAwesome";
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-decoration: inherit;
+    visibility: visible;
+    position: absolute;
+    top: 1;
+    content: "\f0a9";
+}
+   
+   
 p {
    font-weight: normal;
    font-family: Calibri;
@@ -468,43 +507,7 @@ h1:before {
    border-style: dashed;
    border-width: 1px;
 
-a.btn.btn-neutral.float-left {
-    visibility: hidden;
-    position: relative;
-}
-  
-a.btn.btn-neutral.float-left:before {
-    font-family: "FontAwesome";
-    display: inline-block;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    text-decoration: inherit;
-    visibility: visible;
-    position: absolute;
-    top: 1;
-    content: "\f0a8";
-}
-  
-  
-  
-a.btn.btn-neutral.float-right {
-    visibility: hidden;
-    position: relative;
-}
-  
-a.btn.btn-neutral.float-right:before {
-    font-family: "FontAwesome";
-    display: inline-block;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    text-decoration: inherit;
-    visibility: visible;
-    position: absolute;
-    top: 1;
-    content: "\f0a9";
-}
+
 
      </style>
 {% endblock %}
