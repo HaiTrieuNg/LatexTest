@@ -111,7 +111,7 @@ AT – Tests AT Startup
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. table::
-    :widths: 50,50
+   :widths: 50,50
     
 =================== ==
 **Execute Command** AT
@@ -4408,6 +4408,9 @@ AT+CCOAPDEL
 TLS Commands Overview
 ---------------------
 
+.. table::
+   :widths: 50,50
+   
 ============ ===============
 **Commands** **Description**
 ============ ===============
