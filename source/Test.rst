@@ -53,24 +53,24 @@ Each command set contains four types of AT commands.
 .. table::
     :widths: 10,45,45
 
-+-----------------+--------------------+-----------------------------+
-| **Type**        | **Command Format** | **Description**             |
-+=================+====================+=============================+
-| Test Command    | AT+<X>=?           | Queries the Set Commands’   |
-|                 |                    | internal parameters and     |
-|                 |                    | their range of values.      |
-+-----------------+--------------------+-----------------------------+
-| Query Command   | AT+<X>?            | Returns the current value   |
-|                 |                    | of parameters.              |
-+-----------------+--------------------+-----------------------------+
-| Set Command     | AT+<X>=<…>         | Sets the value of           |
-|                 |                    | user-defined parameters in  |
-|                 |                    | commands, and runs these    |
-|                 |                    | commands.                   |
-+-----------------+--------------------+-----------------------------+
-| Execute Command | AT+<X>             | Runs commands with no       |
-|                 |                    | user-defined parameter.     |
-+-----------------+--------------------+-----------------------------+
+     +-----------------+--------------------+-----------------------------+
+     | **Type**        | **Command Format** | **Description**             |
+     +=================+====================+=============================+
+     | Test Command    | AT+<X>=?           | Queries the Set Commands’   |
+     |                 |                    | internal parameters and     |
+     |                 |                    | their range of values.      |
+     +-----------------+--------------------+-----------------------------+
+     | Query Command   | AT+<X>?            | Returns the current value   |
+     |                 |                    | of parameters.              |
+     +-----------------+--------------------+-----------------------------+
+     | Set Command     | AT+<X>=<…>         | Sets the value of           |
+     |                 |                    | user-defined parameters in  |
+     |                 |                    | commands, and runs these    |
+     |                 |                    | commands.                   |
+     +-----------------+--------------------+-----------------------------+
+     | Execute Command | AT+<X>             | Runs commands with no       |
+     |                 |                    | user-defined parameter.     |
+     +-----------------+--------------------+-----------------------------+
 
 .. note::
      -  *Not all AT commands support all four varioations mentioned above.* |br|
@@ -113,11 +113,11 @@ AT – Tests AT Startup
 .. table::
    :widths: 50,50
     
-=================== ==
-**Execute Command** AT
-**Response**        OK
-**Parameters**      \-
-=================== ==
+     =================== ==
+     **Execute Command** AT
+     **Response**        OK
+     **Parameters**      \-
+     =================== ==
 
 AT+ATE – Configures Echoing of AT Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4411,16 +4411,16 @@ TLS Commands Overview
 .. table::
    :widths: 50,50
    
-============ ===============
-**Commands** **Description**
-============ ===============
-AT+CTLSCFG   
-AT+CTLSCONN  
-AT+CTLSCLOSE 
-AT+CTLSSEND  
-AT+CTLSRECV  
-AT+CSETCA    
-============ ===============
+     ============ ===============
+     **Commands** **Description**
+     ============ ===============
+     AT+CTLSCFG   
+     AT+CTLSCONN  
+     AT+CTLSCLOSE 
+     AT+CTLSSEND  
+     AT+CTLSRECV  
+     AT+CSETCA    
+     ============ ===============
 
 AWS IoT Core AT Commands
 ========================
