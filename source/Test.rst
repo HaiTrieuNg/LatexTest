@@ -50,6 +50,9 @@ Command Types and Formats
 
 Each command set contains four types of AT commands.
 
+.. table::
+    :widths: 30,35,35
+
 +-----------------+--------------------+-----------------------------+
 | **Type**        | **Command Format** | **Description**             |
 +=================+====================+=============================+
@@ -107,6 +110,9 @@ Command Descriptions
 AT – Tests AT Startup
 ~~~~~~~~~~~~~~~~~~~~~
 
+.. table::
+    :widths: 50,50
+    
 =================== ==
 **Execute Command** AT
 **Response**        OK
