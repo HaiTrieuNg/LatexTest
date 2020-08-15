@@ -18,6 +18,10 @@ BFQ4004 AT Firmware, officially launched by BeeFi Technologies
 Users may also find AT Project where BeeFi created example demo code for
 users to customize their AT firmware.
 
+This document provides detailed information about the BF4004Q WiFi
+module AT commands. It also introduces how to download firmware images
+onto the flash on the module as well as some customization examples.
+
 .. code-block:: python
 
     def some_function():
@@ -27,22 +31,23 @@ users to customize their AT firmware.
                       print '...but this one is.'
 
 .. important::
-    -  *Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document.* |br|
-    -  *AT firmware uses priority levels* *and 1 of system_os_task, so only     one task of priority 2 is allowed to be set up by user application.* |br|
+    -  Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document. |br|
+    -  AT firmware uses priority levels and 1 of system_os_task, so only     one task of priority 2 is allowed to be set up by user application. |br|
 
 This document provides detailed information about the BF4004Q WiFi
 module AT commands. It also introduces how to download firmware images
 onto the flash on the module as well as some customization examples.
 
 .. note::
-     -  *Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document.* |br|
-     -  *AT firmware uses priority levels* *and 1 of system_os_task, so only     one task of priority 2 is allowed to be set up by user application.* |br|
+     -  Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document. |br|
+     -  AT firmware uses priority levels and 1 of system_os_task, so only     one task of priority 2 is allowed to be set up by user application. |br|
 
 .. attention::
-     *Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document.* |br|
-   
-     
- 
+     Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document. |br|
+
+.. note::
+     -  Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document. |br|
+     -  AT firmware uses priority levels and 1 of system_os_task, so only     one task of priority 2 is allowed to be set up by user application. |br|
 
 
 Command Types and Formats
@@ -50,9 +55,10 @@ Command Types and Formats
 
 Each command set contains four types of AT commands.
 
-.. table::
-     :widths: 20, 35, 45
 
+.. table::
+     :widths: 10,30,60
+     
      +-----------------+--------------------+-----------------------------+
      | **Type**        | **Command Format** | **Description**             |
      +=================+====================+=============================+
@@ -72,6 +78,11 @@ Each command set contains four types of AT commands.
      |                 |                    | user-defined parameter.     |
      +-----------------+--------------------+-----------------------------+
 
+BFQ4004 AT Firmware, officially launched by BeeFi Technologies
+(hereafter “BeeFi”), is available for download and can be used directly.
+Users may also find AT Project where BeeFi created example demo code for
+users to customize their AT firmware.
+
 .. note::
      -  *Not all AT commands support all four varioations mentioned above.* |br|
      -  *Square brackets “[]” designate the default value. It is not always     required or may not appear.* |br|
@@ -88,21 +99,25 @@ Basic AT Commands
 Overview
 --------
 
-============ =====================================================
-**Commands** **Description**
-============ =====================================================
-AT           Tests AT startup.
-ATE          Configures echoing of AT commands.
-AT+RST       Restarts the module.
-AT+GMR       Checks AT commands version information.
-AT+RESTORE   Restores the factory settings.
-AT+UART_CUR  The current UART configuration.
-AT+UART_DEF  The default UART configuration, saved in flash.
-AT+SYSRAM    Checks the available RAM space.
-AT+SLEEP     Configures the operating modes for power optimization
-AT+GSLP      Enters suspend (deep-sleep) mode.
-AT+RFPOWER   Sets the maximum RF TX power.
-============ =====================================================
+
+.. table::
+     :widths: 50,50
+     
+     ============ =====================================================
+     **Commands** **Description**
+     ============ =====================================================
+     AT           Tests AT startup.
+     ATE          Configures echoing of AT commands.
+     AT+RST       Restarts the module.
+     AT+GMR       Checks AT commands version information.
+     AT+RESTORE   Restores the factory settings.
+     AT+UART_CUR  The current UART configuration.
+     AT+UART_DEF  The default UART configuration, saved in flash.
+     AT+SYSRAM    Checks the available RAM space.
+     AT+SLEEP     Configures the operating modes for power optimization
+     AT+GSLP      Enters suspend (deep-sleep) mode.
+     AT+RFPOWER   Sets the maximum RF TX power.
+     ============ =====================================================
 
 Command Descriptions
 --------------------
@@ -110,9 +125,10 @@ Command Descriptions
 AT – Tests AT Startup
 ~~~~~~~~~~~~~~~~~~~~~
 
+
 .. table::
      :widths: 50,50
-    
+     
      =================== ==
      **Execute Command** AT
      **Response**        OK
@@ -121,6 +137,11 @@ AT – Tests AT Startup
 
 AT+ATE – Configures Echoing of AT Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+BFQ4004 AT Firmware, officially launched by BeeFi Technologies
+(hereafter “BeeFi”), is available for download and can be used directly.
+Users may also find AT Project where BeeFi created example demo code for
+users to customize their AT firmware.
 
 +---------------------+-----------------------------------------------+
 | **Execute Command** | ATE                                           |
@@ -142,23 +163,34 @@ AT+ATE – Configures Echoing of AT Commands
 AT+RST – Restarts the Module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-=================== ======
-**Execute Command** AT+RST
-**Response**        OK
-**Parameters**      \-
-=================== ======
+
+.. table::
+     :widths: 50,50
+     
+     =================== ======
+     **Execute Command** AT+RST
+     **Response**        OK
+     **Parameters**      \-
+     =================== ======
+
+
 
 AT+GMR – Checks AT Commands Version Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+BFQ4004 AT Firmware, officially launched by BeeFi Technologies
+(hereafter “BeeFi”), is available for download and can be used directly.
+Users may also find AT Project where BeeFi created example demo code for
+users to customize their AT firmware.
+
 =================== ==================
 **Execute Command** AT+GMR
 **Response**        <AT version info>
-                    
+
                     <SDK version info>
-                    
+
                     <compile time>
-                    
+
                     OK
 **Parameters**      \-
 =================== ==================
@@ -166,21 +198,24 @@ AT+GMR – Checks AT Commands Version Information
 AT+RESTORE – Restores Factory Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------+-----------------------------------------------+
-| **Execute Command** | AT+RESTORE                                    |
-+---------------------+-----------------------------------------------+
-| **Response**        | OK                                            |
-+---------------------+-----------------------------------------------+
-| **Notes**           | The execution of this command resets all      |
-|                     | parameters saved in flash, and restores the   |
-|                     | factory default settings of the module. The   |
-|                     | chip will be restarted when this command is   |
-|                     | executed.                                     |
-+---------------------+-----------------------------------------------+
+
+.. table::
+     :widths: 50,50
+     
+     +---------------------+-----------------------------------------------+
+     | **Execute Command** | AT+RESTORE                                    |
+     +---------------------+-----------------------------------------------+
+     | **Response**        | OK                                            |
+     +---------------------+-----------------------------------------------+
+     | **Notes**           | The execution of this command resets all      |
+     |                     | parameters saved in flash, and restores the   |
+     |                     | factory default settings of the module. The   |
+     |                     | chip will be restarted when this command is   |
+     |                     | executed.                                     |
+     +---------------------+-----------------------------------------------+
 
 AT+UART_CUR – Current UART Configuration in RAM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query:                  | Set:                    |
@@ -285,116 +320,132 @@ AT+UART_CUR – Current UART Configuration in RAM
 AT+UART_DEF – Default UART Configuration from Flash
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------+-------------------------+-------------------------+
-| **Command**    | Query:                  | Set:                    |
-|                | AT+UART_DEF?            | AT+UART_DEF=<baudrate>, |
-|                |                         | <databit                |
-|                |                         | s>,<stopbits>,<parity>, |
-|                |                         | <flow control>          |
-+----------------+-------------------------+-------------------------+
-| **Response**   | | +UART_DEF:<baudrate>, | OK                      |
-|                | | <databit              |                         |
-|                | s>,<stopbits>,<parity>, |                         |
-|                | | <flow control>        |                         |
-|                |                         |                         |
-|                | OK                      |                         |
-+----------------+-------------------------+-------------------------+
-| **Parameters** | -  <baudrate>: UART                               |
-|                |    baud rate                                      |
-|                |                                                   |
-|                | -  <databits>: data                               |
-|                |    bits                                           |
-|                |                                                   |
-|                |    -  5: 5-bit data                               |
-|                |                                                   |
-|                |    -  6: 6-bit data                               |
-|                |                                                   |
-|                |    -  7: 7-bit data                               |
-|                |                                                   |
-|                |    -  8: 8-bit data                               |
-|                |                                                   |
-|                | -  <stopbits>: stop                               |
-|                |    bits                                           |
-|                |                                                   |
-|                |    -  1: 1-bit stop bit                           |
-|                |                                                   |
-|                |    -  2: 1.5-bit stop                             |
-|                |       bit                                         |
-|                |                                                   |
-|                |    -  3: 2-bit stop bit                           |
-|                |                                                   |
-|                | -  <parity>: parity bit                           |
-|                |                                                   |
-|                |    -  : None                                      |
-|                |                                                   |
-|                |    -  1: Odd                                      |
-|                |                                                   |
-|                |    -  2: Even                                     |
-|                |                                                   |
-|                | -  <flow control>: flow                           |
-|                |    control                                        |
-|                |                                                   |
-|                |    -  : flow control is                           |
-|                |       not enabled                                 |
-|                |                                                   |
-|                |    -  1: enable RTS                               |
-|                |                                                   |
-|                |    -  2: enable CTS                               |
-|                |                                                   |
-|                |    -  3: enable both                              |
-|                |       RTS and CTS                                 |
-+----------------+-------------------------+-------------------------+
-| **Notes**      | 1. The configuration                              |
-|                |    changes will be                                |
-|                |    saved in the user                              |
-|                |    parameter area in                              |
-|                |    the flash and will                             |
-|                |    still be valid when                            |
-|                |    the chip is powered                            |
-|                |    on again after                                 |
-|                |    shutdown.                                      |
-|                |                                                   |
-|                | 2. The use of flow                                |
-|                |    control requires the                           |
-|                |    support of hardware:                           |
-|                |                                                   |
-|                |    -  GPIO9 is UART CTS                           |
-|                |                                                   |
-|                |    -  GPIO8 is UART RTS                           |
-|                |                                                   |
-|                |    -  There are 2 UART                            |
-|                |       ports, only UART                            |
-|                |       has flow control                            |
-|                |       (4-wire)                                    |
-|                |                                                   |
-|                | 3. The range of baud                              |
-|                |    rates supported:                               |
-|                |    110~115200*4.                                  |
-+----------------+-------------------------+-------------------------+
-| **Examples**   | AT+UART_DEF=1152,8,1,                             |
-|                | ,3                                                |
-+----------------+-------------------------+-------------------------+
+.. table::
+     :widths: 10,30,60
+     
+     +----------------+-------------------------+-------------------------+
+     | **Command**    | Query:                  | Set:                    |
+     |                | AT+UART_DEF?            | AT+UART_DEF=<baudrate>, |
+     |                |                         | <databit                |
+     |                |                         | s>,<stopbits>,<parity>, |
+     |                |                         | <flow control>          |
+     +----------------+-------------------------+-------------------------+
+     | **Response**   | | +UART_DEF:<baudrate>, | OK                      |
+     |                | | <databit              |                         |
+     |                | s>,<stopbits>,<parity>, |                         |
+     |                | | <flow control>        |                         |
+     |                |                         |                         |
+     |                | OK                      |                         |
+     +----------------+-------------------------+-------------------------+
+     | **Parameters** | -  <baudrate>: UART                               |
+     |                |    baud rate                                      |
+     |                |                                                   |
+     |                | -  <databits>: data                               |
+     |                |    bits                                           |
+     |                |                                                   |
+     |                |    -  5: 5-bit data                               |
+     |                |                                                   |
+     |                |    -  6: 6-bit data                               |
+     |                |                                                   |
+     |                |    -  7: 7-bit data                               |
+     |                |                                                   |
+     |                |    -  8: 8-bit data                               |
+     |                |                                                   |
+     |                | -  <stopbits>: stop                               |
+     |                |    bits                                           |
+     |                |                                                   |
+     |                |    -  1: 1-bit stop bit                           |
+     |                |                                                   |
+     |                |    -  2: 1.5-bit stop                             |
+     |                |       bit                                         |
+     |                |                                                   |
+     |                |    -  3: 2-bit stop bit                           |
+     |                |                                                   |
+     |                | -  <parity>: parity bit                           |
+     |                |                                                   |
+     |                |    -  : None                                      |
+     |                |                                                   |
+     |                |    -  1: Odd                                      |
+     |                |                                                   |
+     |                |    -  2: Even                                     |
+     |                |                                                   |
+     |                | -  <flow control>: flow                           |
+     |                |    control                                        |
+     |                |                                                   |
+     |                |    -  : flow control is                           |
+     |                |       not enabled                                 |
+     |                |                                                   |
+     |                |    -  1: enable RTS                               |
+     |                |                                                   |
+     |                |    -  2: enable CTS                               |
+     |                |                                                   |
+     |                |    -  3: enable both                              |
+     |                |       RTS and CTS                                 |
+     +----------------+-------------------------+-------------------------+
+     | **Notes**      | 1. The configuration                              |
+     |                |    changes will be                                |
+     |                |    saved in the user                              |
+     |                |    parameter area in                              |
+     |                |    the flash and will                             |
+     |                |    still be valid when                            |
+     |                |    the chip is powered                            |
+     |                |    on again after                                 |
+     |                |    shutdown.                                      |
+     |                |                                                   |
+     |                | 2. The use of flow                                |
+     |                |    control requires the                           |
+     |                |    support of hardware:                           |
+     |                |                                                   |
+     |                |    -  GPIO9 is UART CTS                           |
+     |                |                                                   |
+     |                |    -  GPIO8 is UART RTS                           |
+     |                |                                                   |
+     |                |    -  There are 2 UART                            |
+     |                |       ports, only UART                            |
+     |                |       has flow control                            |
+     |                |       (4-wire)                                    |
+     |                |                                                   |
+     |                | 3. The range of baud                              |
+     |                |    rates supported:                               |
+     |                |    110~115200*4.                                  |
+     +----------------+-------------------------+-------------------------+
+     | **Examples**   | AT+UART_DEF=1152,8,1,                             |
+     |                | ,3                                                |
+     +----------------+-------------------------+-------------------------+
 
 AT+SYSRAM – Checks the Remaining Space on RAM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BFQ4004 AT Firmware, officially launched by BeeFi Technologies
+(hereafter “BeeFi”), is available for download and can be used directly.
+Users may also find AT Project where BeeFi created example demo code for
+users to customize their AT firmware.
 
-+-------------------+---------------------------------------------------------+
-| **Query Command** | AT+SYSRAM?                                              |
-+-------------------+---------------------------------------------------------+
-| **Response**      | +SYSRAM:<remaining RAM size>                            |
-|                   |                                                         |
-|                   | OK                                                      |
-+-------------------+---------------------------------------------------------+
-| **Notes**         | <remaining RAM size>: remaining space of RAM, in bytes. |
-+-------------------+---------------------------------------------------------+
+
+.. table::
+     :widths: 50,50
+     
+     +-------------------+---------------------------------------------------------+
+     | **Query Command** | AT+SYSRAM?                                              |
+     +-------------------+---------------------------------------------------------+
+     | **Response**      | +SYSRAM:<remaining RAM size>                            |
+     |                   |                                                         |
+     |                   | OK                                                      |
+     +-------------------+---------------------------------------------------------+
+     | **Notes**         | <remaining RAM size>: remaining space of RAM, in bytes. |
+     +-------------------+---------------------------------------------------------+
 
 AT+SLEEP – Configures the Operating Modes for Power Optimization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+BFQ4004 AT Firmware, officially launched by BeeFi Technologies
+(hereafter “BeeFi”), is available for download and can be used directly.
+Users may also find AT Project where BeeFi created example demo code for
+users to customize their AT firmware.
+
 
 .. table::
-   :widths: 20,50,30
-   
+     :widths: 10,30,60
+     
      +----------------+-------------------------+-----------------------+
      | **Command**    | Query:                  | Set:                  |
      |                | AT+SLEEP?               | AT+SLEEP=<sleep mode> |
@@ -460,47 +511,52 @@ AT+SLEEP – Configures the Operating Modes for Power Optimization
 AT+GSLP – Enters Suspend (Deep-sleep) Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------+---------------------------------------------------+
-| **Set Command** | AT+GSLP=<time>                                    |
-+-----------------+---------------------------------------------------+
-| **Response**    | <time>                                            |
-|                 |                                                   |
-|                 | OK                                                |
-+-----------------+---------------------------------------------------+
-| **Parameters**  | <time>: the milliseconds (ms) BFQ4004 stays in    |
-|                 | suspend mode.                                     |
-+-----------------+---------------------------------------------------+
-| **Notes**       | In suspend mode only the wakeup manager and PMU   |
-|                 | are powered with everything else powered down. It |
-|                 | is the lowest power consumption mode at the       |
-|                 | expense of a longer wakeup latency.               |
-|                 |                                                   |
-|                 | BFQ4004 can exit suspend mode in 2 ways:          |
-|                 |                                                   |
-|                 | 1. The synchronous internal timer expired after   |
-|                 |    <time> milliseconds; or                        |
-|                 |                                                   |
-|                 | 2. An asynchronous event is detected on the       |
-|                 |    WAKEUP pin.                                    |
-+-----------------+---------------------------------------------------+
+.. table::
+     :widths: 50,50
+     +-----------------+---------------------------------------------------+
+     | **Set Command** | AT+GSLP=<time>                                    |
+     +-----------------+---------------------------------------------------+
+     | **Response**    | <time>                                            |
+     |                 |                                                   |
+     |                 | OK                                                |
+     +-----------------+---------------------------------------------------+
+     | **Parameters**  | <time>: the milliseconds (ms) BFQ4004 stays in    |
+     |                 | suspend mode.                                     |
+     +-----------------+---------------------------------------------------+
+     | **Notes**       | In suspend mode only the wakeup manager and PMU   |
+     |                 | are powered with everything else powered down. It |
+     |                 | is the lowest power consumption mode at the       |
+     |                 | expense of a longer wakeup latency.               |
+     |                 |                                                   |
+     |                 | BFQ4004 can exit suspend mode in 2 ways:          |
+     |                 |                                                   |
+     |                 | 1. The synchronous internal timer expired after   |
+     |                 |    <time> milliseconds; or                        |
+     |                 |                                                   |
+     |                 | 2. An asynchronous event is detected on the       |
+     |                 |    WAKEUP pin.                                    |
+     +-----------------+---------------------------------------------------+
+     
+     AT+RFPOWER – Sets Maximum of RF TX Power
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-AT+RFPOWER – Sets Maximum of RF TX Power
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-----------------+---------------------------------------------------+
-| **Set Command** | AT+RFPOWER=<TX power>                             |
-+-----------------+---------------------------------------------------+
-| **Response**    | OK                                                |
-+-----------------+---------------------------------------------------+
-| **Parameters**  | <TX power>: the maximum value of RF TX power,     |
-|                 | range: [0, 82] in 0.25dBm unit                    |
-+-----------------+---------------------------------------------------+
-| **Notes**       | This command sets the maximum value of BFQ4004 RF |
-|                 | TX power. It is not precise. The actual value     |
-|                 | could be smaller than the set value.              |
-+-----------------+---------------------------------------------------+
-| **Examples**    | AT+RFPOWER=50                                     |
-+-----------------+---------------------------------------------------+
+.. table::
+     :widths: 50,50
+     
+     +-----------------+---------------------------------------------------+
+     | **Set Command** | AT+RFPOWER=<TX power>                             |
+     +-----------------+---------------------------------------------------+
+     | **Response**    | OK                                                |
+     +-----------------+---------------------------------------------------+
+     | **Parameters**  | <TX power>: the maximum value of RF TX power,     |
+     |                 | range: [0, 82] in 0.25dBm unit                    |
+     +-----------------+---------------------------------------------------+
+     | **Notes**       | This command sets the maximum value of BFQ4004 RF |
+     |                 | TX power. It is not precise. The actual value     |
+     |                 | could be smaller than the set value.              |
+     +-----------------+---------------------------------------------------+
+     | **Examples**    | AT+RFPOWER=50                                     |
+     +-----------------+---------------------------------------------------+
 
 Hardware-Related AT Commands
 ============================
@@ -510,16 +566,19 @@ Hardware-Related AT Commands
 Overview
 --------
 
-=============== =====================================================
-**Commands**    **Description**
-=============== =====================================================
-AT+SYSIOSETCFG  Configures IO working mode.
-AT+SYSIOGETCFG  Checks the working mode of IO pin.
-AT+SYSGPIODIR   Configures the direction of GPIO.
-AT+SYSGPIOWRITE Configures the GPIO output level.
-AT+SYSGPIOREAD  Configures the GPIO input level.
-AT+WAKEUPGPIO   Configures a GPIO to wake BFQ4004 up from sleep mode.
-=============== =====================================================
+.. table::
+     :widths: 50,50
+     
+     =============== =====================================================
+     **Commands**    **Description**
+     =============== =====================================================
+     AT+SYSIOSETCFG  Configures IO working mode.
+     AT+SYSIOGETCFG  Checks the working mode of IO pin.
+     AT+SYSGPIODIR   Configures the direction of GPIO.
+     AT+SYSGPIOWRITE Configures the GPIO output level.
+     AT+SYSGPIOREAD  Configures the GPIO input level.
+     AT+WAKEUPGPIO   Configures a GPIO to wake BFQ4004 up from sleep mode.
+     =============== =====================================================
 
 .. _command-descriptions-1:
 
@@ -529,84 +588,92 @@ Command Descriptions
 AT+SYSIOSETCFG – Configures IO Working Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------+---------------------------------------------------+
-| **Set Command** | AT+SYSIOSETCFG=<pin>,<mode>,<pull-up>             |
-+-----------------+---------------------------------------------------+
-| **Response**    | OK                                                |
-+-----------------+---------------------------------------------------+
-| **Parameters**  | -  <pin>: number of an IO pin                     |
-|                 |                                                   |
-|                 | -  <mode>: the working mode of the IO pin         |
-|                 |                                                   |
-|                 | -  <pull-up>                                      |
-|                 |                                                   |
-|                 |    -  : disable the pull-up                       |
-|                 |                                                   |
-|                 |    -  1: enable the pull-up of the IO pin         |
-+-----------------+---------------------------------------------------+
-| **Notes**       | Please refer to BFQ4004 Pin List for uses of      |
-|                 | AT+SYSGPIO-related commands.                      |
-+-----------------+---------------------------------------------------+
-| **Examples**    | AT+SYSIOSETCFG=12,3,1 //Set GPIO12 to work as a   |
-|                 | GPIO                                              |
-+-----------------+---------------------------------------------------+
+.. table::
+     :widths: 50,50
+     +-----------------+---------------------------------------------------+
+     | **Set Command** | AT+SYSIOSETCFG=<pin>,<mode>,<pull-up>             |
+     +-----------------+---------------------------------------------------+
+     | **Response**    | OK                                                |
+     +-----------------+---------------------------------------------------+
+     | **Parameters**  | -  <pin>: number of an IO pin                     |
+     |                 |                                                   |
+     |                 | -  <mode>: the working mode of the IO pin         |
+     |                 |                                                   |
+     |                 | -  <pull-up>                                      |
+     |                 |                                                   |
+     |                 |    -  : disable the pull-up                       |
+     |                 |                                                   |
+     |                 |    -  1: enable the pull-up of the IO pin         |
+     +-----------------+---------------------------------------------------+
+     | **Notes**       | Please refer to BFQ4004 Pin List for uses of      |
+     |                 | AT+SYSGPIO-related commands.                      |
+     +-----------------+---------------------------------------------------+
+     | **Examples**    | AT+SYSIOSETCFG=12,3,1 //Set GPIO12 to work as a   |
+     |                 | GPIO                                              |
+     +-----------------+---------------------------------------------------+
+     
+     AT+SYSIOGETCFG – Get IO Working Mode
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-AT+SYSIOGETCFG – Get IO Working Mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-----------------+---------------------------------------------------+
-| **Set Command** | AT+SYSIOGETCFG=<pin>                              |
-+-----------------+---------------------------------------------------+
-| **Response**    | +SYSIOGETCFG:<pin>,<mode>,<pull-up>               |
-|                 |                                                   |
-|                 | OK                                                |
-+-----------------+---------------------------------------------------+
-| **Parameters**  | -  <pin>: number of an IO pin                     |
-|                 |                                                   |
-|                 | -  <mode>: the working mode of the IO pin         |
-|                 |                                                   |
-|                 | -  <pull-up>                                      |
-|                 |                                                   |
-|                 |    -  : disable the pull-up                       |
-|                 |                                                   |
-|                 |    -  1: enable the pull-up of the IO pin         |
-+-----------------+---------------------------------------------------+
-| **Notes**       | Please refer to BFQ4004 Pin List for uses of      |
-|                 | AT+SYSGPIO-related commands.                      |
-+-----------------+---------------------------------------------------+
+.. table::
+     :widths: 50,50
+     
+     +-----------------+---------------------------------------------------+
+     | **Set Command** | AT+SYSIOGETCFG=<pin>                              |
+     +-----------------+---------------------------------------------------+
+     | **Response**    | +SYSIOGETCFG:<pin>,<mode>,<pull-up>               |
+     |                 |                                                   |
+     |                 | OK                                                |
+     +-----------------+---------------------------------------------------+
+     | **Parameters**  | -  <pin>: number of an IO pin                     |
+     |                 |                                                   |
+     |                 | -  <mode>: the working mode of the IO pin         |
+     |                 |                                                   |
+     |                 | -  <pull-up>                                      |
+     |                 |                                                   |
+     |                 |    -  : disable the pull-up                       |
+     |                 |                                                   |
+     |                 |    -  1: enable the pull-up of the IO pin         |
+     +-----------------+---------------------------------------------------+
+     | **Notes**       | Please refer to BFQ4004 Pin List for uses of      |
+     |                 | AT+SYSGPIO-related commands.                      |
+     +-----------------+---------------------------------------------------+
 
 AT+SYSGPIODIR – Configures the Direction of GPIO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------+---------------------------------------------------+
-| **Set Command** | AT+SYSGPIODIR=<pin>,<dir>                         |
-+-----------------+---------------------------------------------------+
-| **Response**    | -  | If the configuration is successful, the      |
-|                 |      command will return:                         |
-|                 |    | OK                                           |
-|                 |                                                   |
-|                 | -  | If the IO pin is not in GPIO mode, the       |
-|                 |      command will return:                         |
-|                 |    | NOT GPIO MODE!                               |
-|                 |    | ERROR                                        |
-+-----------------+---------------------------------------------------+
-| **Parameters**  | -  <pin>: GPIO pin number                         |
-|                 |                                                   |
-|                 | -  <dir>:                                         |
-|                 |                                                   |
-|                 |    -  : sets the GPIO as an input                 |
-|                 |                                                   |
-|                 |    -  1: sets the GPIO as an output               |
-+-----------------+---------------------------------------------------+
-| **Notes**       | Please refer to BFQ4004 Pin List for uses of      |
-|                 | AT+SYSGPIO-related commands.                      |
-+-----------------+---------------------------------------------------+
-| **Examples**    | AT+SYSIOSETCFG=12,3,1 //Set GPIO12 to work as a   |
-|                 | GPIO                                              |
-|                 |                                                   |
-|                 | AT+SYSGPIODIR=12,0 //Set GPIO12 to work as an     |
-|                 | input                                             |
-+-----------------+---------------------------------------------------+
+.. table::
+     :widths: 50,50
+     
+     +-----------------+---------------------------------------------------+
+     | **Set Command** | AT+SYSGPIODIR=<pin>,<dir>                         |
+     +-----------------+---------------------------------------------------+
+     | **Response**    | -  | If the configuration is successful, the      |
+     |                 |      command will return:                         |
+     |                 |    | OK                                           |
+     |                 |                                                   |
+     |                 | -  | If the IO pin is not in GPIO mode, the       |
+     |                 |      command will return:                         |
+     |                 |    | NOT GPIO MODE!                               |
+     |                 |    | ERROR                                        |
+     +-----------------+---------------------------------------------------+
+     | **Parameters**  | -  <pin>: GPIO pin number                         |
+     |                 |                                                   |
+     |                 | -  <dir>:                                         |
+     |                 |                                                   |
+     |                 |    -  : sets the GPIO as an input                 |
+     |                 |                                                   |
+     |                 |    -  1: sets the GPIO as an output               |
+     +-----------------+---------------------------------------------------+
+     | **Notes**       | Please refer to BFQ4004 Pin List for uses of      |
+     |                 | AT+SYSGPIO-related commands.                      |
+     +-----------------+---------------------------------------------------+
+     | **Examples**    | AT+SYSIOSETCFG=12,3,1 //Set GPIO12 to work as a   |
+     |                 | GPIO                                              |
+     |                 |                                                   |
+     |                 | AT+SYSGPIODIR=12,0 //Set GPIO12 to work as an     |
+     |                 | input                                             |
+     +-----------------+---------------------------------------------------+
 
 AT+SYSGPIOWRITE – Configures the Output Level of a GPIO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4284,9 +4351,9 @@ AT+CHTTPCTP – Sets Command Type of HTTP (GET or POST)
                 Function: sets command type of either POST or GET.
 **Response**    OK
 **Parameters**  <type>: a number representing GET or POST command.
-                
+
                 -  : GET (default);
-                
+
                 -  1: POST.
 **Examples**    AT+CHTTPCTP=1
 =============== ==================================================
@@ -4385,47 +4452,57 @@ Internet-of-Things (IoT)-Related AT Commands
 MQTT Commands Overview
 ----------------------
 
-=============== ===============
-**Commands**    **Description**
-=============== ===============
-AT+CMQNEW       
-AT+CMQCON       
-AT+CMQDISCON    
-AT+CMQSUB       
-AT+CMQUNSUB     
-AT+CMQPUB       
-AT+CMQTTSNEW    
-AT+CMQTTSNEWEXT 
-=============== ===============
+
+.. table::
+     :widths: 50,50
+     
+     =============== ===============
+     **Commands**    **Description**
+     =============== ===============
+     AT+CMQNEW
+     AT+CMQCON
+     AT+CMQDISCON
+     AT+CMQSUB
+     AT+CMQUNSUB
+     AT+CMQPUB
+     AT+CMQTTSNEW
+     AT+CMQTTSNEWEXT
+     =============== ===============
 
 CoAP Commands Overview
 ----------------------
 
-============= ===============
-**Commands**  **Description**
-============= ===============
-AT+CCOAPNEW   
-AT+CCOAPSEND  
-AT+CCOAPCSEND 
-AT+CCOAPDEL   
-============= ===============
+
+.. table::
+     :widths: 50,50
+     
+     ============= ===============
+     **Commands**  **Description**
+     ============= ===============
+     AT+CCOAPNEW
+     AT+CCOAPSEND
+     AT+CCOAPCSEND
+     AT+CCOAPDEL
+     ============= ===============
+
 
 TLS Commands Overview
 ---------------------
 
+
 .. table::
-   :widths: 50,50
-   
-   ============ ===============
-   **Commands** **Description**
-   ============ ===============
-   AT+CTLSCFG   
-   AT+CTLSCONN  
-   AT+CTLSCLOSE 
-   AT+CTLSSEND  
-   AT+CTLSRECV  
-   AT+CSETCA    
-   ============ ===============
+     :widths: 50,50
+     
+     ============ ===============
+     **Commands** **Description**
+     ============ ===============
+     AT+CTLSCFG
+     AT+CTLSCONN
+     AT+CTLSCLOSE
+     AT+CTLSSEND
+     AT+CTLSRECV
+     AT+CSETCA
+     ============ ===============
 
 AWS IoT Core AT Commands
 ========================
