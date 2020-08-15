@@ -20,7 +20,7 @@ users to customize their AT firmware.
 
 This document provides detailed information about the BF4004Q WiFi
 module AT commands. It also introduces how to download firmware images
-onto the flash on the module as well as some customization examples.
+onto the flash on the module as well as some customization examples. 
 
 .. code-block:: python
 
