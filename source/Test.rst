@@ -51,7 +51,7 @@ Command Types and Formats
 Each command set contains four types of AT commands.
 
 .. table::
-     :widths: 20,35,45
+     :widths: 20, 35, 45
 
      +-----------------+--------------------+-----------------------------+
      | **Type**        | **Command Format** | **Description**             |
