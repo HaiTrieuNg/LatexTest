@@ -51,7 +51,7 @@ Command Types and Formats
 Each command set contains four types of AT commands.
 
 .. table::
-    :widths: 20,35,45
+     :widths: 20,35,45
 
      +-----------------+--------------------+-----------------------------+
      | **Type**        | **Command Format** | **Description**             |
@@ -111,7 +111,7 @@ AT – Tests AT Startup
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. table::
-   :widths: 50,50
+     :widths: 50,50
     
      =================== ==
      **Execute Command** AT
@@ -4416,16 +4416,16 @@ TLS Commands Overview
 .. table::
    :widths: 50,50
    
-     ============ ===============
-     **Commands** **Description**
-     ============ ===============
-     AT+CTLSCFG   
-     AT+CTLSCONN  
-     AT+CTLSCLOSE 
-     AT+CTLSSEND  
-     AT+CTLSRECV  
-     AT+CSETCA    
-     ============ ===============
+   ============ ===============
+   **Commands** **Description**
+   ============ ===============
+   AT+CTLSCFG   
+   AT+CTLSCONN  
+   AT+CTLSCLOSE 
+   AT+CTLSSEND  
+   AT+CTLSRECV  
+   AT+CSETCA    
+   ============ ===============
 
 AWS IoT Core AT Commands
 ========================
