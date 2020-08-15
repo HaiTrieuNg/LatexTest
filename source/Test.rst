@@ -51,7 +51,7 @@ Command Types and Formats
 Each command set contains four types of AT commands.
 
 .. table::
-    :widths: 10,45,45
+    :widths: 20,35,45
 
      +-----------------+--------------------+-----------------------------+
      | **Type**        | **Command Format** | **Description**             |
@@ -180,6 +180,7 @@ AT+RESTORE – Restores Factory Settings
 
 AT+UART_CUR – Current UART Configuration in RAM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 +----------------+-------------------------+-------------------------+
 | **Command**    | Query:                  | Set:                    |
@@ -390,67 +391,71 @@ AT+SYSRAM – Checks the Remaining Space on RAM
 AT+SLEEP – Configures the Operating Modes for Power Optimization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------+-------------------------+-----------------------+
-| **Command**    | Query:                  | Set:                  |
-|                | AT+SLEEP?               | AT+SLEEP=<sleep mode> |
-+----------------+-------------------------+-----------------------+
-| **Response**   | +SLEEP:<sleep mode>     | OK                    |
-|                |                         |                       |
-|                | OK                      |                       |
-+----------------+-------------------------+-----------------------+
-| **Parameters** | -  <sleep mode>:                                |
-|                |                                                 |
-|                |    -  : Disable sleep                           |
-|                |          mode                                   |
-|                |                                                 |
-|                |       (high-performance                         |
-|                |          mode)                                  |
-|                |                                                 |
-|                |    -  1: Sleep mode                             |
-|                |                                                 |
-|                |    -  2: Associated                             |
-|                |          mode                                   |
-+----------------+-------------------------+-----------------------+
-| **Notes**      | This command can only                           |
-|                | be used in Station                              |
-|                | mode. Associated mode                           |
-|                | is the default mode.                            |
-|                |                                                 |
-|                | 1. “Disable sleep”                              |
-|                |    means chip host CPU                          |
-|                |    and everything else                          |
-|                |    are all powered on.                          |
-|                |    This is the highest                          |
-|                |    power-consumption                            |
-|                |    mode and also the                            |
-|                |    highest performance                          |
-|                |    mode.                                        |
-|                |                                                 |
-|                | 2. “Sleep” means WLAN                           |
-|                |    blocks are powered                           |
-|                |    down and clocks are                          |
-|                |    suspended, and                               |
-|                |    BFQ4004 is                                   |
-|                |    disconnected from                            |
-|                |    access point.                                |
-|                |                                                 |
-|                | 3. “Associated” means                           |
-|                |    BFQ4004 is duty                              |
-|                |    cycling between                              |
-|                |    sleep state and                              |
-|                |    active WLAN TX, RX.                          |
-|                |    It is used to allow                          |
-|                |    BFQ4004 to                                   |
-|                |    periodically wake up                         |
-|                |    and listen for                               |
-|                |    beacon signals from                          |
-|                |    access point (AP) to                         |
-|                |    maintain the                                 |
-|                |    connection with the                          |
-|                |    AP.                                          |
-+----------------+-------------------------+-----------------------+
-| **Examples**   | AT+SLEEP=0                                      |
-+----------------+-------------------------+-----------------------+
+
+.. table::
+   :widths: 20,50,30
+   
+     +----------------+-------------------------+-----------------------+
+     | **Command**    | Query:                  | Set:                  |
+     |                | AT+SLEEP?               | AT+SLEEP=<sleep mode> |
+     +----------------+-------------------------+-----------------------+
+     | **Response**   | +SLEEP:<sleep mode>     | OK                    |
+     |                |                         |                       |
+     |                | OK                      |                       |
+     +----------------+-------------------------+-----------------------+
+     | **Parameters** | -  <sleep mode>:                                |
+     |                |                                                 |
+     |                |    -  : Disable sleep                           |
+     |                |          mode                                   |
+     |                |                                                 |
+     |                |       (high-performance                         |
+     |                |          mode)                                  |
+     |                |                                                 |
+     |                |    -  1: Sleep mode                             |
+     |                |                                                 |
+     |                |    -  2: Associated                             |
+     |                |          mode                                   |
+     +----------------+-------------------------+-----------------------+
+     | **Notes**      | This command can only                           |
+     |                | be used in Station                              |
+     |                | mode. Associated mode                           |
+     |                | is the default mode.                            |
+     |                |                                                 |
+     |                | 1. “Disable sleep”                              |
+     |                |    means chip host CPU                          |
+     |                |    and everything else                          |
+     |                |    are all powered on.                          |
+     |                |    This is the highest                          |
+     |                |    power-consumption                            |
+     |                |    mode and also the                            |
+     |                |    highest performance                          |
+     |                |    mode.                                        |
+     |                |                                                 |
+     |                | 2. “Sleep” means WLAN                           |
+     |                |    blocks are powered                           |
+     |                |    down and clocks are                          |
+     |                |    suspended, and                               |
+     |                |    BFQ4004 is                                   |
+     |                |    disconnected from                            |
+     |                |    access point.                                |
+     |                |                                                 |
+     |                | 3. “Associated” means                           |
+     |                |    BFQ4004 is duty                              |
+     |                |    cycling between                              |
+     |                |    sleep state and                              |
+     |                |    active WLAN TX, RX.                          |
+     |                |    It is used to allow                          |
+     |                |    BFQ4004 to                                   |
+     |                |    periodically wake up                         |
+     |                |    and listen for                               |
+     |                |    beacon signals from                          |
+     |                |    access point (AP) to                         |
+     |                |    maintain the                                 |
+     |                |    connection with the                          |
+     |                |    AP.                                          |
+     +----------------+-------------------------+-----------------------+
+     | **Examples**   | AT+SLEEP=0                                      |
+     +----------------+-------------------------+-----------------------+
 
 AT+GSLP – Enters Suspend (Deep-sleep) Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
