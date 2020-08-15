@@ -27,6 +27,11 @@ author = 'Trieu Nguyen'
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
 
+rst_prolog = """
+.. include:: <s5defs.txt>
+.. default-role::
+"""
+
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
