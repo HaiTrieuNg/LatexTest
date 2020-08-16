@@ -105,7 +105,7 @@ latex_elements = {
     ''',
 }
 
-latex_logo = 'BeeFi_Logo.png'
+#latex_logo = 'BeeFi_Logo.png'
 
 latex_documents = [
     (master_doc, 'test.tex', 'LatexTest',
