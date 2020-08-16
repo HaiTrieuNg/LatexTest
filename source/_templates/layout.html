@@ -8,10 +8,15 @@
     visibility: visible !important;
 }
  */  
+
+/*Highlight text*/
 .aqua {
   color: white;
   background-color: deepSkyBlue;
  }
+   
+
+/*List bullet icon*/
    
  .wy-plain-list-disc li, .rst-content .section ul li, .rst-content .toctree-wrapper ul li, article ul li {
     list-style: none !important;
@@ -30,14 +35,12 @@
     color: darkblue;
 }
    
+   
 .wy-breadcrumbs li:before {
     visibility: hidden !important;
 }
    
-.wy-breadcrumbs li:first-child a:first-child {
-    left: -15px;
-}
-   
+/*Previous icon at the end of page*/   
 a.btn.btn-neutral.float-left {
     visibility: hidden;
     position: relative;
@@ -58,7 +61,7 @@ a.btn.btn-neutral.float-left:before {
 }
   
   
-  
+/*Next icon at the end of page*/     
 a.btn.btn-neutral.float-right {
     visibility: hidden;
     position: relative;
@@ -79,7 +82,7 @@ a.btn.btn-neutral.float-right:before {
     content: "\f138";
 }
    
-   
+/*body font*/   
 p {
    font-weight: normal;
    font-family: Calibri;
@@ -93,38 +96,32 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
      font-family: Calibri;
 }
  
- 
+/*table border*/ 
 .wy-table-bordered-all td, .rst-content table.docutils td {
    border-bottom: 1px solid black;
    border-left: 1px solid black;
 }
-
-.wy-side-nav-search>div.version {
-    font-size: 18px !important;
-}
-
 .wy-table-bordered-all, .rst-content table.docutils {
    border: 1px solid black;
 }
 
+/*side menu*/
+.wy-side-nav-search>div.version {
+    font-size: 18px !important;
+}
 
+/*Titles color*/
 
 h1 {
    color: #0027A0;
-
-
 }
 
 h2 {
    color: #0027A0;
-
-
 }
    
 h3 {
    color: #0027A0;
-
-
 }
    
  /*
@@ -242,24 +239,28 @@ th {
   }
 
    
-  .wy-breadcrumbs li:first-child a:first-child:before {
-    font-family: "FontAwesome";
-    display: inline-block;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    text-decoration: inherit;
-    
-    visibility: visible;
-    position: absolute;
-    top: 1;
-    left: 0;
-    content: "\f015";
-  }
+   /*Home*/
+   
  
    
+.wy-breadcrumbs li:first-child a:first-child {
+    left: -15px;
+}
    
-  
+.wy-breadcrumbs li:first-child a:first-child:before {
+   visibility: visible;
+   content: "";
+   background: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSj3XfIpf-OOJRCcWz4iN2CU3qMKVVbj0p0bRvKNGVo1U9pk_8ZIlyR8pWreA);
+   width: 20px;
+   height: 20px;
+   margin-left: 10px;
+   content: "";
+   background-size: cover;
+   position: absolute;
+}
+
+ 
+  /* all table same width*/
    table {
      width : 95%  !important;
    }
