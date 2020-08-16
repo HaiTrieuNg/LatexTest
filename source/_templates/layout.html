@@ -50,12 +50,16 @@
    visibility: visible;
    content: "";
    background: url(https://raw.githubusercontent.com/HaiTrieuNg/LatexTest/master/source/_images/web-UI_FA_2-02.png);
-   width: 20px;
-   height: 20px;
+   width: 15px;
+   height: 15px;
    margin-left: 15px;
    content: "";
    background-size: cover;
    position: absolute;
+}
+   
+.wy-breadcrumbs li {
+    color: #001C71;
 }
    
    
@@ -262,18 +266,13 @@ th {
     left: 0;
     content: "\f02d Switch Version";
   }
-
-   
-   
+ 
   /*Change Top link in content area from "Docs" to "Home"*/   
   
   .wy-breadcrumbs li:first-child a:first-child {
      visibility: hidden;
     position: relative;
   }
-
-   
-
 
  
   /* all table same width*/
@@ -521,10 +520,11 @@ hr {
 }
 
 
-.fa-book:before, .icon-book:before {
-   content: "\f02d Switch Version";
-
-
+span.fa.fa-book:after {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    content: " Switch Version";
 }
 
 
