@@ -22,23 +22,41 @@
     list-style: none !important;
 }
    
- .wy-nav-content ul li:before {
-    font-family: "FontAwesome";
-    display: inline-block;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    text-decoration: inherit;
-    font-size: 60%;
-    content: "\f0c8 ";
-    width: 15px;
-    color: darkblue;
+.wy-nav-content ul li:before {
+   content: "";
+   background: url(https://raw.githubusercontent.com/HaiTrieuNg/LatexTest/master/source/_images/web-UI_FA_2-04.png);
+   width: 20px;
+   height: 20px;
+   margin-left: -20px;
+   content: "";
+   background-size: cover;
+   position: absolute;
 }
+
    
-   
+ 
+ /*Home icon*/
+    
 .wy-breadcrumbs li:before {
     visibility: hidden !important;
 }
+
+.wy-breadcrumbs li:first-child a:first-child {
+    left: -15px;
+}
+   
+.wy-breadcrumbs li:first-child a:first-child:before {
+   visibility: visible;
+   content: "";
+   background: url(https://raw.githubusercontent.com/HaiTrieuNg/LatexTest/master/source/_images/web-UI_FA_2-02.png);
+   width: 20px;
+   height: 20px;
+   margin-left: 10px;
+   content: "";
+   background-size: cover;
+   position: absolute;
+}
+   
    
 /*Previous icon at the end of page*/   
 a.btn.btn-neutral.float-left {
@@ -239,25 +257,7 @@ th {
   }
 
    
-   /*Home*/
-   
- 
-   
-.wy-breadcrumbs li:first-child a:first-child {
-    left: -15px;
-}
-   
-.wy-breadcrumbs li:first-child a:first-child:before {
-   visibility: visible;
-   content: "";
-   background: url(https://raw.githubusercontent.com/HaiTrieuNg/LatexTest/master/source/_images/web-UI_FA_2-02.png);
-   width: 20px;
-   height: 20px;
-   margin-left: 10px;
-   content: "";
-   background-size: cover;
-   position: absolute;
-}
+
 
  
   /* all table same width*/
@@ -509,15 +509,15 @@ hr {
 }*/
 
 h1:before {
-   font-family: "FontAwesome";
-   display: inline-block;
-   font-style: normal;
-   font-weight: normal;
-   line-height: 1;
-   text-decoration: inherit;
-   font-size: 100%;
-   content: "\f1b3";
+   background: url(https://raw.githubusercontent.com/HaiTrieuNg/LatexTest/master/source/_images/web-UI_FA_2-03.png);
+   width: 20px;
+   height: 20px;
+   margin-left: -20px;
+   content: "";
+   background-size: cover;
+   position: absolute;
 }
+
 
 
 
