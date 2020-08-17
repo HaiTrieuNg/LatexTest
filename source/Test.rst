@@ -94,8 +94,51 @@ users to customize their AT firmware.
      -  *String values need to be included in double quotation markets, for     example:     AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4* |br|
      -  *The default baud rate is 1152.* |br|
      -  *AT commands have to be capitalized and must end with a new line (CR     LF).* |br|
+     
+.. hint::
+     -  *Not all AT commands support all four varioations mentioned above.* |br|
+     -  *Square brackets “[]” designate the default value. It is not always     required or may not appear.* |br|
+     -  *String values need to be included in double quotation markets, for     example:     AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4* |br|
+     -  *The default baud rate is 1152.* |br|
+     -  *AT commands have to be capitalized and must end with a new line (CR     LF).* |br|
 
-
+.. tip::
+     -  *Not all AT commands support all four varioations mentioned above.* |br|
+     -  *Square brackets “[]” designate the default value. It is not always     required or may not appear.* |br|
+     -  *String values need to be included in double quotation markets, for     example:     AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4* |br|
+     -  *The default baud rate is 1152.* |br|
+     -  *AT commands have to be capitalized and must end with a new line (CR     LF).* |br|
+         
+     
+.. warning::
+     -  *Not all AT commands support all four varioations mentioned above.* |br|
+     -  *Square brackets “[]” designate the default value. It is not always     required or may not appear.* |br|
+     -  *String values need to be included in double quotation markets, for     example:     AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4* |br|
+     -  *The default baud rate is 1152.* |br|
+     -  *AT commands have to be capitalized and must end with a new line (CR     LF).* |br|  
+     
+.. caution::
+     -  *Not all AT commands support all four varioations mentioned above.* |br|
+     -  *Square brackets “[]” designate the default value. It is not always     required or may not appear.* |br|
+     -  *String values need to be included in double quotation markets, for     example:     AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4* |br|
+     -  *The default baud rate is 1152.* |br|
+     -  *AT commands have to be capitalized and must end with a new line (CR     LF).* |br|
+     
+.. danger::
+     -  *Not all AT commands support all four varioations mentioned above.* |br|
+     -  *Square brackets “[]” designate the default value. It is not always     required or may not appear.* |br|
+     -  *String values need to be included in double quotation markets, for     example:     AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4* |br|
+     -  *The default baud rate is 1152.* |br|
+     -  *AT commands have to be capitalized and must end with a new line (CR     LF).* |br|
+     
+.. error::
+     -  *Not all AT commands support all four varioations mentioned above.* |br|
+     -  *Square brackets “[]” designate the default value. It is not always     required or may not appear.* |br|
+     -  *String values need to be included in double quotation markets, for     example:     AT+CWSAP_CUR=”BFQ4004A”,”123456789”,1,4* |br|
+     -  *The default baud rate is 1152.* |br|
+     -  *AT commands have to be capitalized and must end with a new line (CR     LF).* |br|
+     
+     
 Basic AT Commands
 =================
 
