@@ -34,6 +34,28 @@ onto the flash on the module as well as some customization examples.
                       print 'This line is highlighted.'
                       print 'This one is not...'
                       print '...but this one is.'
+                      
+If you want to install the tools without the help of ESP-IDF Tools Installer, open the Command Prompt and follow these steps:
+
+.. code-block:: batch
+
+    cd %userprofile%\esp\esp-idf
+    install.bat
+
+or with Windows PowerShell
+
+.. code-block:: powershell
+
+    cd ~/esp/esp-idf
+    ./install.ps1
+
+Linux and macOS
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    cd ~/esp/esp-idf
+    ./install.sh
 
 .. important::
     -  Please make sure that correct binary file (.bin) has been installed     in BFQ4004 module before using the AT commands in this document. |br|
