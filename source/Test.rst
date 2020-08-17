@@ -35,14 +35,6 @@ onto the flash on the module as well as some customization examples.
                       print 'This one is not...'
                       print '...but this one is.'
                       
-If you want to install the tools without the help of ESP-IDF Tools Installer, open the Command Prompt and follow these steps:
-
-.. code-block:: batch
-
-    cd %userprofile%\esp\esp-idf
-    install.bat
-
-or with Windows PowerShell
 
 .. code-block:: powershell
 
